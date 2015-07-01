@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>linked-data-editor</title>
+<link rel="stylesheet" href="main.css">
+
+<article class="card">
+
+  <header>
+    <b>Manifestation</b>
+    <code>http://libris.kb.se/bib/9876543210</code>
+  </header>
+
+  <div>
+    <b>coverTitle</b>
+    <div class="card">
+      <p><b>title</b> <span>THE FELLOWSHIP OF THE RINGS</span></p>
+      <p><b>subtitle</b> <span>THE LORD OF THE RINGS PART ONE</span></p>
+      <p><b>responsibilityStatement</b> <span>J·R·R·TOLKIEN</span></p>
+    </div>
+  </div>
+
+  <p><b>editionStatement</b> <span>2nd edition</span></p>
+  <div>
+    <b>manufacture</b>
+    <div class="card">
+        <header><b>Event</b></header>
+      <p><b>when</b> <span>2012</span></p>
+      <p><b>who</b> <a href="#acme">ACME</a></p>
+    </div>
+  </div>
+
+  <p><b>publicationStatement</b> <span>MARINER BOOKS INC.</span></p>
+  <div>
+    <b>publication</b>
+    <div class="card">
+        <header><b>Event</b></header>
+      <p><b>when</b> <span>2012-09-18</span></p>
+      <p><b>who</b> <a href="#marinerbooks">Mariner Books</a></p>
+      <p><b>where</b> <a href="#uk">United Kingdom</a></p>
+    </div>
+  </div>
+
+  <div>
+    <b>identifier</b>
+    <div class="card">
+      <p><b>type</b> <a href="#isbn">ISBN13</a></p>
+      <p><b>value</b> <span>978-0547928210</span></p>
+    </div>
+  </div>
+
+  <p><b>partOfSeries</b> <a href="#lotr">Lord of the Rings</a></p>
+
+  <p><b>bookFormat</b> <a href="#Paperback">Paperback</a></p>
+  <p><b>numberOfPages</b> <span>432</span></p>
+  <p><b>dimensions</b> <span>5.5 x 1 x 8.2 inches</span></p>
+
+  <div>
+    <p><b>exampleOfWork</b> </p>
+    <article class="card auth" id="tfotr">
+      <header>
+        <b>Book</b>
+        <code>http://id.kb.se/book/tfotr-jrrt</code>
+      </header>
+      <p><b>title</b> <span>The Fellowship of the Rings</span></p>
+      <p><b>description</b> <span>The Fellowship of the Ring is the first of three volumes of the epic novel The Lord of the Rings by the English author J. R. R. Tolkien. It takes place in the fictional universe of Middle-earth.</span></p>
+      <p><b>author</b> <a href="#tolkien">J.R.R. Tolkien</a></p>
+      <p><b>language</b> <a href="#en">English</a></p>
+      <p><b>artform</b> <a href="#fantasy">Novel</a></p>
+      <p><b>genre</b> <a href="#fantasy">Fantasy</a></p>
+      <p><b>subject</b> <a href="#middleearth">Middle-Earth</a></p>
+      <p><b>audience</b> <a href="#people">People</a></p>
+      <p><b>dateCreated</b> <span>1954</span></p>
+      <p><b>country</b> <a href="#uk">United Kingdom</a></p>
+      <div>
+        <p><b>hasPart</b> </p>
+        <article class="card">
+          <header><b>VisualArtwork</b></header>
+        </article>
+      </div>
+      <!--
+      <p><b>translationOf</b> <a href="#nibelung">Nibelung</a></p>
+      -->
+    </article>
+
+  </div>
+
+  <div>
+    <p><b>workExample</b> </p>
+    <article class="card">
+      <header><b>Product</b></header>
+      <div>
+        <p><b>offers</b> </p>
+        <article class="card">
+          <header><b>Offer</b></header>
+          <p><b>price</b> <span>80 SEK</span></p>
+          <p><b>seller</b> <a href="#pressbyran">Pressbyrån</a></p>
+        </article>
+      </div>
+    </div>
+    </article>
+  </div>
+
+</article>
+
+<article class="card auth" id="tolkien">
+  <header>
+    <b>Person</b>
+    <code>http://dbpedia.org/resource/J._R._R._Tolkien</code>
+  </header>
+  <p><b>givenName</b> <span>John</span></p>
+  <p><b>additionalName</b> <span>Ronald Reuel</span></p>
+  <p><b>familyName</b> <span>Tolkien</span></p>
+</article>
+
+<article class="card auth" id="lotr">
+  <header>
+    <b>PublicationVolume</b>
+    <code>http://dbpedia.org/resource/The_Lord_of_the_Rings</code>
+  </header>
+  <p><b>name</b> <span>The Lord of the Rings</span></p>
+</article>
