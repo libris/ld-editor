@@ -1,0 +1,28 @@
+{
+  "name": "lediteur",
+  "description": "linked data editor",
+  "version": "0.0.0",
+  "repository": ".",
+  "devDependencies": {
+    "babel": "~5.6.14",
+    "uglify-js": "~2.4.23",
+    "less": "~2.3.1",
+    "chokidar-cli": "~0.2.1",
+    "parallelshell": "~1.0.4",
+    "bower-installer": "~1.2.0"
+  },
+  "config": {
+    "RUN_BABEL": "babel ./ -x .es6 -d build/ --source-root ./ -s"
+  },
+  "scripts": {
+    "vendor": "npm run vendor:fetch && npm run vendor:js",
+    "vendor:fetch": "bower-installer",
+    "vendor:js": "uglifyjs vendor/*.js vendor/{jquery,vue}/js/*.js -o build/vendor.min.js --source-map build/vendor.min.js.map -p relative",
+    "build": "parallelshell 'npm run build:js' 'npm run build:less'",
+    "build:js": "$npm_package_config_RUN_BABEL",
+    "build:less": "lessc main.less build/main.css --source-map=build/main.css.map",
+    "watch": "parallelshell 'npm run watch:js' 'npm run watch:less' 'http-server -p 7000'",
+    "watch:js": "$npm_package_config_RUN_BABEL -w",
+    "watch:less": "chokidar *.less -c 'npm run build:less'"
+  }
+}

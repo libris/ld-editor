@@ -1,0 +1,14 @@
+{
+  "name": "lediteur",
+  "version": "0.0.0",
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "vue": "~0.12.4"
+  },
+  "install": {
+    "base": "vendor",
+    "path": {
+      "js": "{name}/js"
+    }
+  }
+}

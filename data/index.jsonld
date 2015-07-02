@@ -1,0 +1,151 @@
+[
+  {
+    "@id": "#acme",
+    "label": "ACME"
+  },
+  {
+    "@id": "#marinerbooks",
+    "label": "Mariner Books"
+  },
+  {
+    "@id": "#uk",
+    "label": "United Kingdom"
+  },
+  {
+    "@id": "#isbn",
+    "label": "ISBN13"
+  },
+  {
+    "@id": "#lotr",
+    "label": "Lord of the Rings"
+  },
+  {
+    "@id": "#Paperback",
+    "label": "Paperback"
+  },
+  {
+    "@id": "#tolkien",
+    "label": "J.R.R. Tolkien"
+  },
+  {
+    "@id": "#en",
+    "label": "English"
+  },
+  {
+    "@id": "#novel",
+    "label": "Novel"
+  },
+  {
+    "@id": "#fantasy",
+    "label": "Fantasy"
+  },
+  {
+    "@id": "#middleearth",
+    "label": "Middle-Earth"
+  },
+  {
+    "@id": "#people",
+    "label": "People"
+  },
+  {
+    "@id": "#pressbyran",
+    "label": "Pressbyrån"
+  },
+  {
+    "@type": "Manifestation",
+    "@id": "http://libris.kb.se/bib/9780547928210",
+    "coverTitle": {
+      "title": "THE FELLOWSHIP OF THE RINGS",
+      "subtitle": "THE LORD OF THE RINGS PART ONE",
+      "responsibilityStatement": "J·R·R·TOLKIEN"
+    },
+    "editionStatement": "2nd edition",
+    "manufacture": {
+      "@type": "Event",
+      "when": "2012",
+      "who": {
+        "@id": "#acme"
+      }
+    },
+    "publicationStatement": "MARINER BOOKS INC.",
+    "publication": {
+      "@type": "Event",
+      "when": "2012-09-18",
+      "who": {
+        "@id": "#marinerbooks"
+      },
+      "where": {
+        "@id": "#uk"
+      }
+    },
+    "identifier": [
+      {
+        "type": {
+          "@id": "#isbn"
+        },
+        "value": "978-0547928210"
+      }
+    ],
+    "partOfSeries": {
+      "@id": "#lotr"
+    },
+    "bookFormat": {
+      "@id": "#Paperback"
+    },
+    "numberOfPages": "432",
+    "dimensions": "5.5 x 1 x 8.2 inches",
+    "exampleOfWork": {
+      "@type": "Book",
+      "@id": "http://id.kb.se/book/tfotr-jrrt",
+      "title": "The Fellowship of the Rings",
+      "description": "The Fellowship of the Ring is the first of three volumes of the epic novel The Lord of the Rings by the English author J. R. R. Tolkien. It takes place in the fictional universe of Middle-earth.",
+      "author": {
+        "@id": "#tolkien"
+      },
+      "language": {
+        "@id": "#en"
+      },
+      "artform": {
+        "@id": "#novel"
+      },
+      "genre": {
+        "@id": "#fantasy"
+      },
+      "subject": {
+        "@id": "#middleearth"
+      },
+      "audience": {
+        "@id": "#people"
+      },
+      "dateCreated": "1954",
+      "country": {
+        "@id": "#uk"
+      },
+      "hasPart": {
+        "@type": "VisualArtwork"
+      }
+    },
+    "workExample": {
+      "@type": "Product",
+      "offers": {
+        "@type": "Offer",
+        "price": "80 SEK",
+        "seller": {
+          "@id": "#pressbyran"
+        }
+      }
+    }
+  },
+  {
+    "@type": "Person",
+    "@id": "http://dbpedia.org/resource/J._R._R._Tolkien",
+    "givenName": "John",
+    "additionalName": "Ronald Reuel",
+    "familyName": "Tolkien"
+  },
+  {
+    "@type": "PublicationVolume",
+    "@id": "http://dbpedia.org/resource/The_Lord_of_the_Rings",
+    "name": "The Lord of the Rings"
+  }
+]
