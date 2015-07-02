@@ -16,7 +16,7 @@
   },
   "scripts": {
     "vendor": "npm run vendor:fetch && npm run vendor:js",
-    "vendor:fetch": "bower-installer",
+    "vendor:fetch": "parallelshell 'bower-installer' 'cp node_modules/babel/node_modules/babel-core/browser-polyfill.js vendor/'",
     "vendor:js": "uglifyjs vendor/*.js vendor/{jquery,vue}/js/*.js -o build/vendor.min.js --source-map build/vendor.min.js.map -p relative",
     "build": "parallelshell 'npm run build:js' 'npm run build:less'",
     "build:js": "$npm_package_config_RUN_BABEL",
