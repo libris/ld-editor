@@ -29,7 +29,8 @@ function initVue(ld, itemId) {
   let getData = () => Object.assign({ld}, {ID, TYPE})
 
   Vue.partial('edit-contents', '#edit-contents')
-  Vue.partial('part-key', '#part-key')
+  Vue.partial('show-term', '#show-term')
+  Vue.partial('show-type', '#show-type')
 
   window.vue = new Vue({
     el: '#editor',

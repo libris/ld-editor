@@ -20,6 +20,8 @@ export class LD {
   }
 
   label(o, defaultVale='') {
+    if (!o)
+      return defaultVale
     var l
     if (o.labelByLang)
       l = o.labelByLang[this.lang]

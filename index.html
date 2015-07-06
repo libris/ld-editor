@@ -14,7 +14,7 @@
 <template id="edit-node">
   <article class="card {{ type === 'main'? 'main' : 'auth' }}">
     <header>
-      <b v-if="item[TYPE]">{{ld.label(ld.model[item[TYPE]])}}</b>
+      <partial name="show-type"></partial>
       <code v-if="item[ID]">{{item[ID]}}</code>
     </header>
     <partial name="edit-contents"></partial>
@@ -28,7 +28,7 @@
 <template id="edit-bnode">
   <div class="card">
     <header>
-      <b v-if="item[TYPE]">{{ld.label(ld.model[item[TYPE]])}}</b>
+      <partial name="show-type"></partial>
     </header>
     <partial name="edit-contents"></partial>
   </div>
@@ -37,12 +37,12 @@
 <template id="edit-contents">
   <template v-repeat="part : ld.parts(item)" track-by="key">
     <p v-if="part.literal">
-      <partial name="part-key"></partial>
+      <partial name="show-term"></partial>
       <span>{{part.value}}</span>
       <!-- <input v-model="item[part.key]"> -->
     </p>
     <div v-if="part.array">
-      <partial name="part-key"></partial>
+      <partial name="show-term"></partial>
       <template v-if="part.array">
         <template v-repeat="li : part.value">
           <span v-if="typeof li !== 'object'">{{li}}</span>
@@ -52,16 +52,20 @@
       </template>
     </div>
     <p v-if="part.ref">
-      <partial name="part-key"></partial>
+      <partial name="show-term"></partial>
       <edit-ref item="{{part.value}}"></edit-ref>
     </p>
     <div v-if="part.node">
-      <partial name="part-key"></partial>
+      <partial name="show-term"></partial>
       <component is="edit-{{part.bnode? 'bnode' : 'node'}}" item="{{part.value}}"></component>
     </div>
   </template>
 </template>
 
-<template id="part-key">
+<template id="show-term">
   <b>{{ld.label(part.term, part.key)}}</b>
+</template>
+
+<template id="show-type">
+  <b v-if="item[TYPE]">{{ld.label(ld.model[item[TYPE]], item[TYPE])}}</b>
 </template>
