@@ -3,112 +3,59 @@
 <title>linked-data-editor</title>
 <link rel="stylesheet" href="build/main.css">
 <script src="build/vendor.min.js"></script>
+<script src="build/ld.js"></script>
 <script src="build/main.js"></script>
 
-<article class="card" id="editor" v-cloak>
+<div id="editor" v-cloak>
+  <!-- <button v-on="click: save()">Save</button> -->
+  <edit-node type="main" item="{{item}}"></edit-node>
+</div>
 
-  <header>
-    <b>{{item[TYPE]}}</b>
-    <code v-if="item[ID]">{{item[ID]}}</code>
-  </header>
-
-  <div>
-    <b>coverTitle</b>
-    <div class="card">
-      <p><b>title</b> <span>{{ item.coverTitle.title }}</span></p>
-      <p><b>subtitle</b> <span>{{ item.coverTitle.subtitle }}</span></p>
-      <p><b>responsibilityStatement</b> <span>{{ item.coverTitle.responsibilityStatement }}</span></p>
-    </div>
-  </div>
-
-  <p><b>editionStatement</b> <span>{{item.editionStatement}}</span></p>
-
-  <div v-if="item.manufacture">
-    <b>manufacture</b>
-    <edit-event event="{{item.manufacture}}"></edit-event>
-  </div>
-
-  <p><b>publicationStatement</b> <span>{{item.publicationStatement}}</span></p>
-
-  <div v-if="item.publication">
-    <b>publication</b>
-    <edit-event event="{{item.publication}}"></edit-event>
-  </div>
-
-  <div>
-    <b>identifier</b>
-    <div class="card" v-repeat="identifier : item.identifier">
-      <p><b>type</b> <a href="#">{{index[identifier.type[ID]].label}}</a></p>
-      <p><b>value</b> <span>{{identifier.value}}</span></p>
-    </div>
-  </div>
-
-  <p><b>partOfSeries</b> <a href="#">{{index[item.partOfSeries[ID]].label}}</a></p>
-
-  <p><b>bookFormat</b> <a href="#">{{index[item.bookFormat[ID]].label}}</a></p>
-  <p><b>numberOfPages</b> <span>{{item.numberOfPages}}</span></p>
-  <p><b>dimensions</b> <span>{{item.dimensions}}</span></p>
-
-  <div>
-    <p><b>exampleOfWork</b> </p>
-    <edit-work work="{{item.exampleOfWork}}"></edit-work>
-  </div>
-
-  <div>
-    <p><b>workExample</b> </p>
-    <edit-product product="{{item.workExample}}"></edit-product>
-  </div>
-
-</article>
-
-<template id="edit-event">
-  <div class="card">
-    <header><b>{{event[TYPE]}}</b></header>
-    <p v-if="event.when"><b>when</b> <span>{{event.when}}</span></p>
-    <p v-if="event.who"><b>who</b> <a href="#">{{ index[event.who[ID]].label }}</a></p>
-    <p v-if="event.where"><b>where</b> <a href="#">{{ index[event.where[ID]].label }}</a></p>
-  </div>
-</template>
-
-<template id="edit-work">
-  <article class="card auth">
+<template id="edit-node">
+  <article class="card {{ type === 'main'? 'main' : 'auth' }}">
     <header>
-      <b>{{work[TYPE]}}</b>
-      <code>{{work[ID]}}</code>
+      <b v-if="item[TYPE]">{{item[TYPE]}}</b>
+      <code v-if="item[ID]">{{item[ID]}}</code>
     </header>
-    <p><b>title</b> <span>{{work.title}}</span></p>
-    <p><b>description</b> <span>{{work.description}}</span></p>
-    <p><b>author</b> <a href="#">{{index[work.author[ID]].label}}</a></p>
-    <p><b>language</b> <a href="#">{{index[work.language[ID]].label}}</a></p>
-    <p><b>artform</b> <a href="#">{{index[work.artform[ID]].label}}</a></p>
-    <p><b>genre</b> <a href="#">{{index[work.genre[ID]].label}}</a></p>
-    <p><b>subject</b> <a href="#">{{index[work.subject[ID]].label}}</a></p>
-    <p><b>audience</b> <a href="#">{{index[work.audience[ID]].label}}</a></p>
-    <p><b>dateCreated</b> <span>{{work.dateCreated}}</span></p>
-    <p><b>country</b> <a href="#">{{index[work.country[ID]].label}}</a></p>
-    <div>
-      <p><b>hasPart</b> </p>
-      <article class="card">
-        <header><b>VisualArtwork</b></header>
-      </article>
-    </div>
-    <p v-if="work.translationOf">
-      <b>translationOf</b> <a href="#">{{index[work.translationOf[ID]].label}}</a>
-    </p>
+    <partial name="edit-contents"></partial>
   </article>
 </template>
 
-<template id="edit-product">
-  <article class="card">
-    <header><b>{{product[TYPE]}}</b></header>
-    <div>
-      <p><b>offers</b> </p>
-      <article class="card">
-        <header><b>Offer</b></header>
-        <p><b>price</b> <span>{{product.offers.price}}</span></p>
-        <p v-if="product.offers.seller"><b>seller</b> <a href="#">{{ index[product.offers.seller[ID]].label }}</a></p>
-      </article>
-    </div>
+<template id="edit-ref">
+  <a href="#">{{ld.label(ld.deref(item))}}</a></p>
+</template>
+
+<template id="edit-bnode">
+  <div class="card">
+    <header>
+      <b v-if="item[TYPE]">{{item[TYPE]}}</b>
+    </header>
+    <partial name="edit-contents"></partial>
   </div>
-  </article>
+</template>
+
+<template id="edit-contents">
+  <template v-repeat="part : ld.parts(item)" track-by="key">
+    <p v-if="part.literal">
+      <b>{{part.key}}</b>
+      <span>{{part.value}}</span>
+      <!-- <input v-model="item[part.key]"> -->
+    </p>
+    <div v-if="part.array">
+      <b>{{part.key}}</b>
+      <template v-if="part.array">
+        <template v-repeat="li : part.value">
+          <component is="edit-{{li[ID]? 'node' : 'bnode'}}" item="{{li}}"></component>
+        </template>
+      </template>
+    </div>
+    <p v-if="part.ref">
+      <b>{{part.key}}</b>
+      <edit-ref item="{{part.value}}"></edit-ref>
+    </p>
+    <div v-if="part.node">
+      <b>{{part.key}}</b>
+      <component is="edit-{{part.bnode? 'bnode' : 'node'}}" item="{{part.value}}"></component>
+    </div>
+  </template>
 </template>
