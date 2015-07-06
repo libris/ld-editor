@@ -1,0 +1,133 @@
+{
+  "index": {
+    "Book": {
+      "labelByLang": {"en": "Book", "sv": "Bok"}
+    },
+    "Event": {
+      "labelByLang": {"en": "Event", "sv": "Händelse"}
+    },
+    "Manifestation": {
+      "labelByLang": {"en": "Manifestation", "sv": "Manifestation"}
+    },
+    "Offer": {
+      "labelByLang": {"en": "Offer", "sv": "Erbjudande"}
+    },
+    "Product": {
+      "labelByLang": {"en": "Product", "sv": "Produkt"}
+    },
+    "additionalName": {
+      "labelByLang": {"en": "additional name", "sv": "tilläggsnamn"}
+    },
+    "artform": {
+      "labelByLang": {"en": "artform", "sv": "verksform"}
+    },
+    "audience": {
+      "labelByLang": {"en": "audience", "sv": "målgrupp"}
+    },
+    "author": {
+      "labelByLang": {"en": "author", "sv": "författare"}
+    },
+    "bookFormat": {
+      "labelByLang": {"en": "book format", "sv": "bokformat"}
+    },
+    "country": {
+      "labelByLang": {"en": "country", "sv": "land"}
+    },
+    "coverTitle": {
+      "labelByLang": {"en": "cover title", "sv": "omslagstitel"}
+    },
+    "dateCreated": {
+      "labelByLang": {"en": "date created", "sv": "skapad"}
+    },
+    "description": {
+      "labelByLang": {"en": "description", "sv": "beskrivning"}
+    },
+    "dimensions": {
+      "labelByLang": {"en": "dimensions", "sv": "dimensioner"}
+    },
+    "editionStatement": {
+      "labelByLang": {"en": "editionStatement", "sv": "utgåveangivelse"}
+    },
+    "exampleOfWork": {
+      "labelByLang": {"en": "example of work", "sv": "exempel på verk"}
+    },
+    "familyName": {
+      "labelByLang": {"en": "family name", "sv": "familjenamn"}
+    },
+    "genre": {
+      "labelByLang": {"en": "genre", "sv": "genre"}
+    },
+    "givenName": {
+      "labelByLang": {"en": "given name", "sv": "egennamn"}
+    },
+    "hasPart": {
+      "labelByLang": {"en": "has part", "sv": "har del"}
+    },
+    "identifier": {
+      "labelByLang": {"en": "identifier", "sv": "identifikator"}
+    },
+    "label": {
+      "labelByLang": {"en": "label", "sv": "etikett"}
+    },
+    "language": {
+      "labelByLang": {"en": "language", "sv": "språk"}
+    },
+    "manufacture": {
+      "labelByLang": {"en": "manufacture", "sv": "tillverkning"}
+    },
+    "name": {
+      "labelByLang": {"en": "name", "sv": "namn"}
+    },
+    "numberOfPages": {
+      "labelByLang": {"en": "number of pages", "sv": "sidantal"}
+    },
+    "offers": {
+      "labelByLang": {"en": "offers", "sv": "erbjudande"}
+    },
+    "partOfSeries": {
+      "labelByLang": {"en": "part of series", "sv": "del i serie"}
+    },
+    "price": {
+      "labelByLang": {"en": "price", "sv": "pris"}
+    },
+    "publication": {
+      "labelByLang": {"en": "publication", "sv": "utgivning"}
+    },
+    "publicationStatement": {
+      "labelByLang": {"en": "publication statement", "sv": "utgivningsangivelse"}
+    },
+    "responsibilityStatement": {
+      "labelByLang": {"en": "responsibility statement", "sv": "upphovsangivelse"}
+    },
+    "seller": {
+      "labelByLang": {"en": "seller", "sv": "försäljare"}
+    },
+    "subject": {
+      "labelByLang": {"en": "subject", "sv": "ämne"}
+    },
+    "subtitle": {
+      "labelByLang": {"en": "subtitle", "sv": "undertitel"}
+    },
+    "title": {
+      "labelByLang": {"en": "title", "sv": "titel"}
+    },
+    "type": {
+      "labelByLang": {"en": "type", "sv": "typ"}
+    },
+    "value": {
+      "labelByLang": {"en": "value", "sv": "värde"}
+    },
+    "when": {
+      "labelByLang": {"en": "when", "sv": "när"}
+    },
+    "where": {
+      "labelByLang": {"en": "where", "sv": "var"}
+    },
+    "who": {
+      "labelByLang": {"en": "who", "sv": "vem"}
+    },
+    "workExample": {
+      "labelByLang": {"en": "work example", "sv": "verksexempel"}
+    }
+  }
+}

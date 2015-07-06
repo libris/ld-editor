@@ -1,11 +1,14 @@
 export const ID = '@id',
-  TYPE = '@type'
+  TYPE = '@type',
+  GRAPH = '@graph',
+  INDEX = '@index'
 
 export class LD {
 
-  constructor(model, data) {
-    this.model = model
+  constructor(model, data, {lang}={}) {
+    this.model = model.index
     this.index = buildIndex(data)
+    this.lang = lang
   }
 
   keys(o) {
@@ -16,23 +19,27 @@ export class LD {
     return this.index[ref[ID]]
   }
 
-  label(o) {
-    return o.label
+  label(o, defaultVale='') {
+    var l
+    if (o.labelByLang)
+      l = o.labelByLang[this.lang]
+    return l || o.label || defaultVale
   }
 
   parts(o) {
     return this.keys(o).map(key => {
+      let term = this.model[key]
       let value = o[key]
-      return Object.assign({key, value}, classify(value))
+      return Object.assign({term, key, value}, classify(value))
     })
   }
 
 }
 
-function buildIndex(data) {
+function buildIndex(data, indexKey=ID) {
   let index = {}
   for (let item of data) {
-    index[item[ID]] = item
+    index[item[indexKey]] = item
   }
   return index
 }

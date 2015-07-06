@@ -3,20 +3,23 @@ import {ID, TYPE, LD} from './ld'
 $(run)
 
 function run() {
+  let lang = 'sv'
+  let itemId = 'http://libris.kb.se/bib/9780547928210'
 
-  $.ajax('data/index.jsonld', {dataType: 'json'}).done(data => {
-    let ld = new LD({}, data)
-    initVue(ld)
+  Promise.all([
+    $.ajax('data/model.json', {dataType: 'json'}),
+    $.ajax('data/index.jsonld', {dataType: 'json'})
+  ]).then(([model, index]) => {
+    let ld = new LD(model, index, {lang})
+    initVue(ld, itemId)
   })
-
 }
 
 
-function initVue(ld) {
+function initVue(ld, itemId) {
   Vue.config.debug = true
 
-  let editId = 'http://libris.kb.se/bib/9780547928210'
-  let item = ld.index[editId]
+  let item = ld.index[itemId]
 
   let getData = () => Object.assign({ld}, {ID, TYPE})
 
