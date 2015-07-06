@@ -3,8 +3,13 @@ import {ID, TYPE, LD} from './ld'
 $(run)
 
 function run() {
-  let lang = 'sv'
-  let itemId = 'http://libris.kb.se/bib/9780547928210'
+  let params = {}
+  window.location.search.substring(1).split(/&/).forEach(pair => {
+    let [k, v] = pair.split(/=/)
+    if (k) params[k] = decodeURIComponent(v)
+  })
+  let lang = params.lang || 'en'
+  let itemId = params.item
 
   Promise.all([
     $.ajax('data/model.json', {dataType: 'json'}),
