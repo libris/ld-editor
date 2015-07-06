@@ -45,7 +45,9 @@
       <b>{{part.key}}</b>
       <template v-if="part.array">
         <template v-repeat="li : part.value">
-          <component is="edit-{{li[ID]? 'node' : 'bnode'}}" item="{{li}}"></component>
+          <span v-if="typeof li !== 'object'">{{li}}</span>
+          <component v-if="typeof li === 'object'"
+              is="edit-{{li[ID]? 'node' : 'bnode'}}" item="{{li}}"></component>
         </template>
       </template>
     </div>
