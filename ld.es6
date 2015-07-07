@@ -20,12 +20,12 @@ export class LD {
   }
 
   label(o, defaultVale='') {
-    if (!o)
-      return defaultVale
-    var l
-    if (o.labelByLang)
-      l = o.labelByLang[this.lang]
-    return l || o.label || defaultVale
+    return (!o && defaultVale) ||
+            (o.labelByLang && o.labelByLang[this.lang]) ||
+            o.title ||
+            o.name ||
+            o.label ||
+            defaultVale
   }
 
   parts(o) {
