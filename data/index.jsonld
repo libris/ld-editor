@@ -32,7 +32,7 @@
     "format": {"@id": "/format/Book/Paperback"},
     "numberOfPages": "432",
     "dimensions": "5.5 x 1 x 8.2 inches",
-    "exampleOfWork": {"@id": "http://id.kb.se/book/tfotr-jrrt"},
+    "exampleOfWork": {"@id": "/book/tfotr-jrrt"},
     "offers": {
       "@type": "Offer",
       "price": "80 SEK",
@@ -41,11 +41,12 @@
   },
   {
     "@type": "Book",
-    "@id": "http://id.kb.se/book/tfotr-jrrt",
+    "@id": "/book/tfotr-jrrt",
+    "sameAs": {"@id": "http://dbpedia.org/resource/The_Fellowship_of_the_Ring"},
     "title": "The Fellowship of the Ring",
     "description": "The Fellowship of the Ring is the first of three volumes of the epic novel The Lord of the Rings by the English author J. R. R. Tolkien. It takes place in the fictional universe of Middle-earth.",
     "author": {"@id": "/concept/jrr_tolkien"},
-    "language": {"@id": "/lang/eng"},
+    "language": {"@id": "/language/eng"},
     "artform": {"@id": "/concept/novel"},
     "genre": {"@id": "/concept/fantasy"},
     "subject": {"@id": "/concept/middleearth"},
@@ -59,7 +60,7 @@
     "@type": "PrintedBook",
     "contentsNote": "S. 11-15: John Tolkien och hans fantasivärld / Åke Ohlmarks",
     "exampleOfWork": {"@id": "/text/npcwb5dzl-smrtlkhlmsv"},
-    "hasPart": {"@id": "_:ub1bL9C14"},
+    "hasPart": {"@id": "_:tolkienfantasivarld"},
     "illustrationNote": "ill., kart.",
     "manufacture": {
       "@type": "Event",
@@ -71,14 +72,14 @@
     "publication": {
       "@type": "Event",
       "when": "1959-01-01",
-      "where": {"@id": "/place/rsg0f8h3p-stckhlm"},
-      "who": {"@id": "/organization/9b0jzs1m7-gbr-14kd"}
+      "where": {"@id": "/place/stockholm"},
+      "who": {"@id": "/org/geber"}
     },
     "publicationStatement": "© 1959 Geber",
     "sameAs": {"@id": "http://libris.kb.se/resource/bib/1846457"}
   },
   {
-    "@id": "/bib/8837573#thing",
+    "@id": "http://libris.kb.se/bib/8837573#thing",
     "@type": "PrintedBook",
     "qualifiedTitle": {
       "@type": "TitlePage",
@@ -93,23 +94,23 @@
       "@type": "ISBN13",
       "value": "91-7263-341-7"
     },
-    "isPartOf": {"@id": "_:ub1bL42C15"},
+    "isPartOf": {"@id": "/periodical/panpocket"},
     "isVersionOf": {"@id": "http://libris.kb.se/bib/1846457#thing"},
     "manufacture": {
       "@type": "Event",
-      "where": {"@id": "_:ub1bL38C20"}
+      "where": {"@id": "/country/dk"}
     },
     "noteOnPublicationStatement": [
       "Första svenska uppl. 1959",
       "Även med tryckår: 2. tr., 2003"
     ],
     "numberOfPages": "481, [1]",
-    "partOfSeries": {"@id": "_:ub1bL40C19"},
+    "partOfSeries": {"@id": "/series/panpocket"},
     "publication": {
       "@type": "Event",
       "when": "2002-01-01",
-      "where": {"@id": "/place/rsg0f8h3p-stckhlm"},
-      "who": {"@id": "/organization/tvj2hbk5r-pn-w4rl"}
+      "where": {"@id": "/place/stockholm"},
+      "who": {"@id": "/org/pan"}
     },
     "publicationStatement": "© 2002 Pan",
     "sameAs": {"@id": "http://libris.kb.se/resource/bib/8837573"}
@@ -126,14 +127,14 @@
     ],
     "language": {"@id": "/language/swe"},
     "title": "Sagan om ringen",
-    "translationOf": {"@id": "http://id.kb.se/book/tfotr-jrrt"},
+    "translationOf": {"@id": "/book/tfotr-jrrt"},
     "translator": {"@id": "/person/aake-ohlmarks-1911-1984"},
     "type": {"@id": "/concept/novel"},
     "author": {"@id": "/person/jrr-tolkien-1892-1973"},
     "translator": {"@id": "/person/aake-ohlmarks-1911-1984"}
   },
   {
-    "@id": "_:ub1bL9C14",
+    "@id": "_:tolkienfantasivarld",
     "@type": "CreativeWork",
     "title": "John Tolkien och hans fantasivärld",
     "author": {"@id": "/person/aake-ohlmarks-1911-1984"}
@@ -182,14 +183,26 @@
     "labelByLang": {"en": "United Kingdom", "sv": "Storbrittanien"}
   },
   {
-    "@id": "_:ub1bL38C20",
-    "@type": "Place",
+    "@id": "/country/sw",
+    "@type": "Country",
+    "labelByLang": {"en": "Sweden", "sv": "Sverige"}
+  },
+  {
+    "@id": "/country/dk",
+    "@type": "Country",
     "labelByLang": {"en": "Denmark", "sv": "Danmark"}
+  },
+  {
+    "@id": "/place/stockholm",
+    "@type": "Place",
+    "name": "Stockholm",
+    "containedIn": {"@id": "/country/sw"}
   },
   {
     "@id": "/place/uppsala",
     "@type": "Place",
-    "name": "Uppsala"
+    "name": "Uppsala",
+    "containedIn": {"@id": "/country/sw"}
   },
 
 
@@ -204,12 +217,12 @@
     }
   },
   {
-    "@id": "_:ub1bL42C15",
+    "@id": "/periodical/panpocket",
     "@type": "PublicationVolume",
     "title": "Pan pocket"
   },
   {
-    "@id": "_:ub1bL40C19",
+    "@id": "/series/panpocket",
     "@type": "CreativeWorkSeries",
     "name": "En Panpocket från Norstedts"
   },
@@ -224,6 +237,16 @@
     "@type": "Organization",
     "label": "Mariner Books"
   },
+  {
+    "@id": "/org/geber",
+    "@type": "Organization",
+    "label": "Geber"
+  },
+  {
+    "@id": "/org/pan",
+    "@type": "Organization",
+    "label": "Pan"
+  },
 
   {
     "@id": "/format/Book/Paperback",
@@ -231,9 +254,14 @@
     "labelByLang": {"en": "Paperback", "sv": "Pocketbok"}
   },
   {
-    "@id": "/lang/eng",
+    "@id": "/language/eng",
     "@type": "Language",
     "labelByLang": {"en": "English", "sv": "Engelska"}
+  },
+  {
+    "@id": "/language/swe",
+    "@type": "Language",
+    "labelByLang": {"en": "Swedish", "sv": "Svenska"}
   },
   {
     "@id": "/concept/novel",
