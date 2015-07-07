@@ -1,0 +1,194 @@
+[
+  {
+    "@id": "Book",
+    "labelByLang": {"en": "Book", "sv": "Bok"}
+  },
+  {
+    "@id": "CoverTitle",
+    "labelByLang": {"en": "Cover Title", "sv": "Omslagstitel"}
+  },
+  {
+    "@id": "Event",
+    "labelByLang": {"en": "Event", "sv": "Händelse"}
+  },
+  {
+    "@id": "ISBN13",
+    "label": "ISBN-13"
+  },
+  {
+    "@id": "Manifestation",
+    "labelByLang": {"en": "Manifestation", "sv": "Manifestation"}
+  },
+  {
+    "@id": "Offer",
+    "labelByLang": {"en": "Offer", "sv": "Erbjudande"}
+  },
+  {
+    "@id": "PrintedBook",
+    "labelByLang": {"en": "Printed Book", "sv": "Tryckt bok"}
+  },
+  {
+    "@id": "Product",
+    "labelByLang": {"en": "Product", "sv": "Produkt"}
+  },
+  {
+    "@id": "additionalName",
+    "labelByLang": {"en": "additional name", "sv": "tilläggsnamn"}
+  },
+  {
+    "@id": "artform",
+    "labelByLang": {"en": "artform", "sv": "verksform"}
+  },
+  {
+    "@id": "audience",
+    "labelByLang": {"en": "audience", "sv": "målgrupp"}
+  },
+  {
+    "@id": "author",
+    "labelByLang": {"en": "author", "sv": "författare"}
+  },
+  {
+    "@id": "bookFormat",
+    "labelByLang": {"en": "book format", "sv": "bokformat"}
+  },
+  {
+    "@id": "country",
+    "labelByLang": {"en": "country", "sv": "land"}
+  },
+  {
+    "@id": "dateCreated",
+    "labelByLang": {"en": "date created", "sv": "skapad"}
+  },
+  {
+    "@id": "description",
+    "labelByLang": {"en": "description", "sv": "beskrivning"}
+  },
+  {
+    "@id": "dimensions",
+    "labelByLang": {"en": "dimensions", "sv": "dimensioner"}
+  },
+  {
+    "@id": "editionStatement",
+    "labelByLang": {"en": "editionStatement", "sv": "utgåveangivelse"}
+  },
+  {
+    "@id": "exampleOfWork",
+    "labelByLang": {"en": "example of work", "sv": "exemplifierar verk"}
+  },
+  {
+    "@id": "familyName",
+    "labelByLang": {"en": "family name", "sv": "familjenamn"}
+  },
+  {
+    "@id": "format",
+    "labelByLang": {"en": "format", "sv": "format"}
+  },
+  {
+    "@id": "genre",
+    "labelByLang": {"en": "genre", "sv": "genre"}
+  },
+  {
+    "@id": "givenName",
+    "labelByLang": {"en": "given name", "sv": "egennamn"}
+  },
+  {
+    "@id": "hasPart",
+    "labelByLang": {"en": "has part", "sv": "har del"}
+  },
+  {
+    "@id": "identifier",
+    "labelByLang": {"en": "identifier", "sv": "identifikator"}
+  },
+  {
+    "@id": "label",
+    "labelByLang": {"en": "label", "sv": "etikett"}
+  },
+  {
+    "@id": "language",
+    "labelByLang": {"en": "language", "sv": "språk"}
+  },
+  {
+    "@id": "manufacture",
+    "labelByLang": {"en": "manufacture", "sv": "tillverkning"}
+  },
+  {
+    "@id": "name",
+    "labelByLang": {"en": "name", "sv": "namn"}
+  },
+  {
+    "@id": "numberOfPages",
+    "labelByLang": {"en": "number of pages", "sv": "sidantal"}
+  },
+  {
+    "@id": "offers",
+    "labelByLang": {"en": "product offer", "sv": "produkterbjudande"}
+  },
+  {
+    "@id": "partOfSeries",
+    "labelByLang": {"en": "part of series", "sv": "del i serie"}
+  },
+  {
+    "@id": "price",
+    "labelByLang": {"en": "price", "sv": "pris"}
+  },
+  {
+    "@id": "publication",
+    "labelByLang": {"en": "publication", "sv": "utgivning"}
+  },
+  {
+    "@id": "publicationStatement",
+    "labelByLang": {"en": "publication statement", "sv": "utgivningsangivelse"}
+  },
+  {
+    "@id": "qualifiedIdentifier",
+    "labelByLang": {"en": "qualified identifier", "sv": "kvalificerad identifikator"}
+  },
+  {
+    "@id": "qualifiedTitle",
+    "labelByLang": {"en": "qualified title", "sv": "kvalificerad titel"}
+  },
+  {
+    "@id": "responsibilityStatement",
+    "labelByLang": {"en": "responsibility statement", "sv": "upphovsangivelse"}
+  },
+  {
+    "@id": "seller",
+    "labelByLang": {"en": "seller", "sv": "försäljare"}
+  },
+  {
+    "@id": "subject",
+    "labelByLang": {"en": "subject", "sv": "ämne"}
+  },
+  {
+    "@id": "subtitle",
+    "labelByLang": {"en": "subtitle", "sv": "undertitel"}
+  },
+  {
+    "@id": "title",
+    "labelByLang": {"en": "title", "sv": "titel"}
+  },
+  {
+    "@id": "type",
+    "labelByLang": {"en": "type", "sv": "typ"}
+  },
+  {
+    "@id": "value",
+    "labelByLang": {"en": "value", "sv": "värde"}
+  },
+  {
+    "@id": "when",
+    "labelByLang": {"en": "when", "sv": "när"}
+  },
+  {
+    "@id": "where",
+    "labelByLang": {"en": "where", "sv": "var"}
+  },
+  {
+    "@id": "who",
+    "labelByLang": {"en": "who", "sv": "vem"}
+  },
+  {
+    "@id": "workExample",
+    "labelByLang": {"en": "work example", "sv": "verksexempel"}
+  }
+]

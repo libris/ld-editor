@@ -1,12 +1,21 @@
-export const ID = '@id',
-  TYPE = '@type',
+export const BASE = '@base',
+  CONTAINER = '@container',
+  CONTEXT = '@context',
   GRAPH = '@graph',
-  INDEX = '@index'
+  ID = '@id',
+  INDEX = '@index',
+  LANGUAGE = '@language',
+  LIST = '@list',
+  SET = '@set',
+  TYPE = '@type',
+  VALUE = '@value',
+  VOCAB = '@vocab'
 
 export class LD {
 
-  constructor(model, data, {lang}={}) {
-    this.model = model.index
+  constructor(context, model, data, {lang}={}) {
+    this.context = context
+    this.model = buildIndex(model)
     this.index = buildIndex(data)
     this.lang = lang
   }
@@ -19,9 +28,14 @@ export class LD {
     return this.index[ref[ID]]
   }
 
+  expand(key) {
+    return key
+  }
+
   label(o, defaultVale='') {
     return (!o && defaultVale) ||
             (o.labelByLang && o.labelByLang[this.lang]) ||
+            o.prefLabel ||
             o.title ||
             o.name ||
             o.label ||
@@ -30,7 +44,7 @@ export class LD {
 
   parts(o) {
     return this.keys(o).map(key => {
-      let term = this.model[key]
+      let term = this.model[this.expand(key)]
       let value = o[key]
       return Object.assign({term, key, value}, classify(value))
     })

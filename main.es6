@@ -12,10 +12,11 @@ function run() {
   let itemId = params.item
 
   Promise.all([
-    $.ajax('data/model.json', {dataType: 'json'}),
+    $.ajax('data/context.jsonld', {dataType: 'json'}),
+    $.ajax('data/model.jsonld', {dataType: 'json'}),
     $.ajax('data/index.jsonld', {dataType: 'json'})
-  ]).then(([model, index]) => {
-    let ld = new LD(model, index, {lang})
+  ]).then(([context, model, index]) => {
+    let ld = new LD(context, model, index, {lang})
     initVue(ld, itemId)
   })
 }
@@ -56,7 +57,13 @@ function initVue(ld, itemId) {
       'edit-ref': {
         template: '#edit-ref',
         data: getData,
-        props: ['item']
+        props: ['item'],
+        methods: {
+          show($event, id) {
+            $event.preventDefault()
+            alert(JSON.stringify(ld.index[id], null, 2))
+          }
+        }
       }
     }
   })

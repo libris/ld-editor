@@ -22,7 +22,7 @@
 </template>
 
 <template id="edit-ref">
-  <a href="#">{{ld.label(ld.deref(item))}}</a></p>
+  <a href="#" v-on="click: show($event, item[ID])">{{ld.label(ld.deref(item))}}</a></p>
 </template>
 
 <template id="edit-bnode">

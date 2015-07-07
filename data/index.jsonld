@@ -1,53 +1,5 @@
 [
   {
-    "@id": "#acme",
-    "label": "ACME"
-  },
-  {
-    "@id": "#marinerbooks",
-    "label": "Mariner Books"
-  },
-  {
-    "@id": "#uk",
-    "label": "United Kingdom"
-  },
-  {
-    "@id": "#lotr",
-    "label": "Lord of the Rings"
-  },
-  {
-    "@id": "#Paperback",
-    "labelByLang": {"en": "Paperback", "sv": "Pocketbok"}
-  },
-  {
-    "@id": "#tolkien",
-    "label": "J.R.R. Tolkien"
-  },
-  {
-    "@id": "#en",
-    "label": "English"
-  },
-  {
-    "@id": "#novel",
-    "label": "Novel"
-  },
-  {
-    "@id": "#fantasy",
-    "label": "Fantasy"
-  },
-  {
-    "@id": "#middleearth",
-    "label": "Middle-Earth"
-  },
-  {
-    "@id": "#people",
-    "label": "People"
-  },
-  {
-    "@id": "#pressbyran",
-    "label": "Pressbyrån"
-  },
-  {
     "@type": "PrintedBook",
     "@id": "http://libris.kb.se/bib/9780547928210",
     "qualifiedTitle": {
@@ -82,7 +34,7 @@
       }
     ],
     "partOfSeries": {
-      "@id": "#lotr"
+      "@id": "/concept/lotr"
     },
     "format": {
       "@id": "#Paperback"
@@ -95,7 +47,7 @@
       "title": "The Fellowship of the Rings",
       "description": "The Fellowship of the Ring is the first of three volumes of the epic novel The Lord of the Rings by the English author J. R. R. Tolkien. It takes place in the fictional universe of Middle-earth.",
       "author": {
-        "@id": "#tolkien"
+        "@id": "/concept/jrr_tolkien"
       },
       "language": {
         "@id": "#en"
@@ -129,15 +81,66 @@
     }
   },
   {
-    "@type": "Person",
-    "@id": "http://dbpedia.org/resource/J._R._R._Tolkien",
-    "givenName": "John",
-    "additionalName": "Ronald Reuel",
-    "familyName": "Tolkien"
+    "@type": "Concept",
+    "@id": "/concept/jrr_tolkien",
+    "prefLabel": "J.R.R. Tolkien",
+    "focus": {
+      "@type": "Person",
+      "@id": "/person/jrr_tolkien",
+      "sameAs": {"@id": "http://dbpedia.org/resource/J._R._R._Tolkien"},
+      "givenName": "John",
+      "additionalName": "Ronald Reuel",
+      "familyName": "Tolkien"
+    }
   },
   {
-    "@type": "PublicationVolume",
-    "@id": "http://dbpedia.org/resource/The_Lord_of_the_Rings",
-    "name": "The Lord of the Rings"
+    "@type": "Concept",
+    "prefLabel": "Lord of the Rings",
+    "@id": "/concept/lotr",
+    "focus": {
+      "@type": "PublicationVolume",
+      "sameAs": {"@id": "http://dbpedia.org/resource/The_Lord_of_the_Rings"},
+      "title": "The Lord of the Rings"
+    }
+  },
+  {
+    "@id": "#acme",
+    "label": "ACME"
+  },
+  {
+    "@id": "#marinerbooks",
+    "label": "Mariner Books"
+  },
+  {
+    "@id": "#uk",
+    "label": "United Kingdom"
+  },
+  {
+    "@id": "#Paperback",
+    "labelByLang": {"en": "Paperback", "sv": "Pocketbok"}
+  },
+  {
+    "@id": "#en",
+    "label": "English"
+  },
+  {
+    "@id": "#novel",
+    "label": "Novel"
+  },
+  {
+    "@id": "#fantasy",
+    "label": "Fantasy"
+  },
+  {
+    "@id": "#middleearth",
+    "label": "Middle-Earth"
+  },
+  {
+    "@id": "#people",
+    "label": "People"
+  },
+  {
+    "@id": "#pressbyran",
+    "label": "Pressbyrån"
   }
 ]

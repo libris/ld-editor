@@ -1,0 +1,7 @@
+{
+  "@context": {
+    "@vocab": "http://id.kb.se/vocab/",
+    "index": {"@id": "@graph", "@container": "@index"},
+    "labelByLang": {"@id": "label", "@container": "@language"}
+  }
+}
