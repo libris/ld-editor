@@ -8,7 +8,7 @@ function run() {
     let [k, v] = pair.split(/=/)
     if (k) params[k] = decodeURIComponent(v)
   })
-  let lang = params.lang || 'en'
+  let lang = params.lang
   let itemId = params.item
 
   Promise.all([
@@ -59,9 +59,15 @@ function initVue(ld, itemId) {
         data: getData,
         props: ['item'],
         methods: {
-          show($event, id) {
+          show($event, ref) {
             $event.preventDefault()
-            alert(JSON.stringify(ld.index[id], null, 2))
+            let id = ref[ID]
+            let thing = ld.index[id]
+            if (!thing)
+              return
+            for (let key of Object.keys(thing)) {
+              ref.$set(key, thing[key])
+            }
           }
         }
       }

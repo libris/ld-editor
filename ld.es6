@@ -25,21 +25,22 @@ export class LD {
   }
 
   deref(ref) {
-    return this.index[ref[ID]]
+    return this.index[ref[ID]] || ref
   }
 
   expand(key) {
     return key
   }
 
-  label(o, defaultVale='') {
-    return (!o && defaultVale) ||
-            (o.labelByLang && o.labelByLang[this.lang]) ||
+  label(o, defaultValue='') {
+    defaultValue = defaultValue || o[ID]
+    return (!o && defaultValue) ||
+            (this.lang && o.labelByLang && o.labelByLang[this.lang]) ||
             o.prefLabel ||
             o.title ||
             o.name ||
             o.label ||
-            defaultVale
+            defaultValue
   }
 
   parts(o) {
