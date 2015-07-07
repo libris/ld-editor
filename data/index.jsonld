@@ -48,7 +48,7 @@
     "label": "Pressbyrån"
   },
   {
-    "@type": "Manifestation",
+    "@type": "PrintedBook",
     "@id": "http://libris.kb.se/bib/9780547928210",
     "qualifiedTitle": {
       "@type": "CoverTitle",
@@ -120,14 +120,11 @@
         "@type": "VisualArtwork"
       }
     },
-    "workExample": {
-      "@type": "Product",
-      "offers": {
-        "@type": "Offer",
-        "price": "80 SEK",
-        "seller": {
-          "@id": "#pressbyran"
-        }
+    "offers": {
+      "@type": "Offer",
+      "price": "80 SEK",
+      "seller": {
+        "@id": "#pressbyran"
       }
     }
   },

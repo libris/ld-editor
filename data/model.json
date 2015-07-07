@@ -18,6 +18,9 @@
     "Offer": {
       "labelByLang": {"en": "Offer", "sv": "Erbjudande"}
     },
+    "PrintedBook": {
+      "labelByLang": {"en": "Printed Book", "sv": "Tryckt bok"}
+    },
     "Product": {
       "labelByLang": {"en": "Product", "sv": "Produkt"}
     },
@@ -88,7 +91,7 @@
       "labelByLang": {"en": "number of pages", "sv": "sidantal"}
     },
     "offers": {
-      "labelByLang": {"en": "offers", "sv": "erbjudande"}
+      "labelByLang": {"en": "product offer", "sv": "produkterbjudande"}
     },
     "partOfSeries": {
       "labelByLang": {"en": "part of series", "sv": "del i serie"}
