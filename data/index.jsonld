@@ -12,16 +12,12 @@
     "label": "United Kingdom"
   },
   {
-    "@id": "#isbn",
-    "label": "ISBN13"
-  },
-  {
     "@id": "#lotr",
     "label": "Lord of the Rings"
   },
   {
     "@id": "#Paperback",
-    "label": "Paperback"
+    "labelByLang": {"en": "Paperback", "sv": "Pocketbok"}
   },
   {
     "@id": "#tolkien",
@@ -54,7 +50,8 @@
   {
     "@type": "Manifestation",
     "@id": "http://libris.kb.se/bib/9780547928210",
-    "coverTitle": {
+    "qualifiedTitle": {
+      "@type": "CoverTitle",
       "title": "THE FELLOWSHIP OF THE RINGS",
       "subtitle": "THE LORD OF THE RINGS PART ONE",
       "responsibilityStatement": "J·R·R·TOLKIEN"
@@ -78,18 +75,16 @@
         "@id": "#uk"
       }
     },
-    "identifier": [
+    "qualifiedIdentifier": [
       {
-        "type": {
-          "@id": "#isbn"
-        },
+        "@type": "ISBN13",
         "value": "978-0547928210"
       }
     ],
     "partOfSeries": {
       "@id": "#lotr"
     },
-    "bookFormat": {
+    "format": {
       "@id": "#Paperback"
     },
     "numberOfPages": "432",

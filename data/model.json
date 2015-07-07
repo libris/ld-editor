@@ -3,8 +3,14 @@
     "Book": {
       "labelByLang": {"en": "Book", "sv": "Bok"}
     },
+    "CoverTitle": {
+      "labelByLang": {"en": "Cover Title", "sv": "Omslagstitel"}
+    },
     "Event": {
       "labelByLang": {"en": "Event", "sv": "Händelse"}
+    },
+    "ISBN13": {
+      "label": "ISBN-13"
     },
     "Manifestation": {
       "labelByLang": {"en": "Manifestation", "sv": "Manifestation"}
@@ -33,9 +39,6 @@
     "country": {
       "labelByLang": {"en": "country", "sv": "land"}
     },
-    "coverTitle": {
-      "labelByLang": {"en": "cover title", "sv": "omslagstitel"}
-    },
     "dateCreated": {
       "labelByLang": {"en": "date created", "sv": "skapad"}
     },
@@ -49,10 +52,13 @@
       "labelByLang": {"en": "editionStatement", "sv": "utgåveangivelse"}
     },
     "exampleOfWork": {
-      "labelByLang": {"en": "example of work", "sv": "exempel på verk"}
+      "labelByLang": {"en": "example of work", "sv": "exemplifierar verk"}
     },
     "familyName": {
       "labelByLang": {"en": "family name", "sv": "familjenamn"}
+    },
+    "format": {
+      "labelByLang": {"en": "format", "sv": "format"}
     },
     "genre": {
       "labelByLang": {"en": "genre", "sv": "genre"}
@@ -95,6 +101,12 @@
     },
     "publicationStatement": {
       "labelByLang": {"en": "publication statement", "sv": "utgivningsangivelse"}
+    },
+    "qualifiedIdentifier": {
+      "labelByLang": {"en": "qualified identifier", "sv": "kvalificerad identifikator"}
+    },
+    "qualifiedTitle": {
+      "labelByLang": {"en": "qualified title", "sv": "kvalificerad titel"}
     },
     "responsibilityStatement": {
       "labelByLang": {"en": "responsibility statement", "sv": "upphovsangivelse"}
