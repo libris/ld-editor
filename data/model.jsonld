@@ -24,12 +24,20 @@
     "labelByLang": {"en": "Offer", "sv": "Erbjudande"}
   },
   {
+    "@id": "Organization",
+    "labelByLang": {"en": "Organization", "sv": "Organisation"}
+  },
+  {
     "@id": "PrintedBook",
     "labelByLang": {"en": "Printed Book", "sv": "Tryckt bok"}
   },
   {
     "@id": "Product",
     "labelByLang": {"en": "Product", "sv": "Produkt"}
+  },
+  {
+    "@id": "TitlePage",
+    "labelByLang": {"en": "Title Page", "sv": "Titelsida"}
   },
   {
     "@id": "additionalName",
