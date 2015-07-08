@@ -6,9 +6,16 @@
 <script src="build/ld.js"></script>
 <script src="build/main.js"></script>
 
-<div id="editor" v-cloak>
-  <!-- <button v-on="click: save()">Save</button> -->
-  <edit-node type="main" item="{{item}}"></edit-node>
+<div id="editor" class="{{ld.lang? '' : 'raw'}}">
+  <form v-cloak>
+    <label><input type="radio" v-model="ld.lang" name="lang" value=""> raw</label>
+    <label><input type="radio" v-model="ld.lang" name="lang" value="en"> en</label>
+    <label><input type="radio" v-model="ld.lang" name="lang" value="sv"> sv</label>
+    <select name="item" v-model="editId" options="thingOptGroups()"
+            v-on="change: edit(editId)"></select>
+    <!-- <button v-on="click: save()">Save</button> -->
+  </form>
+  <edit-node v-if="item" type="main" item="{{item}}"></edit-node>
 </div>
 
 <template id="edit-node">

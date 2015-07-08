@@ -9,7 +9,7 @@ function run() {
     if (k) params[k] = decodeURIComponent(v)
   })
   let lang = params.lang
-  let itemId = params.item
+  let editId = params.item
 
   Promise.all([
     $.ajax('data/context.jsonld', {dataType: 'json'}),
@@ -17,15 +17,15 @@ function run() {
     $.ajax('data/index.jsonld', {dataType: 'json'})
   ]).then(([context, model, index]) => {
     let ld = new LD(context, model, index, {lang})
-    initVue(ld, itemId)
+    initVue(ld, editId)
   })
 }
 
 
-function initVue(ld, itemId) {
+function initVue(ld, editId) {
   Vue.config.debug = true
 
-  let item = ld.index[itemId]
+  let item = ld.index[editId]
 
   let getData = () => Object.assign({ld}, {ID, TYPE})
 
@@ -35,8 +35,25 @@ function initVue(ld, itemId) {
 
   window.vue = new Vue({
     el: '#editor',
-    data: {item},
+    data: {ld, item, editId},
     methods: {
+      thingOptGroups() {
+        let optGroups = {}
+        for (let it of Object.values(ld.index)) {
+          let type = it[TYPE]
+          if (!type)
+            continue
+          let optGroup = optGroups[type]
+          if (!optGroup) {
+            optGroup = optGroups[type] = {label: type, options: []}
+          }
+          optGroup.options.push({text: ld.label(it), value: it[ID]})
+        }
+        return Object.values(optGroups)
+      },
+      edit(id) {
+        this.$data.item = ld.index[id]
+      },
       save() {
         let item = this.$data.item
         let repr = JSON.stringify(item, null, 2)
