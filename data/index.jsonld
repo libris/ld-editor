@@ -39,7 +39,7 @@
     }
   },
   {
-    "@type": "Book",
+    "@type": "BookVolume",
     "@id": "/book/tfotr-jrrt",
     "sameAs": {"@id": "http://dbpedia.org/resource/The_Fellowship_of_the_Ring"},
     "title": "The Fellowship of the Ring",
@@ -52,7 +52,8 @@
     "audience": {"@id": "/concept/people"},
     "dateCreated": "1954",
     "country": {"@id": "/country/uk"},
-    "partOf": {"@id": "/concept/lotr"},
+    "volumeNumber": 1,
+    "partOf": {"@id": "/multipart/lotr"},
     "hasPart": {"@type": "VisualArtwork"}
   },
   {
@@ -207,18 +208,14 @@
 
 
   {
-    "@type": "Concept",
-    "prefLabel": "Lord of the Rings",
-    "@id": "/concept/lotr",
-    "focus": {
-      "@type": "PublicationVolume",
-      "sameAs": {"@id": "http://dbpedia.org/resource/The_Lord_of_the_Rings"},
-      "title": "The Lord of the Rings"
-    }
+    "@id": "/multipart/lotr",
+    "@type": "MultipartBook",
+    "sameAs": {"@id": "http://dbpedia.org/resource/The_Lord_of_the_Rings"},
+    "title": "The Lord of the Rings"
   },
   {
     "@id": "/periodical/panpocket",
-    "@type": "PublicationVolume",
+    "@type": "Periodical",
     "title": "Pan pocket"
   },
   {

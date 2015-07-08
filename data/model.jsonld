@@ -4,8 +4,22 @@
     "labelByLang": {"en": "Book", "sv": "Bok"}
   },
   {
+    "@id": "MultipartBook",
+    "subClassOf": [{"@id": "Book"}, {"@id": "Multipart"}],
+    "labelByLang": {"en": "Multipart Book", "sv": "Bokverk"}
+  },
+  {
+    "@id": "BookVolume",
+    "subClassOf": [{"@id": "Book"}, {"@id": "PublicationVolume"}],
+    "labelByLang": {"en": "Book Volume", "sv": "Bokband"}
+  },
+  {
     "@id": "CoverTitle",
     "labelByLang": {"en": "Cover Title", "sv": "Omslagstitel"}
+  },
+  {
+    "@id": "Periodical",
+    "labelByLang": {"en": "Periodical", "sv": "Periodika"}
   },
   {
     "@id": "Event",
@@ -102,6 +116,10 @@
   {
     "@id": "hasPart",
     "labelByLang": {"en": "has part", "sv": "har del"}
+  },
+  {
+    "@id": "isPartOf",
+    "labelByLang": {"en": "part of", "sv": "del av"}
   },
   {
     "@id": "identifier",
