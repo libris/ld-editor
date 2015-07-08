@@ -1,5 +1,9 @@
 [
   {
+    "@id": "Authority",
+    "labelByLang": {"en": "Authority", "sv": "Auktoritet"}
+  },
+  {
     "@id": "Book",
     "labelByLang": {"en": "Book", "sv": "Bok"}
   },

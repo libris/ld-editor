@@ -44,7 +44,7 @@
     "sameAs": {"@id": "http://dbpedia.org/resource/The_Fellowship_of_the_Ring"},
     "title": "The Fellowship of the Ring",
     "description": "The Fellowship of the Ring is the first of three volumes of the epic novel The Lord of the Rings by the English author J. R. R. Tolkien. It takes place in the fictional universe of Middle-earth.",
-    "author": {"@id": "/concept/jrr_tolkien"},
+    "author": {"@id": "/auth/person/jrr-tolkien-1892-1973"},
     "language": {"@id": "/language/eng"},
     "artform": {"@id": "/concept/novel"},
     "genre": {"@id": "/concept/fantasy"},
@@ -119,7 +119,7 @@
   {
     "@id": "/text/npcwb5dzl-smrtlkhlmsv",
     "@type": "Book",
-    "author": {"@id": "/person/jrr-tolkien-1892-1973"},
+    "author": {"@id": "/auth/person/jrr-tolkien-1892-1973"},
     "classification": [
       {"@id": "/topic/sab/He.01%3Dc"},
       {"@id": "/topic/kssb/7/He.01%3Dc"},
@@ -129,23 +129,21 @@
     "language": {"@id": "/language/swe"},
     "title": "Sagan om ringen",
     "translationOf": {"@id": "/book/tfotr-jrrt"},
-    "translator": {"@id": "/person/aake-ohlmarks-1911-1984"},
-    "type": {"@id": "/concept/novel"},
-    "author": {"@id": "/person/jrr-tolkien-1892-1973"},
-    "translator": {"@id": "/person/aake-ohlmarks-1911-1984"}
+    "translator": {"@id": "/auth/person/aake-ohlmarks-1911-1984"},
+    "type": {"@id": "/concept/novel"}
   },
   {
     "@id": "_:tolkienfantasivarld",
     "@type": "CreativeWork",
     "title": "John Tolkien och hans fantasivärld",
-    "author": {"@id": "/person/aake-ohlmarks-1911-1984"}
+    "author": {"@id": "/auth/person/aake-ohlmarks-1911-1984"}
   },
 
 
   {
-    "@type": "Concept",
-    "@id": "/concept/jrr_tolkien",
-    "prefLabel": "J.R.R. Tolkien",
+    "@type": "Authority",
+    "@id": "/auth/person/jrr-tolkien-1892-1973",
+    "prefLabel": "Tolkien, J.R.R., 1892-1973",
     "focus": {"@id": "/person/jrr-tolkien-1892-1973"}
   },
   {
@@ -162,8 +160,8 @@
     "deathYear": "1973"
   },
   {
-    "@id": "/person/aake-ohlmarks-1911-1984/entry",
-    "@type": "Concept",
+    "@id": "/auth/person/aake-ohlmarks-1911-1984",
+    "@type": "Authority",
     "focus": {"@id": "/person/aake-ohlmarks-1911-1984"},
     "prefLabel": "Ohlmarks, Åke, 1911-1984"
   },
