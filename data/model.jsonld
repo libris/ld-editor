@@ -77,7 +77,7 @@
   },
   {
     "@id": "editionStatement",
-    "labelByLang": {"en": "editionStatement", "sv": "utgåveangivelse"}
+    "labelByLang": {"en": "editionStatement", "sv": "utgåveuppgift"}
   },
   {
     "@id": "exampleOfWork",
@@ -145,7 +145,7 @@
   },
   {
     "@id": "publicationStatement",
-    "labelByLang": {"en": "publication statement", "sv": "utgivningsangivelse"}
+    "labelByLang": {"en": "publication statement", "sv": "utgivningsuppgift"}
   },
   {
     "@id": "qualifiedIdentifier",
@@ -157,7 +157,7 @@
   },
   {
     "@id": "responsibilityStatement",
-    "labelByLang": {"en": "responsibility statement", "sv": "upphovsangivelse"}
+    "labelByLang": {"en": "responsibility statement", "sv": "upphovsuppgift"}
   },
   {
     "@id": "seller",

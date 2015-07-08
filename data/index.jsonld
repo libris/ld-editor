@@ -180,7 +180,7 @@
   {
     "@id": "/country/uk",
     "@type": "Country",
-    "labelByLang": {"en": "United Kingdom", "sv": "Storbrittanien"}
+    "labelByLang": {"en": "United Kingdom", "sv": "Storbritannien"}
   },
   {
     "@id": "/country/sw",
