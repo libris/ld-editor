@@ -132,8 +132,8 @@
     "labelByLang": {"en": "product offer", "sv": "produkterbjudande"}
   },
   {
-    "@id": "partOfSeries",
-    "labelByLang": {"en": "part of series", "sv": "del i serie"}
+    "@id": "partOf",
+    "labelByLang": {"en": "part of", "sv": "del av"}
   },
   {
     "@id": "price",

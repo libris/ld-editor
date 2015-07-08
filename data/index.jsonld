@@ -28,7 +28,6 @@
         "value": "978-0547928210"
       }
     ],
-    "partOfSeries": {"@id": "/concept/lotr"},
     "format": {"@id": "/format/Book/Paperback"},
     "numberOfPages": "432",
     "dimensions": "5.5 x 1 x 8.2 inches",
@@ -53,6 +52,7 @@
     "audience": {"@id": "/concept/people"},
     "dateCreated": "1954",
     "country": {"@id": "/country/uk"},
+    "partOf": {"@id": "/concept/lotr"},
     "hasPart": {"@type": "VisualArtwork"}
   },
   {
