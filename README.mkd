@@ -20,6 +20,10 @@ During development, run this to *watch* the source files to be rebuilt, and laun
 
     $ npm run watch
 
+To use a different port, set it using the `HTTP_PORT` environment variable, like:
+
+    $ HTTP_PORT=8000 npm run watch
+
 ## Maintenance
 
 To update (and minify) *vendor* dependencies when these are changed (in bower.json), run:

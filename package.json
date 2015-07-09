@@ -24,7 +24,7 @@
     "build": "parallelshell 'npm run build:js' 'npm run build:less'",
     "build:js": "$npm_package_config_RUN_BABEL",
     "build:less": "lessc main.less build/main.css --source-map=build/main.css.map",
-    "watch": "parallelshell 'npm run watch:js' 'npm run watch:less' 'http-server -p 7000'",
+    "watch": "parallelshell 'npm run watch:js' 'npm run watch:less' 'http-server -p ${HTTP_PORT:-7000}'",
     "watch:js": "$npm_package_config_RUN_BABEL -w",
     "watch:less": "chokidar *.less -c 'npm run build:less'"
   }
