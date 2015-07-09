@@ -50,10 +50,10 @@
     "genre": {"@id": "/concept/fantasy"},
     "subject": {"@id": "/concept/middleearth"},
     "audience": {"@id": "/concept/people"},
-    "dateCreated": "1954",
+    "created": "1954",
     "country": {"@id": "/country/uk"},
     "volumeNumber": 1,
-    "partOf": {"@id": "/multipart/lotr"},
+    "isPartOf": {"@id": "/multipart/lotr"},
     "hasPart": {"@type": "VisualArtwork"}
   },
   {
@@ -130,7 +130,7 @@
     "title": "Sagan om ringen",
     "translationOf": {"@id": "/book/tfotr-jrrt"},
     "translator": {"@id": "/auth/person/aake-ohlmarks-1911-1984"},
-    "type": {"@id": "/concept/novel"}
+    "contentType": {"@id": "/concept/novel"}
   },
   {
     "@id": "_:tolkienfantasivarld",
@@ -207,7 +207,7 @@
 
   {
     "@id": "/multipart/lotr",
-    "@type": "MultipartBook",
+    "@type": "MultiVolumeBook",
     "sameAs": {"@id": "http://dbpedia.org/resource/The_Lord_of_the_Rings"},
     "title": "The Lord of the Rings"
   },

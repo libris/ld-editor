@@ -8,14 +8,15 @@
     "labelByLang": {"en": "Book", "sv": "Bok"}
   },
   {
-    "@id": "MultipartBook",
+    "@id": "MultiVolumeBook",
     "subClassOf": [{"@id": "Book"}, {"@id": "Multipart"}],
     "labelByLang": {"en": "Multipart Book", "sv": "Bokverk"}
   },
   {
     "@id": "BookVolume",
     "subClassOf": [{"@id": "Book"}, {"@id": "PublicationVolume"}],
-    "labelByLang": {"en": "Book Volume", "sv": "Bokband"}
+    "labelByLang": {"en": "Book Volume", "sv": "Bokband"},
+    "altLabelByLang": {"sv": ["Band", "Volym"]}
   },
   {
     "@id": "CoverTitle",
@@ -154,10 +155,6 @@
     "labelByLang": {"en": "product offer", "sv": "produkterbjudande"}
   },
   {
-    "@id": "partOf",
-    "labelByLang": {"en": "part of", "sv": "del av"}
-  },
-  {
     "@id": "price",
     "labelByLang": {"en": "price", "sv": "pris"}
   },
@@ -198,7 +195,7 @@
     "labelByLang": {"en": "title", "sv": "titel"}
   },
   {
-    "@id": "type",
+    "@id": "contentType",
     "labelByLang": {"en": "type", "sv": "typ"}
   },
   {
