@@ -17,6 +17,7 @@
     "RUN_BABEL": "babel ./ -x .es6 -m ignore -d build/ --source-root ./ -s"
   },
   "scripts": {
+    "postinstall": "npm run vendor && npm run build",
     "vendor": "npm run vendor:fetch && npm run vendor:js",
     "vendor:fetch": "bower-installer && cp node_modules/babel/node_modules/babel-core/browser-polyfill.js vendor/",
     "vendor:js": "uglifyjs vendor/*.js vendor/{jquery,vue}/js/*.js -o build/vendor.min.js --source-map build/vendor.min.js.map -p relative",

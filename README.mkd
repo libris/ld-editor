@@ -8,23 +8,25 @@ A Linked Data editor driven by a pluggable data model (based on [RDFS and OWL](h
 
 Code is written in [ES6](https://babeljs.io/) and [LESS](http://lesscss.org/). To build the static files, you need tools running on the [Node.js](https://nodejs.org/) platform.
 
-## Running
+## Setup
 
-With Node.js (including NPM) installed, install the tool dependencies by running:
+With Node.js (including NPM) installed, *install* dependencies and build the app by running:
 
     $ npm install .
 
-Then run this to fetch (and minify) vendor dependencies:
+## Development
+
+During development, run this to *watch* the source files to be rebuilt, and launch a simple http-server (on [port 7070](http://localhost:7000/)):
+
+    $ npm run watch
+
+## Maintenance
+
+To update (and minify) *vendor* dependencies when these are changed (in bower.json), run:
 
     $ npm run vendor
 
-And this to create the runtime files:
+To *build* source files if edited without the watch process running, run:
 
     $ npm run build
-
-## Development
-
-During development, run this to watch the source files to be rebuilt, and launch a simple http-server (on [port 7070](http://localhost:7000/)):
-
-    $ npm run watch
 
