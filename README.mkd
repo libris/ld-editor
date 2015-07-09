@@ -1,0 +1,30 @@
+# LD Editor
+
+A Linked Data editor driven by a pluggable data model (based on [RDFS and OWL](https://www.cambridgesemantics.com/semantic-university/learn-owl-and-rdfs)). It is implemented as a single-page web application and uses [JSON-LD](http://json-ld.org/) as the concrete editing format.
+
+*Currently, this is a prototype using a static set of examples.*
+
+## Prerequisites
+
+Code is written in [ES6](https://babeljs.io/) and [LESS](http://lesscss.org/). To build the static files, you need tools running on the [Node.js](https://nodejs.org/) platform.
+
+## Running
+
+With Node.js (including NPM) installed, install the tool dependencies by running:
+
+    $ npm install .
+
+Then run this to fetch (and minify) vendor dependencies:
+
+    $ npm run vendor
+
+And this to create the runtime files:
+
+    $ npm run build
+
+## Development
+
+During development, run this to watch the source files to be rebuilt, and launch a simple http-server (on [port 7070](http://localhost:7000/)):
+
+    $ npm run watch
+
