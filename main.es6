@@ -17,7 +17,7 @@ function run() {
     $.ajax('data/index.jsonld', {dataType: 'json'})
   ]).then(([context, model, index]) => {
     let ld = new LD(context, model, index, {lang})
-    initVue(ld, editId)
+    window.vue = initVue(ld, editId)
   })
 }
 
@@ -33,7 +33,7 @@ function initVue(ld, editId) {
   Vue.partial('show-term', '#show-term')
   Vue.partial('show-type', '#show-type')
 
-  window.vue = new Vue({
+  return new Vue({
     el: '#editor',
     data: {ld, item, editId},
     methods: {
