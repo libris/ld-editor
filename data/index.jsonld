@@ -13,14 +13,14 @@
     "manufacture": {
       "@type": "Event",
       "when": "2012",
-      "who": {"@id": "/org/acme"}
+      "who": {"@id": "http://id.kb.se/org/acme"}
     },
     "publicationStatement": "MARINER BOOKS INC.",
     "publication": {
       "@type": "Event",
       "when": "2012-09-18",
-      "who": {"@id": "/org/marinerbooks"},
-      "where": {"@id": "/country/uk"}
+      "who": {"@id": "http://id.kb.se/org/marinerbooks"},
+      "where": {"@id": "http://id.kb.se/country/uk"}
     },
     "qualifiedIdentifier": [
       {
@@ -28,44 +28,44 @@
         "value": "978-0547928210"
       }
     ],
-    "format": {"@id": "/format/Book/Paperback"},
+    "format": {"@id": "http://id.kb.se/format/Book/Paperback"},
     "numberOfPages": "432",
     "dimensions": "5.5 x 1 x 8.2 inches",
-    "exampleOfWork": {"@id": "/book/tfotr-jrrt"},
+    "exampleOfWork": {"@id": "http://id.kb.se/book/tfotr-jrrt"},
     "offers": {
       "@type": "Offer",
       "price": "80 SEK",
-      "seller": {"@id": "/org/pressbyran"}
+      "seller": {"@id": "http://id.kb.se/org/pressbyran"}
     }
   },
   {
     "@type": "BookVolume",
-    "@id": "/book/tfotr-jrrt",
+    "@id": "http://id.kb.se/book/tfotr-jrrt",
     "sameAs": {"@id": "http://dbpedia.org/resource/The_Fellowship_of_the_Ring"},
     "title": "The Fellowship of the Ring",
     "description": "The Fellowship of the Ring is the first of three volumes of the epic novel The Lord of the Rings by the English author J. R. R. Tolkien. It takes place in the fictional universe of Middle-earth.",
-    "author": {"@id": "/auth/person/jrr-tolkien-1892-1973"},
-    "language": {"@id": "/language/eng"},
-    "artform": {"@id": "/concept/novel"},
-    "genre": {"@id": "/concept/fantasy"},
-    "subject": {"@id": "/concept/middleearth"},
-    "audience": {"@id": "/concept/people"},
+    "author": {"@id": "http://id.kb.se/auth/person/jrr-tolkien-1892-1973"},
+    "language": {"@id": "http://id.kb.se/language/eng"},
+    "artform": {"@id": "http://id.kb.se/concept/novel"},
+    "genre": {"@id": "http://id.kb.se/concept/fantasy"},
+    "subject": {"@id": "http://id.kb.se/concept/middleearth"},
+    "audience": {"@id": "http://id.kb.se/concept/people"},
     "created": "1954",
-    "country": {"@id": "/country/uk"},
+    "country": {"@id": "http://id.kb.se/country/uk"},
     "volumeNumber": 1,
-    "isPartOf": {"@id": "/multipart/lotr"},
+    "isPartOf": {"@id": "http://id.kb.se/multipart/lotr"},
     "hasPart": {"@type": "VisualArtwork"}
   },
   {
     "@id": "http://libris.kb.se/bib/1846457#thing",
     "@type": "PrintedBook",
     "contentsNote": "S. 11-15: John Tolkien och hans fantasivärld / Åke Ohlmarks",
-    "exampleOfWork": {"@id": "/text/npcwb5dzl-smrtlkhlmsv"},
+    "exampleOfWork": {"@id": "http://id.kb.se/text/npcwb5dzl-smrtlkhlmsv"},
     "hasPart": {"@id": "_:tolkienfantasivarld"},
     "illustrationNote": "ill., kart.",
     "manufacture": {
       "@type": "Event",
-      "where": {"@id": "/place/uppsala"},
+      "where": {"@id": "http://id.kb.se/place/uppsala"},
       "who": {"name": "A & W"}
     },
     "noteOnPublicationStatement": "Även tillg. med : 2. uppl., 1962",
@@ -73,8 +73,8 @@
     "publication": {
       "@type": "Event",
       "when": "1959-01-01",
-      "where": {"@id": "/place/stockholm"},
-      "who": {"@id": "/org/geber"}
+      "where": {"@id": "http://id.kb.se/place/stockholm"},
+      "who": {"@id": "http://id.kb.se/org/geber"}
     },
     "publicationStatement": "© 1959 Geber",
     "sameAs": {"@id": "http://libris.kb.se/resource/bib/1846457"}
@@ -89,66 +89,66 @@
     },
     "dimensions": "18 cm",
     "editionStatement": "16. pocketuppl.",
-    "exampleOfWork": {"@id": "/text/npcwb5dzl-smrtlkhlmsv"},
-    "format": {"@id": "/format/Book/Paperback"},
+    "exampleOfWork": {"@id": "http://id.kb.se/text/npcwb5dzl-smrtlkhlmsv"},
+    "format": {"@id": "http://id.kb.se/format/Book/Paperback"},
     "qualifiedIdentifier": {
       "@type": "ISBN13",
       "value": "91-7263-341-7"
     },
-    "isPartOf": {"@id": "/periodical/panpocket"},
+    "isPartOf": {"@id": "http://id.kb.se/periodical/panpocket"},
     "isVersionOf": {"@id": "http://libris.kb.se/bib/1846457#thing"},
     "manufacture": {
       "@type": "Event",
-      "where": {"@id": "/country/dk"}
+      "where": {"@id": "http://id.kb.se/country/dk"}
     },
     "noteOnPublicationStatement": [
       "Första svenska uppl. 1959",
       "Även med tryckår: 2. tr., 2003"
     ],
     "numberOfPages": "481, [1]",
-    "partOfSeries": {"@id": "/series/panpocket"},
+    "partOfSeries": {"@id": "http://id.kb.se/series/panpocket"},
     "publication": {
       "@type": "Event",
       "when": "2002-01-01",
-      "where": {"@id": "/place/stockholm"},
-      "who": {"@id": "/org/pan"}
+      "where": {"@id": "http://id.kb.se/place/stockholm"},
+      "who": {"@id": "http://id.kb.se/org/pan"}
     },
     "publicationStatement": "© 2002 Pan",
     "sameAs": {"@id": "http://libris.kb.se/resource/bib/8837573"}
   },
   {
-    "@id": "/text/npcwb5dzl-smrtlkhlmsv",
+    "@id": "http://id.kb.se/text/npcwb5dzl-smrtlkhlmsv",
     "@type": "Book",
-    "author": {"@id": "/auth/person/jrr-tolkien-1892-1973"},
+    "author": {"@id": "http://id.kb.se/auth/person/jrr-tolkien-1892-1973"},
     "classification": [
-      {"@id": "/topic/sab/He.01%3Dc"},
-      {"@id": "/topic/kssb/7/He.01%3Dc"},
-      {"@id": "/topic/kssb/8/He.01%3Dc"},
-      {"@id": "/topic/kssb/Hce"}
+      {"@id": "http://id.kb.se/topic/sab/He.01%3Dc"},
+      {"@id": "http://id.kb.se/topic/kssb/7/He.01%3Dc"},
+      {"@id": "http://id.kb.se/topic/kssb/8/He.01%3Dc"},
+      {"@id": "http://id.kb.se/topic/kssb/Hce"}
     ],
-    "language": {"@id": "/language/swe"},
+    "language": {"@id": "http://id.kb.se/language/swe"},
     "title": "Sagan om ringen",
-    "translationOf": {"@id": "/book/tfotr-jrrt"},
-    "translator": {"@id": "/auth/person/aake-ohlmarks-1911-1984"},
-    "contentType": {"@id": "/concept/novel"}
+    "translationOf": {"@id": "http://id.kb.se/book/tfotr-jrrt"},
+    "translator": {"@id": "http://id.kb.se/auth/person/aake-ohlmarks-1911-1984"},
+    "contentType": {"@id": "http://id.kb.se/concept/novel"}
   },
   {
     "@id": "_:tolkienfantasivarld",
     "@type": "CreativeWork",
     "title": "John Tolkien och hans fantasivärld",
-    "author": {"@id": "/auth/person/aake-ohlmarks-1911-1984"}
+    "author": {"@id": "http://id.kb.se/auth/person/aake-ohlmarks-1911-1984"}
   },
 
 
   {
     "@type": "Authority",
-    "@id": "/auth/person/jrr-tolkien-1892-1973",
+    "@id": "http://id.kb.se/auth/person/jrr-tolkien-1892-1973",
     "prefLabel": "Tolkien, J.R.R., 1892-1973",
-    "focus": {"@id": "/person/jrr-tolkien-1892-1973"}
+    "focus": {"@id": "http://id.kb.se/person/jrr-tolkien-1892-1973"}
   },
   {
     "@type": "Person",
-    "@id": "/person/jrr-tolkien-1892-1973",
+    "@id": "http://id.kb.se/person/jrr-tolkien-1892-1973",
     "sameAs": [
     {"@id": "http://libris.kb.se/resource/auth/97224"},
       {"@id": "http://dbpedia.org/resource/J._R._R._Tolkien"}
@@ -160,13 +160,13 @@
     "deathYear": "1973"
   },
   {
-    "@id": "/auth/person/aake-ohlmarks-1911-1984",
+    "@id": "http://id.kb.se/auth/person/aake-ohlmarks-1911-1984",
     "@type": "Authority",
-    "focus": {"@id": "/person/aake-ohlmarks-1911-1984"},
+    "focus": {"@id": "http://id.kb.se/person/aake-ohlmarks-1911-1984"},
     "prefLabel": "Ohlmarks, Åke, 1911-1984"
   },
   {
-    "@id": "/person/aake-ohlmarks-1911-1984",
+    "@id": "http://id.kb.se/person/aake-ohlmarks-1911-1984",
     "@type": "Person",
     "familyName": "Ohlmarks",
     "givenName": "Åke",
@@ -177,109 +177,109 @@
 
 
   {
-    "@id": "/country/uk",
+    "@id": "http://id.kb.se/country/uk",
     "@type": "Country",
     "labelByLang": {"en": "United Kingdom", "sv": "Storbritannien"}
   },
   {
-    "@id": "/country/sw",
+    "@id": "http://id.kb.se/country/sw",
     "@type": "Country",
     "labelByLang": {"en": "Sweden", "sv": "Sverige"}
   },
   {
-    "@id": "/country/dk",
+    "@id": "http://id.kb.se/country/dk",
     "@type": "Country",
     "labelByLang": {"en": "Denmark", "sv": "Danmark"}
   },
   {
-    "@id": "/place/stockholm",
+    "@id": "http://id.kb.se/place/stockholm",
     "@type": "Place",
     "name": "Stockholm",
-    "containedIn": {"@id": "/country/sw"}
+    "containedIn": {"@id": "http://id.kb.se/country/sw"}
   },
   {
-    "@id": "/place/uppsala",
+    "@id": "http://id.kb.se/place/uppsala",
     "@type": "Place",
     "name": "Uppsala",
-    "containedIn": {"@id": "/country/sw"}
+    "containedIn": {"@id": "http://id.kb.se/country/sw"}
   },
 
 
   {
-    "@id": "/multipart/lotr",
+    "@id": "http://id.kb.se/multipart/lotr",
     "@type": "MultiVolumeBook",
     "sameAs": {"@id": "http://dbpedia.org/resource/The_Lord_of_the_Rings"},
     "title": "The Lord of the Rings"
   },
   {
-    "@id": "/periodical/panpocket",
+    "@id": "http://id.kb.se/periodical/panpocket",
     "@type": "Periodical",
     "title": "Pan pocket"
   },
   {
-    "@id": "/series/panpocket",
+    "@id": "http://id.kb.se/series/panpocket",
     "@type": "CreativeWorkSeries",
     "name": "En Panpocket från Norstedts"
   },
 
   {
-    "@id": "/org/acme",
+    "@id": "http://id.kb.se/org/acme",
     "@type": "Organization",
     "label": "ACME"
   },
   {
-    "@id": "/org/marinerbooks",
+    "@id": "http://id.kb.se/org/marinerbooks",
     "@type": "Organization",
     "label": "Mariner Books"
   },
   {
-    "@id": "/org/geber",
+    "@id": "http://id.kb.se/org/geber",
     "@type": "Organization",
     "label": "Geber"
   },
   {
-    "@id": "/org/pan",
+    "@id": "http://id.kb.se/org/pan",
     "@type": "Organization",
     "label": "Pan"
   },
 
   {
-    "@id": "/format/Book/Paperback",
+    "@id": "http://id.kb.se/format/Book/Paperback",
     "@type": "BookFormat",
     "labelByLang": {"en": "Paperback", "sv": "Pocketbok"}
   },
   {
-    "@id": "/language/eng",
+    "@id": "http://id.kb.se/language/eng",
     "@type": "Language",
     "labelByLang": {"en": "English", "sv": "Engelska"}
   },
   {
-    "@id": "/language/swe",
+    "@id": "http://id.kb.se/language/swe",
     "@type": "Language",
     "labelByLang": {"en": "Swedish", "sv": "Svenska"}
   },
   {
-    "@id": "/concept/novel",
+    "@id": "http://id.kb.se/concept/novel",
     "@type": "Concept",
     "labelByLang": {"en": "Novel", "sv": "Roman"}
   },
   {
-    "@id": "/concept/fantasy",
+    "@id": "http://id.kb.se/concept/fantasy",
     "@type": "Concept",
     "labelByLang": {"en": "Fantasy", "sv": "Fantasy"}
   },
   {
-    "@id": "/concept/middleearth",
+    "@id": "http://id.kb.se/concept/middleearth",
     "@type": "Concept",
     "labelByLang": {"en": "Middle-Earth", "sv": "Midgård"}
   },
   {
-    "@id": "/concept/people",
+    "@id": "http://id.kb.se/concept/people",
     "@type": "Concept",
     "labelByLang": {"en": "People", "sv": "Folk"}
   },
   {
-    "@id": "/org/pressbyran",
+    "@id": "http://id.kb.se/org/pressbyran",
     "@type": "Organization",
     "label": "Pressbyrån"
   }
