@@ -4,6 +4,8 @@
     "xsd": "http://www.w3.org/2001/XMLSchema#",
     "index": {"@id": "@graph", "@container": "@index"},
     "labelByLang": {"@id": "label", "@container": "@language"},
+    "altLabelByLang": {"@id": "altLabel", "@container": "@language"},
+    "prefLabelByLang": {"@id": "prefLabel", "@container": "@language"},
     "when": {"@type": "xsd:date"},
     "birthYear": {"@type": "xsd:gYear"},
     "deathYear": {"@type": "xsd:gYear"}
