@@ -32,15 +32,23 @@ export class LD {
     return key
   }
 
-  label(o, defaultValue='') {
+  label(o, defaultValue='', leadingUpperCase=false) {
     defaultValue = defaultValue || o[ID]
-    return (!o && defaultValue) ||
-            (this.lang && o.labelByLang && o.labelByLang[this.lang]) ||
-            o.prefLabel ||
-            o.title ||
-            o.name ||
-            o.label ||
-            defaultValue
+    if (o) {
+      let value = (this.lang && o.labelByLang && o.labelByLang[this.lang]) ||
+        o.prefLabel ||
+        o.title ||
+        o.name ||
+        o.notation ||
+        o.label
+      if (value) {
+        if (leadingUpperCase) {
+          value = value[0].toUpperCase() + value.substring(1)
+        }
+        return value
+      }
+    }
+    return defaultValue
   }
 
   parts(o) {
