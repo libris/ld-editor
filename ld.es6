@@ -14,7 +14,7 @@ export const BASE = '@base',
 export class LD {
 
   constructor(context, model, data, {lang}={}) {
-    this.context = context
+    this.context = context[CONTEXT]
     this.model = buildIndex(model)
     this.index = buildIndex(data)
     this.lang = lang
@@ -33,6 +33,12 @@ export class LD {
   }
 
   label(o, defaultValue='', leadingUpperCase=false) {
+    if (!o) {
+      let dfn = this.context[defaultValue]
+      if (dfn) {
+        o = this.model[dfn[ID]]
+      }
+    }
     defaultValue = defaultValue || o[ID]
     if (o) {
       let value = (this.lang && o.labelByLang && o.labelByLang[this.lang]) ||
@@ -40,7 +46,8 @@ export class LD {
         o.title ||
         o.name ||
         o.notation ||
-        o.label
+        o.label ||
+        pick(o, 'qualifiedTitle', 'title')
       if (value) {
         if (leadingUpperCase) {
           value = value[0].toUpperCase() + value.substring(1)
@@ -86,4 +93,15 @@ export function classify(o) {
   let node = object && !ref
   let bnode = node && typeof o[ID] === 'undefined'
   return {literal, array, ref, node, bnode}
+}
+
+export function pick(o, key, subkey) {
+  let part = o[key]
+  if (part) {
+    if (part instanceof Array) {
+      part = part[0]
+    }
+    let value = part[subkey]
+    return value
+  }
 }
