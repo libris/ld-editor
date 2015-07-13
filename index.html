@@ -29,7 +29,8 @@
 </template>
 
 <template id="edit-ref">
-  <a href="#" v-on="click: show($event, item)">{{ld.label(ld.deref(item))}}</a></p>
+  <a href="{{item[ID]}}" v-on="click: show($event)"
+    >{{ld.label(ld.deref(item))}}</a></p>
 </template>
 
 <template id="edit-bnode">
@@ -50,13 +51,15 @@
     </p>
     <div v-if="part.array">
       <partial name="show-term"></partial>
-      <template v-if="part.array">
-        <template v-repeat="li : part.value">
-          <span v-if="typeof li !== 'object'">{{li}}</span>
-          <component v-if="typeof li === 'object'"
-              is="edit-{{li[ID]? 'node' : 'bnode'}}" item="{{li}}"></component>
-        </template>
-      </template>
+      <ul v-if="part.array">
+        <li v-repeat="li : part.value">
+          <span v-if="li.literal">{{li.value}}</span>
+          <edit-ref v-if="li.ref" item="{{li.value}}"
+                    container="{{item[part.key]}}" key="{{$index}}"></edit-ref>
+          <component v-if="li.node"
+            is="edit-{{li.bnode? 'bnode' : 'node'}}" item="{{li.value}}"></component>
+        </li>
+      </ul>
     </div>
     <p v-if="part.ref">
       <partial name="show-term"></partial>

@@ -74,16 +74,21 @@ function initVue(ld, editId) {
       'edit-ref': {
         template: '#edit-ref',
         data: getData,
-        props: ['item'],
+        props: ['item', 'container', 'key'],
         methods: {
-          show($event, ref) {
+          show($event) {
             $event.preventDefault()
+            let ref = this.$data.item
             let id = ref[ID]
             let thing = ld.index[id]
             if (!thing)
               return
             for (let key of Object.keys(thing)) {
               ref.$set(key, thing[key])
+            }
+            let container = this.$data.container, key = this.$data.key
+            if (container) {
+              container.$set(key, ref)
             }
           }
         }

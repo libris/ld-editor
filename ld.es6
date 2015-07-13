@@ -55,7 +55,11 @@ export class LD {
     return this.keys(o).map(key => {
       let term = this.model[this.expand(key)]
       let value = o[key]
-      return Object.assign({term, key, value}, classify(value))
+      let kind = classify(value)
+      if (kind.array) {
+        value = value.map(it => Object.assign({value: it}, classify(it)))
+      }
+      return Object.assign({term, key, value}, kind)
     })
   }
 
