@@ -41,12 +41,15 @@ article.card.embedded {
   color: #48c;
 }
 
-.card > header > code {
+.card > header > a.id {
   color: #b05;
   font-size: 0.67em;
+  font-family: courier;
+  text-decoration: none;
+
+  &:before { content: "<"; }
+  &:after { content: ">"; }
 }
-.card > header > code:before { content: "<"; }
-.card > header > code:after { content: ">"; }
 
 .card p {
   margin: 0.4em 0;
@@ -57,7 +60,7 @@ article.card.embedded {
   color: #4a8;
 }
 
-.card a {
+.card a.ref {
   display: inline-block;
   color: #b05;
   background-color: #ffe;
@@ -66,9 +69,10 @@ article.card.embedded {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.3);
   padding: 0.1em 0.6em;
   text-decoration: none;
-}
-.card a:hover {
-  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.6);
+
+  &:hover {
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.6);
+  }
 }
 
 [v-cloak] {

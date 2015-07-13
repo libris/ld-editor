@@ -22,14 +22,14 @@
   <article class="card {{ type === 'main'? 'main' : 'embedded' }}">
     <header>
       <partial name="show-type"></partial>
-      <code v-if="item[ID]">{{item[ID]}}</code>
+      <a class="id" v-if="item[ID]" href="{{item[ID]}}">{{item[ID]}}</a>
     </header>
     <partial name="edit-contents"></partial>
   </article>
 </template>
 
 <template id="edit-ref">
-  <a href="{{item[ID]}}" v-on="click: show($event)"
+  <a class="ref" href="{{item[ID]}}" v-on="click: show($event)"
     >{{ld.label(ld.deref(item))}}</a></p>
 </template>
 
