@@ -71,6 +71,11 @@ function initVue(ld, editId) {
         data: getData,
         props: ['item']
       },
+      'edit-literal': {
+        template: '#edit-literal',
+        data: getData,
+        props: ['item', 'key']
+      },
       'edit-ref': {
         template: '#edit-ref',
         data: getData,

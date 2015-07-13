@@ -8,9 +8,9 @@
 
 <div id="editor" class="{{ld.lang? '' : 'raw'}}">
   <form v-cloak>
-    <label><input type="radio" v-model="ld.lang" name="lang" value=""> raw</label>
     <label><input type="radio" v-model="ld.lang" name="lang" value="en"> en</label>
     <label><input type="radio" v-model="ld.lang" name="lang" value="sv"> sv</label>
+    <label><input type="radio" v-model="ld.lang" name="lang" value=""> raw</label>
     <select name="item" v-model="editId" options="thingOptGroups()"
             v-on="change: edit(editId)"></select>
     <!-- <button v-on="click: save()">Save</button> -->
@@ -42,12 +42,16 @@
   </div>
 </template>
 
+<template id="edit-literal">
+  <!-- <span>{{item[key]}}</span> -->
+  <input v-model="item[key]" size="{{ 1 + item[key].length }}">
+</template>
+
 <template id="edit-contents">
   <template v-repeat="part : ld.parts(item)" track-by="key">
     <p v-if="part.literal">
       <partial name="show-term"></partial>
-      <span>{{part.value}}</span>
-      <!-- <input v-model="item[part.key]"> -->
+      <edit-literal item="{{item}}" key="{{part.key}}"></edit-literal>
     </p>
     <div v-if="part.array">
       <partial name="show-term"></partial>
