@@ -54,6 +54,9 @@ export class LD {
 }
 
 function buildIndex(data, indexKey=ID) {
+  if (typeof data.forEach !== 'function') {
+    data = data[GRAPH]
+  }
   let index = {}
   for (let item of data) {
     index[item[indexKey]] = item
