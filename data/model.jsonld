@@ -25,9 +25,9 @@
     {
       "@id": "BookVolume",
       "@type": "Class",
-      "altLabelByLang": {"sv": ["Volym", "Band"]},
+      "altLabelByLang": {"sv": ["Band", "Volym"]},
       "labelByLang": {"en": "Book Volume", "sv": "Bokband"},
-      "subClassOf": [{"@id": "PublicationVolume"}, {"@id": "Book"}]
+      "subClassOf": [{"@id": "Book"}, {"@id": "PublicationVolume"}]
     },
     {
       "@id": "CarrierType",
@@ -77,18 +77,18 @@
       "@type": "Class",
       "equivalentClass": [
         {"@id": "prov:Activity"},
-        {"@id": "sdo:Event"},
-        {"@id": "bibo:Event"},
         {"@id": "dctype:Event"},
-        {"@id": "bf:Event"}
+        {"@id": "sdo:Event"},
+        {"@id": "bf:Event"},
+        {"@id": "bibo:Event"}
       ],
       "labelByLang": {"en": "Event", "sv": "Händelse"}
     },
-    {"@id": "ISBN13", "rdfs:label": "ISBN-13"},
+    {"@id": "ISBN13", "label": "ISBN-13"},
     {
       "@id": "Language",
       "@type": "Class",
-      "equivalentClass": [{"@id": "sdo:Language"}, {"@id": "bf:Language"}]
+      "equivalentClass": [{"@id": "bf:Language"}, {"@id": "sdo:Language"}]
     },
     {
       "@id": "MediaType",
@@ -116,8 +116,8 @@
       "equivalentClass": [
         {"@id": "prov:Organization"},
         {"@id": "foaf:Organization"},
-        {"@id": "sdo:Organization"},
-        {"@id": "bf:Organization"}
+        {"@id": "bf:Organization"},
+        {"@id": "sdo:Organization"}
       ],
       "labelByLang": {"en": "Organization", "sv": "Organisation"},
       "subClassOf": {"@id": "Agent"}
@@ -127,9 +127,9 @@
       "@type": "Class",
       "altLabelByLang": {"sv": "Periodisk resurs"},
       "equivalentClass": [
-        {"@id": "sdo:Periodical"},
         {"@id": "bf:Serial"},
-        {"@id": "bibo:Periodical"}
+        {"@id": "bibo:Periodical"},
+        {"@id": "sdo:Periodical"}
       ],
       "labelByLang": {"en": "Periodical", "sv": "Periodika"},
       "subClassOf": {"@id": "Aggregate"}
@@ -138,10 +138,10 @@
       "@id": "Person",
       "@type": "Class",
       "equivalentClass": [
-        {"@id": "sdo:Person"},
-        {"@id": "foaf:Person"},
         {"@id": "prov:Person"},
-        {"@id": "bf:Person"}
+        {"@id": "sdo:Person"},
+        {"@id": "bf:Person"},
+        {"@id": "foaf:Person"}
       ],
       "labelByLang": {"sv": "Person"},
       "subClassOf": {"@id": "Agent"}
@@ -149,7 +149,7 @@
     {
       "@id": "Place",
       "@type": "Class",
-      "equivalentClass": [{"@id": "bf:Place"}, {"@id": "sdo:Place"}],
+      "equivalentClass": [{"@id": "sdo:Place"}, {"@id": "bf:Place"}],
       "labelByLang": {"sv": "Plats"}
     },
     {
@@ -198,7 +198,7 @@
       "equivalentProperty": [{"@id": "dc:audience"}, {"@id": "bf:audience"}],
       "labelByLang": {
         "en": "audience",
-        "sv": ["Målgrupp", "målgrupp"]
+        "sv": ["målgrupp", "Målgrupp"]
       },
       "subPropertyOf": {"@id": "sdo:audience"}
     },
@@ -227,8 +227,8 @@
       "labelByLang": {"sv": "bärartyp"},
       "subPropertyOf": [
         {"@id": "sdo:additionalType"},
-        {"@id": "rdael:carrierType"},
-        {"@id": "dc:format"}
+        {"@id": "dc:format"},
+        {"@id": "rdael:carrierType"}
       ]
     },
     {"@id": "catForm", "@type": "ObjectProperty"},
@@ -251,9 +251,9 @@
       "equivalentProperty": {"@id": "sdo:contentType"},
       "labelByLang": {"en": "content type", "sv": "innehållstyp"},
       "subPropertyOf": [
-        {"@id": "dc:type"},
         {"@id": "sdo:additionalType"},
-        {"@id": "rdael:contentType"}
+        {"@id": "rdael:contentType"},
+        {"@id": "dc:type"}
       ]
     },
     {
@@ -276,7 +276,7 @@
     {
       "@id": "created",
       "@type": "DatatypeProperty",
-      "equivalentProperty": [{"@id": "sdo:dateCreated"}, {"@id": "dc:created"}],
+      "equivalentProperty": [{"@id": "dc:created"}, {"@id": "sdo:dateCreated"}],
       "labelByLang": {"en": "date created", "sv": "skapad"}
     },
     {
@@ -290,9 +290,9 @@
       "@id": "describedBy",
       "@type": "ObjectProperty",
       "equivalentProperty": [
-        {"@id": "iana:describedby"},
+        {"@id": "wdrs:describedby"},
         {"@id": "sdo:mainEntityOfPage"},
-        {"@id": "wdrs:describedby"}
+        {"@id": "iana:describedby"}
       ],
       "labelByLang": {"sv": "Beskriven av"},
       "subPropertyOf": {"@id": "foaf:isPrimaryTopicOf"}
@@ -300,7 +300,7 @@
     {
       "@id": "description",
       "@type": "DatatypeProperty",
-      "equivalentProperty": [{"@id": "sdo:description"}, {"@id": "dc:description"}],
+      "equivalentProperty": [{"@id": "dc:description"}, {"@id": "sdo:description"}],
       "labelByLang": {"en": "description", "sv": "beskrivning"}
     },
     {"@id": "descriptionRules", "@type": "DatatypeProperty"},
@@ -322,12 +322,12 @@
       "@type": "ObjectProperty",
       "equivalentProperty": {"@id": "sdo:exampleOfWork"},
       "labelByLang": {"en": "example of work", "sv": "exemplifierar verk"},
-      "subPropertyOf": [{"@id": "rdfa:copy"}, {"@id": "bf:instanceOf"}]
+      "subPropertyOf": [{"@id": "bf:instanceOf"}, {"@id": "rdfa:copy"}]
     },
     {
       "@id": "familyName",
       "@type": "DatatypeProperty",
-      "equivalentProperty": [{"@id": "foaf:familyName"}, {"@id": "sdo:familyName"}],
+      "equivalentProperty": [{"@id": "sdo:familyName"}, {"@id": "foaf:familyName"}],
       "labelByLang": {"en": "family name", "sv": "familjenamn"}
     },
     {
@@ -344,23 +344,23 @@
     {
       "@id": "genre",
       "@type": "ObjectProperty",
-      "equivalentProperty": [{"@id": "bf:classification"}, {"@id": "bf:genre"}],
+      "equivalentProperty": [{"@id": "bf:genre"}, {"@id": "bf:classification"}],
       "labelByLang": {"en": "genre", "sv": "genre"},
       "subPropertyOf": [{"@id": "dc:type"}, {"@id": "sdo:genre"}]
     },
     {
       "@id": "givenName",
       "@type": "DatatypeProperty",
-      "equivalentProperty": [{"@id": "foaf:givenName"}, {"@id": "sdo:givenName"}],
+      "equivalentProperty": [{"@id": "sdo:givenName"}, {"@id": "foaf:givenName"}],
       "labelByLang": {"en": "given name", "sv": "egennamn"}
     },
     {
       "@id": "hasPart",
       "@type": "ObjectProperty",
       "equivalentProperty": [
-        {"@id": "sdo:hasPart"},
+        {"@id": "bf:hasPart"},
         {"@id": "dc:hasPart"},
-        {"@id": "bf:hasPart"}
+        {"@id": "sdo:hasPart"}
       ],
       "labelByLang": {"en": "has part", "sv": "har del"}
     },
@@ -378,7 +378,7 @@
     {
       "@id": "isPartOf",
       "@type": "ObjectProperty",
-      "equivalentProperty": [{"@id": "sdo:isPartOf"}, {"@id": "dc:isPartOf"}],
+      "equivalentProperty": [{"@id": "dc:isPartOf"}, {"@id": "sdo:isPartOf"}],
       "labelByLang": {"en": "part of", "sv": "del av"}
     },
     {"@id": "isVersionOf", "equivalentProperty": {"@id": "dc:isVersionOf"}},
@@ -386,16 +386,16 @@
       "@id": "label",
       "@type": "DatatypeProperty",
       "equivalentProperty": [
+        {"@id": "sdo:name"},
         {"@id": "rdfs:label"},
-        {"@id": "bf:label"},
-        {"@id": "sdo:name"}
+        {"@id": "bf:label"}
       ],
       "labelByLang": {"en": "label", "sv": "etikett"}
     },
     {
       "@id": "language",
       "@type": "ObjectProperty",
-      "equivalentProperty": [{"@id": "sdo:language"}, {"@id": "bf:language"}],
+      "equivalentProperty": [{"@id": "bf:language"}, {"@id": "sdo:language"}],
       "labelByLang": {"en": "language", "sv": "språk"},
       "subPropertyOf": {"@id": "dc:language"}
     },
@@ -517,7 +517,7 @@
     {
       "@id": "subject",
       "@type": "ObjectProperty",
-      "equivalentProperty": [{"@id": "dc:subject"}, {"@id": "bf:subject"}],
+      "equivalentProperty": [{"@id": "bf:subject"}, {"@id": "dc:subject"}],
       "labelByLang": {"en": "subject", "sv": "ämne"},
       "subPropertyOf": {"@id": "about"}
     },
@@ -543,8 +543,8 @@
       "@type": "DatatypeProperty",
       "equivalentProperty": [
         {"@id": "bf:title"},
-        {"@id": "dc:title"},
-        {"@id": "foaf:title"}
+        {"@id": "foaf:title"},
+        {"@id": "dc:title"}
       ],
       "labelByLang": {"en": "title", "sv": "titel"},
       "subPropertyOf": {"@id": "label"}
@@ -552,7 +552,7 @@
     {
       "@id": "translationOf",
       "@type": "ObjectProperty",
-      "equivalentProperty": [{"@id": "bf:translationOf"}, {"@id": "bibo:translationOf"}]
+      "equivalentProperty": [{"@id": "bibo:translationOf"}, {"@id": "bf:translationOf"}]
     },
     {
       "@id": "translator",
@@ -568,7 +568,7 @@
     },
     {
       "@id": "version",
-      "@type": ["DatatypeProperty", "ObjectProperty"],
+      "@type": ["ObjectProperty", "DatatypeProperty"],
       "equivalentProperty": {"@id": "sdo:version"},
       "labelByLang": {"sv": "version"}
     },
