@@ -2,6 +2,21 @@
   "@context": "/sys/context.jsonld",
   "@graph": [
     {
+      "@id": "Agent",
+      "@type": "Class",
+      "labelByLang": {"sv": "Aktör"},
+      "subClassOf": [
+        {"@id": "foaf:Agent"},
+        {"@id": "prov:Agent"},
+        {"@id": "bf:Agent"}
+      ]
+    },
+    {
+      "@id": "Aggregate",
+      "@type": "Class",
+      "labelByLang": {"sv": "Aggregat"}
+    },
+    {
       "@id": "Authority",
       "@type": "Class",
       "equivalentClass": {"@id": "bf:Authority"},
@@ -27,7 +42,7 @@
       "@type": "Class",
       "altLabelByLang": {"sv": ["Band", "Volym"]},
       "labelByLang": {"en": "Book Volume", "sv": "Bokband"},
-      "subClassOf": [{"@id": "Book"}, {"@id": "PublicationVolume"}]
+      "subClassOf": [{"@id": "PublicationVolume"}, {"@id": "Book"}]
     },
     {
       "@id": "CarrierType",
@@ -44,6 +59,12 @@
       "@id": "ConceptScheme",
       "@type": "Class",
       "equivalentClass": {"@id": "skos:ConceptScheme"}
+    },
+    {
+      "@id": "Continuing",
+      "@type": "Class",
+      "labelByLang": {"sv": "Fortlöpande resurs"},
+      "subClassOf": {"@id": "Aggregate"}
     },
     {
       "@id": "Country",
@@ -76,11 +97,11 @@
       "@id": "Event",
       "@type": "Class",
       "equivalentClass": [
-        {"@id": "prov:Activity"},
         {"@id": "dctype:Event"},
+        {"@id": "prov:Activity"},
         {"@id": "sdo:Event"},
-        {"@id": "bf:Event"},
-        {"@id": "bibo:Event"}
+        {"@id": "bibo:Event"},
+        {"@id": "bf:Event"}
       ],
       "labelByLang": {"en": "Event", "sv": "Händelse"}
     },
@@ -97,12 +118,32 @@
       "labelByLang": {"sv": "Mediatyp"}
     },
     {
+      "@id": "Monograph",
+      "@type": "Class",
+      "equivalentClass": {"@id": "bf:Monograph"},
+      "labelByLang": {"sv": "Monografisk resurs"},
+      "subClassOf": {"@id": "Aggregate"}
+    },
+    {
       "@id": "MultiVolumeBook",
       "@type": "Class",
       "altLabelByLang": {"sv": "Flervolymsbok"},
       "equivalentClass": {"@id": "bibo:MultiVolumeBook"},
       "labelByLang": {"en": "Multipart Book", "sv": "Bokverk"},
       "subClassOf": [{"@id": "Book"}, {"@id": "MultipartMonograph"}]
+    },
+    {
+      "@id": "Multipart",
+      "@type": "Class",
+      "labelByLang": {"sv": "Multipel del"},
+      "subClassOf": {"@id": "Aggregate"}
+    },
+    {
+      "@id": "MultipartMonograph",
+      "@type": "Class",
+      "equivalentClass": {"@id": "bf:MultipartMonograph"},
+      "labelByLang": {"sv": "Multipel del av monograf"},
+      "subClassOf": [{"@id": "Multipart"}, {"@id": "Monograph"}]
     },
     {
       "@id": "Offer",
@@ -127,8 +168,8 @@
       "@type": "Class",
       "altLabelByLang": {"sv": "Periodisk resurs"},
       "equivalentClass": [
-        {"@id": "bf:Serial"},
         {"@id": "bibo:Periodical"},
+        {"@id": "bf:Serial"},
         {"@id": "sdo:Periodical"}
       ],
       "labelByLang": {"en": "Periodical", "sv": "Periodika"},
@@ -138,10 +179,10 @@
       "@id": "Person",
       "@type": "Class",
       "equivalentClass": [
-        {"@id": "prov:Person"},
+        {"@id": "foaf:Person"},
         {"@id": "sdo:Person"},
         {"@id": "bf:Person"},
-        {"@id": "foaf:Person"}
+        {"@id": "prov:Person"}
       ],
       "labelByLang": {"sv": "Person"},
       "subClassOf": {"@id": "Agent"}
@@ -149,17 +190,49 @@
     {
       "@id": "Place",
       "@type": "Class",
-      "equivalentClass": [{"@id": "sdo:Place"}, {"@id": "bf:Place"}],
+      "equivalentClass": [{"@id": "bf:Place"}, {"@id": "sdo:Place"}],
       "labelByLang": {"sv": "Plats"}
+    },
+    {
+      "@id": "Print",
+      "@type": "Class",
+      "equivalentClass": {"@id": "bf:Print"},
+      "labelByLang": {"sv": "Tryck"},
+      "subClassOf": {"@id": "Product"}
     },
     {
       "@id": "PrintedBook",
       "@type": "Class",
       "labelByLang": {"en": "Printed Book", "sv": "Tryckt bok"},
       "subClassOf": [
-        {"@id": "Book"},
-        {"@id": "PrintedText"}
+        {"@id": "PrintedText"},
+        {"@id": "Book"}
       ]
+    },
+    {
+      "@id": "PrintedText",
+      "@type": "Class",
+      "labelByLang": {"sv": "Tryckt text"},
+      "subClassOf": [{"@id": "Text"}, {"@id": "Print"}]
+    },
+    {
+      "@id": "Product",
+      "@type": "Class",
+      "altLabelByLang": {
+        "en": ["Instance", "Manifestation"],
+        "sv": ["Manifestation", "Instans"]
+      },
+      "labelByLang": {"en": "Product", "sv": "Produkt"},
+      "subClassOf": [
+        {"@id": "bf:Instance"},
+        {"@id": "rdaent:Manifestation"},
+        {"@id": "sdo:Product"}
+      ]
+    },
+    {
+      "@id": "PublicationVolume",
+      "@type": "Class",
+      "equivalentClass": {"@id": "sdo:PublicationVolume"}
     },
     {
       "@id": "Record",
@@ -168,10 +241,43 @@
       "subClassOf": {"@id": "foaf:Document"}
     },
     {
+      "@id": "Serial",
+      "@type": "Class",
+      "equivalentClass": {"@id": "bf:Serial"},
+      "labelByLang": {"sv": "Seriell resurs"},
+      "subClassOf": [
+        {"@id": "Aggregate"},
+        {"@id": "Continuing"},
+        {"@id": "CreativeWork"}
+      ]
+    },
+    {
+      "@id": "Text",
+      "@type": "Class",
+      "equivalentClass": [
+        {"@id": "sdo:Text"},
+        {"@id": "dctype:Text"},
+        {"@id": "bf:Text"}
+      ],
+      "labelByLang": {"sv": "Text"},
+      "subClassOf": [{"@id": "CreativeWork"}, {"@id": "Product"}]
+    },
+    {
+      "@id": "Title",
+      "@type": "Class",
+      "equivalentClass": {"@id": "bf:Title"},
+      "labelByLang": {"sv": "Titel"}
+    },
+    {
       "@id": "TitlePage",
       "@type": "Class",
       "labelByLang": {"en": "Title Page", "sv": "Titelsida"},
       "subClassOf": {"@id": "Title"}
+    },
+    {
+      "@id": "Visual",
+      "@type": "Class",
+      "subClassOf": {"@id": "CreativeWork"}
     },
     {
       "@id": "VisualArtwork",
@@ -179,6 +285,12 @@
       "equivalentClass": {"@id": "sdo:VisualArtwork"},
       "labelByLang": {"en": "Visual Artwork", "sv": "Visuellt konstverk"},
       "subClassOf": {"@id": "Visual"}
+    },
+    {
+      "@id": "about",
+      "@type": "ObjectProperty",
+      "equivalentProperty": {"@id": "sdo:about"},
+      "labelByLang": {"sv": "handlar om"}
     },
     {
       "@id": "additionalName",
@@ -198,7 +310,7 @@
       "equivalentProperty": [{"@id": "dc:audience"}, {"@id": "bf:audience"}],
       "labelByLang": {
         "en": "audience",
-        "sv": ["målgrupp", "Målgrupp"]
+        "sv": ["Målgrupp", "målgrupp"]
       },
       "subPropertyOf": {"@id": "sdo:audience"}
     },
@@ -210,6 +322,12 @@
       "subPropertyOf": {"@id": "creator"}
     },
     {"@id": "bibliography", "@type": "ObjectProperty"},
+    {
+      "@id": "birthDate",
+      "@type": "DatatypeProperty",
+      "equivalentProperty": {"@id": "sdo:birthDate"},
+      "labelByLang": {"sv": "födelsedatum"}
+    },
     {
       "@id": "birthYear",
       "@type": "DatatypeProperty",
@@ -226,9 +344,9 @@
       "@type": "ObjectProperty",
       "labelByLang": {"sv": "bärartyp"},
       "subPropertyOf": [
-        {"@id": "sdo:additionalType"},
         {"@id": "dc:format"},
-        {"@id": "rdael:carrierType"}
+        {"@id": "rdael:carrierType"},
+        {"@id": "sdo:additionalType"}
       ]
     },
     {"@id": "catForm", "@type": "ObjectProperty"},
@@ -251,9 +369,9 @@
       "equivalentProperty": {"@id": "sdo:contentType"},
       "labelByLang": {"en": "content type", "sv": "innehållstyp"},
       "subPropertyOf": [
+        {"@id": "dc:type"},
         {"@id": "sdo:additionalType"},
-        {"@id": "rdael:contentType"},
-        {"@id": "dc:type"}
+        {"@id": "rdael:contentType"}
       ]
     },
     {
@@ -280,6 +398,18 @@
       "labelByLang": {"en": "date created", "sv": "skapad"}
     },
     {
+      "@id": "creator",
+      "@type": "ObjectProperty",
+      "equivalentProperty": {"@id": "dc:creator"},
+      "labelByLang": {"sv": "skapare"}
+    },
+    {
+      "@id": "deathDate",
+      "@type": "DatatypeProperty",
+      "equivalentProperty": {"@id": "sdo:deathDate"},
+      "labelByLang": {"sv": "dödsdatum"}
+    },
+    {
       "@id": "deathYear",
       "@type": "DatatypeProperty",
       "equivalentProperty": {"@id": "sdo:deathYear"},
@@ -290,9 +420,9 @@
       "@id": "describedBy",
       "@type": "ObjectProperty",
       "equivalentProperty": [
-        {"@id": "wdrs:describedby"},
+        {"@id": "iana:describedby"},
         {"@id": "sdo:mainEntityOfPage"},
-        {"@id": "iana:describedby"}
+        {"@id": "wdrs:describedby"}
       ],
       "labelByLang": {"sv": "Beskriven av"},
       "subPropertyOf": {"@id": "foaf:isPrimaryTopicOf"}
@@ -300,7 +430,7 @@
     {
       "@id": "description",
       "@type": "DatatypeProperty",
-      "equivalentProperty": [{"@id": "dc:description"}, {"@id": "sdo:description"}],
+      "equivalentProperty": [{"@id": "sdo:description"}, {"@id": "dc:description"}],
       "labelByLang": {"en": "description", "sv": "beskrivning"}
     },
     {"@id": "descriptionRules", "@type": "DatatypeProperty"},
@@ -322,12 +452,18 @@
       "@type": "ObjectProperty",
       "equivalentProperty": {"@id": "sdo:exampleOfWork"},
       "labelByLang": {"en": "example of work", "sv": "exemplifierar verk"},
-      "subPropertyOf": [{"@id": "bf:instanceOf"}, {"@id": "rdfa:copy"}]
+      "subPropertyOf": [{"@id": "rdfa:copy"}, {"@id": "bf:instanceOf"}]
+    },
+    {
+      "@id": "extent",
+      "@type": "DatatypeProperty",
+      "equivalentProperty": [{"@id": "dc:extent"}, {"@id": "bf:extent"}],
+      "labelByLang": {"sv": "Omfång"}
     },
     {
       "@id": "familyName",
       "@type": "DatatypeProperty",
-      "equivalentProperty": [{"@id": "sdo:familyName"}, {"@id": "foaf:familyName"}],
+      "equivalentProperty": [{"@id": "foaf:familyName"}, {"@id": "sdo:familyName"}],
       "labelByLang": {"en": "family name", "sv": "familjenamn"}
     },
     {
@@ -358,11 +494,22 @@
       "@id": "hasPart",
       "@type": "ObjectProperty",
       "equivalentProperty": [
-        {"@id": "bf:hasPart"},
         {"@id": "dc:hasPart"},
-        {"@id": "sdo:hasPart"}
+        {"@id": "sdo:hasPart"},
+        {"@id": "bf:hasPart"}
       ],
       "labelByLang": {"en": "has part", "sv": "har del"}
+    },
+    {
+      "@id": "identifier",
+      "@type": ["DatatypeProperty", "ObjectProperty"],
+      "equivalentProperty": [
+        {"@id": "bibo:identifier"},
+        {"@id": "dc:identifier"},
+        {"@id": "bf:identifier"}
+      ],
+      "labelByLang": {"en": "identifier", "sv": "identifikator"},
+      "subPropertyOf": {"@id": "label"}
     },
     {
       "@id": "illustrationNote",
@@ -378,7 +525,7 @@
     {
       "@id": "isPartOf",
       "@type": "ObjectProperty",
-      "equivalentProperty": [{"@id": "dc:isPartOf"}, {"@id": "sdo:isPartOf"}],
+      "equivalentProperty": [{"@id": "sdo:isPartOf"}, {"@id": "dc:isPartOf"}],
       "labelByLang": {"en": "part of", "sv": "del av"}
     },
     {"@id": "isVersionOf", "equivalentProperty": {"@id": "dc:isVersionOf"}},
@@ -387,8 +534,8 @@
       "@type": "DatatypeProperty",
       "equivalentProperty": [
         {"@id": "sdo:name"},
-        {"@id": "rdfs:label"},
-        {"@id": "bf:label"}
+        {"@id": "bf:label"},
+        {"@id": "rdfs:label"}
       ],
       "labelByLang": {"en": "label", "sv": "etikett"}
     },
@@ -426,14 +573,14 @@
     {
       "@id": "name",
       "@type": "DatatypeProperty",
-      "equivalentProperty": [{"@id": "foaf:name"}, {"@id": "sdo:name"}],
+      "equivalentProperty": [{"@id": "sdo:name"}, {"@id": "foaf:name"}],
       "labelByLang": {"en": "name", "sv": "namn"},
       "subPropertyOf": {"@id": "label"}
     },
     {
       "@id": "notation",
       "@type": "DatatypeProperty",
-      "equivalentProperty": [{"@id": "skos:notation"}, {"@id": "bf:notation"}],
+      "equivalentProperty": [{"@id": "bf:notation"}, {"@id": "skos:notation"}],
       "subPropertyOf": {"@id": "label"}
     },
     {
@@ -500,7 +647,7 @@
       "@id": "responsibilityStatement",
       "@type": "DatatypeProperty",
       "altLabelByLang": {"sv": "Upphov"},
-      "equivalentProperty": [{"@id": "bf:responsibilityStatement"}, {"@id": "rdael:statementOfResponsibility"}],
+      "equivalentProperty": [{"@id": "rdael:statementOfResponsibility"}, {"@id": "bf:responsibilityStatement"}],
       "labelByLang": {"en": "responsibility statement", "sv": "upphovsuppgift"}
     },
     {
@@ -517,7 +664,7 @@
     {
       "@id": "subject",
       "@type": "ObjectProperty",
-      "equivalentProperty": [{"@id": "bf:subject"}, {"@id": "dc:subject"}],
+      "equivalentProperty": [{"@id": "dc:subject"}, {"@id": "bf:subject"}],
       "labelByLang": {"en": "subject", "sv": "ämne"},
       "subPropertyOf": {"@id": "about"}
     },
@@ -568,7 +715,7 @@
     },
     {
       "@id": "version",
-      "@type": ["ObjectProperty", "DatatypeProperty"],
+      "@type": ["DatatypeProperty", "ObjectProperty"],
       "equivalentProperty": {"@id": "sdo:version"},
       "labelByLang": {"sv": "version"}
     },
