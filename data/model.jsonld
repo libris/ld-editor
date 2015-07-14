@@ -1,221 +1,596 @@
-[
-  {
-    "@id": "Authority",
-    "labelByLang": {"en": "Authority", "sv": "Auktoritet"}
-  },
-  {
-    "@id": "Book",
-    "labelByLang": {"en": "Book", "sv": "Bok"}
-  },
-  {
-    "@id": "MultiVolumeBook",
-    "subClassOf": [{"@id": "Book"}, {"@id": "Multipart"}],
-    "labelByLang": {"en": "Multipart Book", "sv": "Bokverk"}
-  },
-  {
-    "@id": "BookVolume",
-    "subClassOf": [{"@id": "Book"}, {"@id": "PublicationVolume"}],
-    "labelByLang": {"en": "Book Volume", "sv": "Bokband"},
-    "altLabelByLang": {"sv": ["Band", "Volym"]}
-  },
-  {
-    "@id": "CoverTitle",
-    "labelByLang": {"en": "Cover Title", "sv": "Omslagstitel"}
-  },
-  {
-    "@id": "Periodical",
-    "labelByLang": {"en": "Periodical", "sv": "Periodika"}
-  },
-  {
-    "@id": "Event",
-    "labelByLang": {"en": "Event", "sv": "Händelse"}
-  },
-  {
-    "@id": "ISBN13",
-    "label": "ISBN-13"
-  },
-  {
-    "@id": "Manifestation",
-    "labelByLang": {"en": "Manifestation", "sv": "Manifestation"}
-  },
-  {
-    "@id": "Offer",
-    "labelByLang": {"en": "Offer", "sv": "Erbjudande"}
-  },
-  {
-    "@id": "Organization",
-    "labelByLang": {"en": "Organization", "sv": "Organisation"}
-  },
-  {
-    "@id": "PrintedBook",
-    "labelByLang": {"en": "Printed Book", "sv": "Tryckt bok"}
-  },
-  {
-    "@id": "Product",
-    "labelByLang": {"en": "Product", "sv": "Produkt"}
-  },
-  {
-    "@id": "TitlePage",
-    "labelByLang": {"en": "Title Page", "sv": "Titelsida"}
-  },
-  {
-    "@id": "additionalName",
-    "labelByLang": {"en": "additional name", "sv": "tilläggsnamn"}
-  },
-  {
-    "@id": "artform",
-    "labelByLang": {"en": "artform", "sv": "verksform"}
-  },
-  {
-    "@id": "audience",
-    "labelByLang": {"en": "audience", "sv": "målgrupp"}
-  },
-  {
-    "@id": "author",
-    "labelByLang": {"en": "author", "sv": "författare"}
-  },
-  {
-    "@id": "bookFormat",
-    "labelByLang": {"en": "book format", "sv": "bokformat"}
-  },
-  {
-    "@id": "country",
-    "labelByLang": {"en": "country", "sv": "land"}
-  },
-  {
-    "@id": "dateCreated",
-    "labelByLang": {"en": "date created", "sv": "skapad"}
-  },
-  {
-    "@id": "description",
-    "labelByLang": {"en": "description", "sv": "beskrivning"}
-  },
-  {
-    "@id": "dimensions",
-    "labelByLang": {"en": "dimensions", "sv": "dimensioner"}
-  },
-  {
-    "@id": "editionStatement",
-    "labelByLang": {"en": "editionStatement", "sv": "utgåveuppgift"}
-  },
-  {
-    "@id": "exampleOfWork",
-    "labelByLang": {"en": "example of work", "sv": "exemplifierar verk"}
-  },
-  {
-    "@id": "familyName",
-    "labelByLang": {"en": "family name", "sv": "familjenamn"}
-  },
-  {
-    "@id": "format",
-    "labelByLang": {"en": "format", "sv": "format"}
-  },
-  {
-    "@id": "genre",
-    "labelByLang": {"en": "genre", "sv": "genre"}
-  },
-  {
-    "@id": "givenName",
-    "labelByLang": {"en": "given name", "sv": "egennamn"}
-  },
-  {
-    "@id": "hasPart",
-    "labelByLang": {"en": "has part", "sv": "har del"}
-  },
-  {
-    "@id": "isPartOf",
-    "labelByLang": {"en": "part of", "sv": "del av"}
-  },
-  {
-    "@id": "identifier",
-    "labelByLang": {"en": "identifier", "sv": "identifikator"}
-  },
-  {
-    "@id": "label",
-    "labelByLang": {"en": "label", "sv": "etikett"}
-  },
-  {
-    "@id": "language",
-    "labelByLang": {"en": "language", "sv": "språk"}
-  },
-  {
-    "@id": "manufacture",
-    "labelByLang": {"en": "manufacture", "sv": "tillverkning"}
-  },
-  {
-    "@id": "name",
-    "labelByLang": {"en": "name", "sv": "namn"}
-  },
-  {
-    "@id": "numberOfPages",
-    "labelByLang": {"en": "number of pages", "sv": "sidantal"}
-  },
-  {
-    "@id": "offers",
-    "labelByLang": {"en": "product offer", "sv": "produkterbjudande"}
-  },
-  {
-    "@id": "price",
-    "labelByLang": {"en": "price", "sv": "pris"}
-  },
-  {
-    "@id": "publication",
-    "labelByLang": {"en": "publication", "sv": "utgivning"}
-  },
-  {
-    "@id": "publicationStatement",
-    "labelByLang": {"en": "publication statement", "sv": "utgivningsuppgift"}
-  },
-  {
-    "@id": "qualifiedIdentifier",
-    "labelByLang": {"en": "qualified identifier", "sv": "kvalificerad identifikator"}
-  },
-  {
-    "@id": "qualifiedTitle",
-    "labelByLang": {"en": "qualified title", "sv": "kvalificerad titel"}
-  },
-  {
-    "@id": "responsibilityStatement",
-    "labelByLang": {"en": "responsibility statement", "sv": "upphovsuppgift"}
-  },
-  {
-    "@id": "seller",
-    "labelByLang": {"en": "seller", "sv": "försäljare"}
-  },
-  {
-    "@id": "subject",
-    "labelByLang": {"en": "subject", "sv": "ämne"}
-  },
-  {
-    "@id": "subtitle",
-    "labelByLang": {"en": "subtitle", "sv": "undertitel"}
-  },
-  {
-    "@id": "title",
-    "labelByLang": {"en": "title", "sv": "titel"}
-  },
-  {
-    "@id": "contentType",
-    "labelByLang": {"en": "type", "sv": "typ"}
-  },
-  {
-    "@id": "value",
-    "labelByLang": {"en": "value", "sv": "värde"}
-  },
-  {
-    "@id": "when",
-    "labelByLang": {"en": "when", "sv": "när"}
-  },
-  {
-    "@id": "where",
-    "labelByLang": {"en": "where", "sv": "var"}
-  },
-  {
-    "@id": "who",
-    "labelByLang": {"en": "who", "sv": "vem"}
-  },
-  {
-    "@id": "workExample",
-    "labelByLang": {"en": "work example", "sv": "verksexempel"}
-  }
-]
+{
+  "@context": "/sys/context.jsonld",
+  "@graph": [
+    {
+      "@id": "Authority",
+      "@type": "Class",
+      "equivalentClass": {"@id": "bf:Authority"},
+      "labelByLang": {"en": "Authority", "sv": "Auktoritet"},
+      "subClassOf": {"@id": "Concept"}
+    },
+    {
+      "@id": "Book",
+      "@type": "Class",
+      "equivalentClass": {"@id": "bibo:Book"},
+      "labelByLang": {"en": "Book", "sv": "Bok"},
+      "subClassOf": [{"@id": "Monograph"}, {"@id": "Text"}]
+    },
+    {
+      "@id": "BookFormat",
+      "@type": "Class",
+      "equivalentClass": {"@id": "sdo:BookFormat"},
+      "labelByLang": {"en": "Book Format", "sv": "Bokformat"},
+      "subClassOf": {"@id": "CarrierType"}
+    },
+    {
+      "@id": "BookVolume",
+      "@type": "Class",
+      "altLabelByLang": {"sv": ["Volym", "Band"]},
+      "labelByLang": {"en": "Book Volume", "sv": "Bokband"},
+      "subClassOf": [{"@id": "PublicationVolume"}, {"@id": "Book"}]
+    },
+    {
+      "@id": "CarrierType",
+      "@type": "Class",
+      "labelByLang": {"sv": "Bärartyp"},
+      "subClassOf": {"@id": "MediaType"}
+    },
+    {
+      "@id": "Concept",
+      "@type": "Class",
+      "equivalentClass": {"@id": "skos:Concept"}
+    },
+    {
+      "@id": "ConceptScheme",
+      "@type": "Class",
+      "equivalentClass": {"@id": "skos:ConceptScheme"}
+    },
+    {
+      "@id": "Country",
+      "@type": "Class",
+      "equivalentClass": {"@id": "sdo:Country"},
+      "labelByLang": {"sv": "Land"},
+      "subClassOf": {"@id": "Place"}
+    },
+    {
+      "@id": "CoverTitle",
+      "@type": "Class",
+      "labelByLang": {"en": "Cover Title", "sv": "Omslagstitel"},
+      "subClassOf": {"@id": "Title"}
+    },
+    {
+      "@id": "CreativeWork",
+      "@type": "Class",
+      "equivalentClass": {"@id": "sdo:CreativeWork"},
+      "labelByLang": {"sv": "Kreativt verk"},
+      "subClassOf": {"@id": "dc:BibliographicResource"}
+    },
+    {
+      "@id": "CreativeWorkSeries",
+      "@type": "Class",
+      "equivalentClass": {"@id": "sdo:CreativeWorkSeries"},
+      "labelByLang": {"en": "Creative Work Series", "sv": "Utgivningsserie"},
+      "subClassOf": {"@id": "Serial"}
+    },
+    {
+      "@id": "Event",
+      "@type": "Class",
+      "equivalentClass": [
+        {"@id": "prov:Activity"},
+        {"@id": "sdo:Event"},
+        {"@id": "bibo:Event"},
+        {"@id": "dctype:Event"},
+        {"@id": "bf:Event"}
+      ],
+      "labelByLang": {"en": "Event", "sv": "Händelse"}
+    },
+    {"@id": "ISBN13", "rdfs:label": "ISBN-13"},
+    {
+      "@id": "Language",
+      "@type": "Class",
+      "equivalentClass": [{"@id": "sdo:Language"}, {"@id": "bf:Language"}]
+    },
+    {
+      "@id": "MediaType",
+      "@type": "Class",
+      "equivalentClass": {"@id": "dc:MediaType"},
+      "labelByLang": {"sv": "Mediatyp"}
+    },
+    {
+      "@id": "MultiVolumeBook",
+      "@type": "Class",
+      "altLabelByLang": {"sv": "Flervolymsbok"},
+      "equivalentClass": {"@id": "bibo:MultiVolumeBook"},
+      "labelByLang": {"en": "Multipart Book", "sv": "Bokverk"},
+      "subClassOf": [{"@id": "Book"}, {"@id": "MultipartMonograph"}]
+    },
+    {
+      "@id": "Offer",
+      "@type": "Class",
+      "labelByLang": {"en": "Offer", "sv": "Erbjudande"},
+      "subClassOf": {"@id": "sdo:Offer"}
+    },
+    {
+      "@id": "Organization",
+      "@type": "Class",
+      "equivalentClass": [
+        {"@id": "prov:Organization"},
+        {"@id": "foaf:Organization"},
+        {"@id": "sdo:Organization"},
+        {"@id": "bf:Organization"}
+      ],
+      "labelByLang": {"en": "Organization", "sv": "Organisation"},
+      "subClassOf": {"@id": "Agent"}
+    },
+    {
+      "@id": "Periodical",
+      "@type": "Class",
+      "altLabelByLang": {"sv": "Periodisk resurs"},
+      "equivalentClass": [
+        {"@id": "sdo:Periodical"},
+        {"@id": "bf:Serial"},
+        {"@id": "bibo:Periodical"}
+      ],
+      "labelByLang": {"en": "Periodical", "sv": "Periodika"},
+      "subClassOf": {"@id": "Aggregate"}
+    },
+    {
+      "@id": "Person",
+      "@type": "Class",
+      "equivalentClass": [
+        {"@id": "sdo:Person"},
+        {"@id": "foaf:Person"},
+        {"@id": "prov:Person"},
+        {"@id": "bf:Person"}
+      ],
+      "labelByLang": {"sv": "Person"},
+      "subClassOf": {"@id": "Agent"}
+    },
+    {
+      "@id": "Place",
+      "@type": "Class",
+      "equivalentClass": [{"@id": "bf:Place"}, {"@id": "sdo:Place"}],
+      "labelByLang": {"sv": "Plats"}
+    },
+    {
+      "@id": "PrintedBook",
+      "@type": "Class",
+      "labelByLang": {"en": "Printed Book", "sv": "Tryckt bok"},
+      "subClassOf": [
+        {"@id": "Book"},
+        {"@id": "PrintedText"}
+      ]
+    },
+    {
+      "@id": "Record",
+      "@type": "Class",
+      "labelByLang": {"sv": "Post"},
+      "subClassOf": {"@id": "foaf:Document"}
+    },
+    {
+      "@id": "TitlePage",
+      "@type": "Class",
+      "labelByLang": {"en": "Title Page", "sv": "Titelsida"},
+      "subClassOf": {"@id": "Title"}
+    },
+    {
+      "@id": "VisualArtwork",
+      "@type": "Class",
+      "equivalentClass": {"@id": "sdo:VisualArtwork"},
+      "labelByLang": {"en": "Visual Artwork", "sv": "Visuellt konstverk"},
+      "subClassOf": {"@id": "Visual"}
+    },
+    {
+      "@id": "additionalName",
+      "@type": "DatatypeProperty",
+      "equivalentProperty": {"@id": "sdo:additionalName"},
+      "labelByLang": {"en": "additional name", "sv": "tilläggsnamn"}
+    },
+    {
+      "@id": "artform",
+      "@type": "ObjectProperty",
+      "equivalentProperty": {"@id": "sdo:artform"},
+      "labelByLang": {"en": "artform", "sv": "verksform"}
+    },
+    {
+      "@id": "audience",
+      "@type": "ObjectProperty",
+      "equivalentProperty": [{"@id": "dc:audience"}, {"@id": "bf:audience"}],
+      "labelByLang": {
+        "en": "audience",
+        "sv": ["Målgrupp", "målgrupp"]
+      },
+      "subPropertyOf": {"@id": "sdo:audience"}
+    },
+    {
+      "@id": "author",
+      "@type": "ObjectProperty",
+      "equivalentProperty": {"@id": "sdo:author"},
+      "labelByLang": {"en": "author", "sv": "författare"},
+      "subPropertyOf": {"@id": "creator"}
+    },
+    {"@id": "bibliography", "@type": "ObjectProperty"},
+    {
+      "@id": "birthYear",
+      "@type": "DatatypeProperty",
+      "labelByLang": {"en": "birth year", "sv": "födelseår"},
+      "subPropertyOf": {"@id": "birthDate"}
+    },
+    {
+      "@id": "broader",
+      "@type": "ObjectProperty",
+      "equivalentProperty": {"@id": "skos:broader"}
+    },
+    {
+      "@id": "carrierType",
+      "@type": "ObjectProperty",
+      "labelByLang": {"sv": "bärartyp"},
+      "subPropertyOf": [
+        {"@id": "sdo:additionalType"},
+        {"@id": "rdael:carrierType"},
+        {"@id": "dc:format"}
+      ]
+    },
+    {"@id": "catForm", "@type": "ObjectProperty"},
+    {"@id": "catalogingSource", "@type": "ObjectProperty"},
+    {
+      "@id": "classification",
+      "@type": "ObjectProperty",
+      "equivalentProperty": {"@id": "bf:classification"},
+      "labelByLang": {"sv": "Klassifikation"}
+    },
+    {
+      "@id": "containedIn",
+      "@type": "ObjectProperty",
+      "equivalentProperty": {"@id": "sdo:containedIn"}
+    },
+    {
+      "@id": "contentType",
+      "@type": "ObjectProperty",
+      "altLabelByLang": {"sv": "Form för utgåva"},
+      "equivalentProperty": {"@id": "sdo:contentType"},
+      "labelByLang": {"en": "content type", "sv": "innehållstyp"},
+      "subPropertyOf": [
+        {"@id": "dc:type"},
+        {"@id": "sdo:additionalType"},
+        {"@id": "rdael:contentType"}
+      ]
+    },
+    {
+      "@id": "contentsNote",
+      "@type": "DatatypeProperty",
+      "equivalentProperty": {"@id": "bf:contentsNote"},
+      "labelByLang": {"en": "contents note", "sv": "innehållsanteckning"}
+    },
+    {
+      "@id": "controlNumber",
+      "@type": "DatatypeProperty",
+      "equivalentProperty": {"@id": "identifier"},
+      "labelByLang": {"sv": "kontrollnummer"}
+    },
+    {
+      "@id": "country",
+      "@type": "ObjectProperty",
+      "labelByLang": {"en": "country", "sv": "land"}
+    },
+    {
+      "@id": "created",
+      "@type": "DatatypeProperty",
+      "equivalentProperty": [{"@id": "sdo:dateCreated"}, {"@id": "dc:created"}],
+      "labelByLang": {"en": "date created", "sv": "skapad"}
+    },
+    {
+      "@id": "deathYear",
+      "@type": "DatatypeProperty",
+      "equivalentProperty": {"@id": "sdo:deathYear"},
+      "labelByLang": {"en": "death year", "sv": "dödsår"},
+      "subPropertyOf": {"@id": "deathDate"}
+    },
+    {
+      "@id": "describedBy",
+      "@type": "ObjectProperty",
+      "equivalentProperty": [
+        {"@id": "iana:describedby"},
+        {"@id": "sdo:mainEntityOfPage"},
+        {"@id": "wdrs:describedby"}
+      ],
+      "labelByLang": {"sv": "Beskriven av"},
+      "subPropertyOf": {"@id": "foaf:isPrimaryTopicOf"}
+    },
+    {
+      "@id": "description",
+      "@type": "DatatypeProperty",
+      "equivalentProperty": [{"@id": "sdo:description"}, {"@id": "dc:description"}],
+      "labelByLang": {"en": "description", "sv": "beskrivning"}
+    },
+    {"@id": "descriptionRules", "@type": "DatatypeProperty"},
+    {
+      "@id": "dimensions",
+      "@type": "DatatypeProperty",
+      "altLabelByLang": {"sv": "Mått"},
+      "equivalentProperty": {"@id": "bf:dimensions"},
+      "labelByLang": {"en": "dimensions", "sv": "dimensioner"}
+    },
+    {
+      "@id": "editionStatement",
+      "@type": "DatatypeProperty",
+      "labelByLang": {"en": "editionStatement", "sv": "utgåveuppgift"},
+      "subPropertyOf": {"@id": "bf:providerStatement"}
+    },
+    {
+      "@id": "exampleOfWork",
+      "@type": "ObjectProperty",
+      "equivalentProperty": {"@id": "sdo:exampleOfWork"},
+      "labelByLang": {"en": "example of work", "sv": "exemplifierar verk"},
+      "subPropertyOf": [{"@id": "rdfa:copy"}, {"@id": "bf:instanceOf"}]
+    },
+    {
+      "@id": "familyName",
+      "@type": "DatatypeProperty",
+      "equivalentProperty": [{"@id": "foaf:familyName"}, {"@id": "sdo:familyName"}],
+      "labelByLang": {"en": "family name", "sv": "familjenamn"}
+    },
+    {
+      "@id": "focus",
+      "@type": "ObjectProperty",
+      "equivalentProperty": {"@id": "foaf:focus"}
+    },
+    {
+      "@id": "format",
+      "@type": "ObjectProperty",
+      "equivalentProperty": {"@id": "dc:format"},
+      "labelByLang": {"en": "format", "sv": "format"}
+    },
+    {
+      "@id": "genre",
+      "@type": "ObjectProperty",
+      "equivalentProperty": [{"@id": "bf:classification"}, {"@id": "bf:genre"}],
+      "labelByLang": {"en": "genre", "sv": "genre"},
+      "subPropertyOf": [{"@id": "dc:type"}, {"@id": "sdo:genre"}]
+    },
+    {
+      "@id": "givenName",
+      "@type": "DatatypeProperty",
+      "equivalentProperty": [{"@id": "foaf:givenName"}, {"@id": "sdo:givenName"}],
+      "labelByLang": {"en": "given name", "sv": "egennamn"}
+    },
+    {
+      "@id": "hasPart",
+      "@type": "ObjectProperty",
+      "equivalentProperty": [
+        {"@id": "sdo:hasPart"},
+        {"@id": "dc:hasPart"},
+        {"@id": "bf:hasPart"}
+      ],
+      "labelByLang": {"en": "has part", "sv": "har del"}
+    },
+    {
+      "@id": "illustrationNote",
+      "@type": "DatatypeProperty",
+      "equivalentProperty": {"@id": "bf:illustrationNote"},
+      "labelByLang": {"en": "illustration note", "sv": "illustrationsanteckning"}
+    },
+    {
+      "@id": "inScheme",
+      "@type": "ObjectProperty",
+      "equivalentProperty": {"@id": "skos:inScheme"}
+    },
+    {
+      "@id": "isPartOf",
+      "@type": "ObjectProperty",
+      "equivalentProperty": [{"@id": "sdo:isPartOf"}, {"@id": "dc:isPartOf"}],
+      "labelByLang": {"en": "part of", "sv": "del av"}
+    },
+    {"@id": "isVersionOf", "equivalentProperty": {"@id": "dc:isVersionOf"}},
+    {
+      "@id": "label",
+      "@type": "DatatypeProperty",
+      "equivalentProperty": [
+        {"@id": "rdfs:label"},
+        {"@id": "bf:label"},
+        {"@id": "sdo:name"}
+      ],
+      "labelByLang": {"en": "label", "sv": "etikett"}
+    },
+    {
+      "@id": "language",
+      "@type": "ObjectProperty",
+      "equivalentProperty": [{"@id": "sdo:language"}, {"@id": "bf:language"}],
+      "labelByLang": {"en": "language", "sv": "språk"},
+      "subPropertyOf": {"@id": "dc:language"}
+    },
+    {
+      "@id": "literaryForm",
+      "@type": "ObjectProperty",
+      "labelByLang": {"sv": "Litterär genre"}
+    },
+    {
+      "@id": "manufacture",
+      "@type": "ObjectProperty",
+      "equivalentProperty": {"@id": "bf:manufacture"},
+      "labelByLang": {"en": "manufacture", "sv": "tillverkning"}
+    },
+    {
+      "@id": "mediaType",
+      "@type": "ObjectProperty",
+      "labelByLang": {"en": "media type", "sv": "mediatyp"},
+      "subPropertyOf": {"@id": "rdael:mediaType"}
+    },
+    {
+      "@id": "modified",
+      "@type": "DatatypeProperty",
+      "equivalentProperty": {"@id": "dc:modified"},
+      "labelByLang": {"sv": "modifierad"}
+    },
+    {"@id": "modifyingAgency", "@type": "ObjectProperty"},
+    {
+      "@id": "name",
+      "@type": "DatatypeProperty",
+      "equivalentProperty": [{"@id": "foaf:name"}, {"@id": "sdo:name"}],
+      "labelByLang": {"en": "name", "sv": "namn"},
+      "subPropertyOf": {"@id": "label"}
+    },
+    {
+      "@id": "notation",
+      "@type": "DatatypeProperty",
+      "equivalentProperty": [{"@id": "skos:notation"}, {"@id": "bf:notation"}],
+      "subPropertyOf": {"@id": "label"}
+    },
+    {
+      "@id": "noteOnPublicationStatement",
+      "@type": "DatatypeProperty",
+      "labelByLang": {"en": "note on publication statement", "sv": "utgivningsuppgiftsanteckning"}
+    },
+    {
+      "@id": "numberOfPages",
+      "@type": "DatatypeProperty",
+      "equivalentProperty": {"@id": "sdo:numberOfPages"},
+      "labelByLang": {"en": "number of pages", "sv": "sidantal"},
+      "subPropertyOf": {"@id": "extent"}
+    },
+    {
+      "@id": "offers",
+      "@type": "ObjectProperty",
+      "equivalentProperty": {"@id": "sdo:offers"},
+      "labelByLang": {"en": "product offer", "sv": "produkterbjudande"}
+    },
+    {"@id": "originalCatalogingAgency", "@type": "ObjectProperty"},
+    {
+      "@id": "partOfSeries",
+      "@type": "ObjectProperty",
+      "labelByLang": {"en": "part of series", "sv": "del av serie"},
+      "subPropertyOf": {"@id": "isPartOf"}
+    },
+    {
+      "@id": "prefLabel",
+      "@type": "DatatypeProperty",
+      "equivalentProperty": {"@id": "skos:prefLabel"},
+      "subPropertyOf": {"@id": "label"}
+    },
+    {
+      "@id": "price",
+      "@type": "DatatypeProperty",
+      "equivalentProperty": {"@id": "sdo:price"},
+      "labelByLang": {"en": "price", "sv": "pris"}
+    },
+    {
+      "@id": "publication",
+      "@type": "ObjectProperty",
+      "equivalentProperty": [{"@id": "bf:publication"}, {"@id": "sdo:publication"}],
+      "labelByLang": {"en": "publication", "sv": "utgivning"}
+    },
+    {
+      "@id": "publicationStatement",
+      "@type": "DatatypeProperty",
+      "labelByLang": {"en": "publication statement", "sv": "utgivningsuppgift"},
+      "subPropertyOf": {"@id": "bf:providerStatement"}
+    },
+    {
+      "@id": "qualifiedIdentifier",
+      "@type": "ObjectProperty",
+      "labelByLang": {"en": "qualified identifier", "sv": "kvalificerad identifikator"}
+    },
+    {
+      "@id": "qualifiedTitle",
+      "@type": "ObjectProperty",
+      "equivalentProperty": {"@id": "bf:instanceTitle"},
+      "labelByLang": {"en": "qualified title", "sv": "kvalificerad titel"}
+    },
+    {
+      "@id": "responsibilityStatement",
+      "@type": "DatatypeProperty",
+      "altLabelByLang": {"sv": "Upphov"},
+      "equivalentProperty": [{"@id": "bf:responsibilityStatement"}, {"@id": "rdael:statementOfResponsibility"}],
+      "labelByLang": {"en": "responsibility statement", "sv": "upphovsuppgift"}
+    },
+    {
+      "@id": "sameAs",
+      "@type": "ObjectProperty",
+      "equivalentProperty": {"@id": "owl:sameAs"},
+      "labelByLang": {"sv": "samma sak som"}
+    },
+    {
+      "@id": "seller",
+      "@type": "ObjectProperty",
+      "labelByLang": {"en": "seller", "sv": "försäljare"}
+    },
+    {
+      "@id": "subject",
+      "@type": "ObjectProperty",
+      "equivalentProperty": [{"@id": "dc:subject"}, {"@id": "bf:subject"}],
+      "labelByLang": {"en": "subject", "sv": "ämne"},
+      "subPropertyOf": {"@id": "about"}
+    },
+    {
+      "@id": "subtitle",
+      "@type": "DatatypeProperty",
+      "equivalentProperty": {"@id": "bf:subtitle"},
+      "labelByLang": {"en": "subtitle", "sv": "undertitel"}
+    },
+    {
+      "@id": "systemNumber",
+      "@type": "DatatypeProperty",
+      "equivalentProperty": {"@id": "bf:systemNumber"}
+    },
+    {
+      "@id": "technicalNote",
+      "@type": "DatatypeProperty",
+      "labelByLang": {"sv": "Intern anmärkning av systemteknisk karaktär"}
+    },
+    {"@id": "termGroup", "@type": "DatatypeProperty"},
+    {
+      "@id": "title",
+      "@type": "DatatypeProperty",
+      "equivalentProperty": [
+        {"@id": "bf:title"},
+        {"@id": "dc:title"},
+        {"@id": "foaf:title"}
+      ],
+      "labelByLang": {"en": "title", "sv": "titel"},
+      "subPropertyOf": {"@id": "label"}
+    },
+    {
+      "@id": "translationOf",
+      "@type": "ObjectProperty",
+      "equivalentProperty": [{"@id": "bf:translationOf"}, {"@id": "bibo:translationOf"}]
+    },
+    {
+      "@id": "translator",
+      "@type": "ObjectProperty",
+      "equivalentProperty": {"@id": "sdo:translator"},
+      "labelByLang": {"en": "translator", "sv": "översättare"}
+    },
+    {
+      "@id": "value",
+      "@type": "DatatypeProperty",
+      "equivalentProperty": {"@id": "rdf:value"},
+      "labelByLang": {"en": "value", "sv": "värde"}
+    },
+    {
+      "@id": "version",
+      "@type": ["DatatypeProperty", "ObjectProperty"],
+      "equivalentProperty": {"@id": "sdo:version"},
+      "labelByLang": {"sv": "version"}
+    },
+    {
+      "@id": "volumeNumber",
+      "@type": "DatatypeProperty",
+      "equivalentProperty": {"@id": "sdo:volumeNumber"}
+    },
+    {
+      "@id": "when",
+      "@type": "ObjectProperty",
+      "labelByLang": {"en": "when", "sv": "när"}
+    },
+    {
+      "@id": "where",
+      "@type": "ObjectProperty",
+      "labelByLang": {"en": "where", "sv": "var"}
+    },
+    {
+      "@id": "who",
+      "@type": "ObjectProperty",
+      "labelByLang": {"en": "who", "sv": "vem"}
+    }
+  ]
+}
