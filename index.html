@@ -21,8 +21,8 @@
 <template id="edit-node">
   <article class="card {{ type === 'main'? 'main' : 'embedded' }}">
     <header>
-      <partial name="show-type"></partial>
       <a class="id" v-if="item[ID]" href="{{item[ID]}}">{{item[ID]}}</a>
+      <partial name="show-type"></partial>
     </header>
     <partial name="edit-contents"></partial>
   </article>
