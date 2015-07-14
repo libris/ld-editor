@@ -24,8 +24,12 @@ export class LD {
     return Object.keys(o).filter(k => k[0] !== '@')
   }
 
+  get(id) {
+    return this.index[id] || this.model[id]
+  }
+
   deref(ref) {
-    return this.index[ref[ID]] || ref
+    return this.get(ref[ID]) || ref
   }
 
   expand(key) {

@@ -15,11 +15,12 @@
             v-on="change: edit(editId)"></select>
     <!-- <button v-on="click: save()">Save</button> -->
   </form>
+  <edit-node v-if="state.term" type="term" item="{{state.term}}"></edit-node>
   <edit-node v-if="item" type="main" item="{{item}}"></edit-node>
 </div>
 
 <template id="edit-node">
-  <article class="card {{ type === 'main'? 'main' : 'embedded' }}">
+  <article class="card {{ type || 'embedded' }}">
     <header>
       <a class="id" v-if="item[ID]" href="{{item[ID]}}">{{item[ID]}}</a>
       <partial name="show-type"></partial>
@@ -77,9 +78,10 @@
 </template>
 
 <template id="show-term">
-  <b>{{ld.label(part.term, part.key)}}</b>
+  <b v-on="click: state.termInfo(part.key)">{{ld.label(part.term, part.key)}}</b>
 </template>
 
 <template id="show-type">
-  <b v-if="item[TYPE]">{{ld.label(ld.model[item[TYPE]], item[TYPE])}}</b>
+  <b v-on="click: state.termInfo(item[TYPE])" v-if="item[TYPE]"
+    >{{ld.label(ld.model[item[TYPE]], item[TYPE])}}</b>
 </template>

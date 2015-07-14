@@ -25,17 +25,29 @@ function run() {
 function initVue(ld, editId) {
   Vue.config.debug = true
 
-  let item = ld.index[editId]
+  let state = {
+    termInfo(key) {
+      if (this.key == key) {
+        this.$set('term', null)
+        this.key = null
+      } else {
+        this.$set('term', ld.model[key])
+        this.key = key
+      }
+    }
+  }
 
-  let getData = () => Object.assign({ld}, {ID, TYPE})
+  let item = ld.get(editId)
 
   Vue.partial('edit-contents', '#edit-contents')
   Vue.partial('show-term', '#show-term')
   Vue.partial('show-type', '#show-type')
 
+  let getData = () => Object.assign({state, ld}, {ID, TYPE})
+
   return new Vue({
     el: '#editor',
-    data: {ld, item, editId},
+    data: {state, ld, item, editId},
     methods: {
       thingOptGroups() {
         let optGroups = {}
@@ -52,7 +64,7 @@ function initVue(ld, editId) {
         return Object.values(optGroups)
       },
       edit(id) {
-        this.$data.item = ld.index[id]
+        this.$data.item = ld.get(id)
       },
       save() {
         let item = this.$data.item
@@ -85,7 +97,7 @@ function initVue(ld, editId) {
             $event.preventDefault()
             let ref = this.$data.item
             let id = ref[ID]
-            let thing = ld.index[id]
+            let thing = ld.get(id)
             if (!thing)
               return
             for (let key of Object.keys(thing)) {
