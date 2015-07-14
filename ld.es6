@@ -33,6 +33,16 @@ export class LD {
   }
 
   expand(key) {
+    let [pfx, local] = key.split(/:/)
+    if (!local) {
+      [pfx, local] = [null, pfx]
+    } else  {
+      let ns = this.context[pfx]
+      console.log(key, ns, local)
+      if (ns) {
+        return ns + local
+      }
+    }
     return key
   }
 
@@ -64,7 +74,7 @@ export class LD {
 
   parts(o) {
     return this.keys(o).map(key => {
-      let term = this.model[this.expand(key)]
+      let term = this.model[key]
       let value = o[key]
       let kind = classify(value)
       if (kind.array) {

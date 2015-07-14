@@ -30,7 +30,7 @@
 </template>
 
 <template id="edit-ref">
-  <a class="ref" href="{{item[ID]}}" v-on="click: show($event)"
+  <a class="ref" href="{{ld.expand(item[ID])}}" v-on="click: show($event)"
     >{{ld.label(ld.deref(item))}}</a></p>
 </template>
 
