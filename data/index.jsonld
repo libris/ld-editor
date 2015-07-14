@@ -1,6 +1,123 @@
 [
 
   {
+    "@id": "http://libris.kb.se/resource/bib/14809796",
+    "@type": "PrintedBook",
+    "contentType": {"@id": "http://id.kb.se/rda/content/Text"},
+    "mediaType": {"@id": "http://id.kb.se/rda/media/Unmediated"},
+    "carrierType": {"@id": "http://id.kb.se/rda/carrier/Volume"},
+    "qualifiedTitle": [
+      {
+        "@type": "TitlePage",
+        "title": "Mervärdesskatt i teori och tillämpning"
+      },
+      {
+        "@type": "CoverTitle",
+        "title": "Mervärdesskatt",
+        "subtitle": "i teori och tillämpning"
+      }
+    ],
+    "responsibilityStatement": "Oskar Henkow",
+    "editionStatement": "Andra upplagan",
+    "qualifiedIdentifier": [
+      {
+        "@type": "ISBN13",
+        "value": "9789140678591"
+      }
+    ],
+    "manufacture": [
+      {
+        "@type": "Event",
+        "where": {"@id": "http://id.kb.se/country/Poland"},
+        "when": "2013"
+      }
+    ],
+    "publication": [
+      {
+        "@type": "Event",
+        "where": {"@id": "http://id.kb.se/place/malmoe"},
+        "impliedWhen": "[2013]",
+        "who": {"name": "Gleerups"}
+      }
+    ],
+    "dimensions": "21 cm",
+    "numberOfPages": "127",
+    "illustrationNote": "illustrationer",
+    "exampleOfWork": {"@id": "http://id.kb.se/text/mrvrdssktttrtllmpnng-hnkwskr"},
+    "describedBy": {
+      "@id": "http://libris.kb.se/bib/14809796",
+      "@type": "Record",
+      "controlNumber": "14809796",
+      "created": "2013-11-29T00:00:00.0+01:00",
+      "modified": "2015-06-11T08:44:50.0+02:00",
+      "language": {"@id": "http://id.kb.se/language/swe"},
+      "bibliography": [
+        {
+          "@type": "Organization",
+          "notation": "NB"
+        }
+      ],
+      "modifyingAgency": {
+        "@type": "Organization",
+        "name": "Lehl"
+      },
+      "originalCatalogingAgency": {
+        "@type": "Organization",
+        "name": "BOKR"
+      },
+      "systemNumber": [
+        "(BOKR)9789140678591"
+      ],
+      "catalogingSource": {"@id": "/def/enum/content/CooperativeCatalogingProgram"},
+      "catForm": {"@id": "/def/enum/record/ISBD"},
+      "descriptionRules": "rda",
+      "technicalNote": [
+        "Ändrad av RDA-projektet på KB"
+      ]
+    }
+  },
+
+  {
+    "@type": "Book",
+    "@id": "http://id.kb.se/text/mrvrdssktttrtllmpnng-hnkwskr",
+    "title": "Mervärdesskatt i teori och tillämpning",
+    "author": [
+      {
+        "@type": "Person",
+        "birthYear": "1972",
+        "familyName": "Henkow",
+        "givenName": "Oskar"
+      }
+    ],
+    "language": {"@id": "http://id.kb.se/language/swe"},
+    "country": {"@id": "http://id.kb.se/country/sw"},
+    "literaryForm": {"@id": "/def/enum/content/NotFictionNotFurtherSpecified"},
+    "classification": [
+      {"@id": "http://dewey.info/class/343.485055/e23/"},
+      {"@id": "http://dewey.info/class/336.2714/e23/"}
+    ],
+    "subject": [
+      {
+        "@type": "Concept",
+        "broader": [
+          {
+            "@type": "Concept",
+            "prefLabel": "Mervärdesskatt"
+          },
+          {
+            "@type": "Concept",
+            "prefLabel": "juridik och lagstiftning"
+          }
+        ],
+        "inScheme": {"@id": "http://id.kb.se/topic/sao"}
+      },
+      {"@id": "http://id.loc.gov/authorities/label/Value-added%20tax"},
+      {"@id": "http://id.kb.se/country/sw"}
+    ]
+  },
+
+
+  {
     "@type": "PrintedBook",
     "@id": "http://libris.kb.se/bib/9780547928210",
     "qualifiedTitle": {
@@ -56,6 +173,7 @@
     "isPartOf": {"@id": "http://id.kb.se/multipart/lotr"},
     "hasPart": {"@type": "VisualArtwork"}
   },
+
   {
     "@id": "http://libris.kb.se/bib/1846457#thing",
     "@type": "PrintedBook",
@@ -175,7 +293,42 @@
     "sameAs": {"@id": "http://libris.kb.se/resource/auth/196303"}
   },
 
+  {
+    "@id": "http://id.kb.se/org/acme",
+    "@type": "Organization",
+    "label": "ACME"
+  },
+  {
+    "@id": "http://id.kb.se/org/marinerbooks",
+    "@type": "Organization",
+    "label": "Mariner Books"
+  },
+  {
+    "@id": "http://id.kb.se/org/geber",
+    "@type": "Organization",
+    "label": "Geber"
+  },
+  {
+    "@id": "http://id.kb.se/org/pan",
+    "@type": "Organization",
+    "label": "Pan"
+  },
+  {
+    "@id": "http://id.kb.se/org/pressbyran",
+    "@type": "Organization",
+    "label": "Pressbyrån"
+  },
 
+  {
+    "@id": "http://id.kb.se/language/eng",
+    "@type": "Language",
+    "labelByLang": {"en": "English", "sv": "Engelska"}
+  },
+  {
+    "@id": "http://id.kb.se/language/swe",
+    "@type": "Language",
+    "labelByLang": {"en": "Swedish", "sv": "Svenska"}
+  },
   {
     "@id": "http://id.kb.se/country/uk",
     "@type": "Country",
@@ -192,6 +345,11 @@
     "labelByLang": {"en": "Denmark", "sv": "Danmark"}
   },
   {
+    "@id": "http://id.kb.se/country/Poland",
+    "@type": "Country",
+    "labelByLang": {"en": "Poland", "sv": "Polen"}
+  },
+  {
     "@id": "http://id.kb.se/place/stockholm",
     "@type": "Place",
     "name": "Stockholm",
@@ -201,6 +359,12 @@
     "@id": "http://id.kb.se/place/uppsala",
     "@type": "Place",
     "name": "Uppsala",
+    "containedIn": {"@id": "http://id.kb.se/country/sw"}
+  },
+  {
+    "@id": "http://id.kb.se/place/malmoe",
+    "@type": "Place",
+    "name": "Malmö",
     "containedIn": {"@id": "http://id.kb.se/country/sw"}
   },
 
@@ -223,41 +387,68 @@
   },
 
   {
-    "@id": "http://id.kb.se/org/acme",
-    "@type": "Organization",
-    "label": "ACME"
-  },
-  {
-    "@id": "http://id.kb.se/org/marinerbooks",
-    "@type": "Organization",
-    "label": "Mariner Books"
-  },
-  {
-    "@id": "http://id.kb.se/org/geber",
-    "@type": "Organization",
-    "label": "Geber"
-  },
-  {
-    "@id": "http://id.kb.se/org/pan",
-    "@type": "Organization",
-    "label": "Pan"
-  },
-
-  {
     "@id": "http://id.kb.se/format/Book/Paperback",
     "@type": "BookFormat",
     "labelByLang": {"en": "Paperback", "sv": "Pocketbok"}
   },
+
   {
-    "@id": "http://id.kb.se/language/eng",
-    "@type": "Language",
-    "labelByLang": {"en": "English", "sv": "Engelska"}
+    "@id": "http://id.kb.se/rda/content/Text",
+    "@type": "Class",
+    "labelByLang": {"en": "Text", "sv": "Text"},
+    "termGroup": "rdacontent"
   },
   {
-    "@id": "http://id.kb.se/language/swe",
-    "@type": "Language",
-    "labelByLang": {"en": "Swedish", "sv": "Svenska"}
+    "@id": "http://id.kb.se/rda/media/Unmediated",
+    "@type": "MediaType",
+    "labelByLang": {"en": "Unmediated", "sv": "Oförmedlad"},
+    "termGroup": "rdamedia"
   },
+  {
+    "@id": "http://id.kb.se/rda/carrier/Volume",
+    "@type": "CarrierType",
+    "labelByLang": {"en": "Volume", "sv": "Volym"},
+    "termGroup": "rdacarrier"
+  },
+
+  {
+    "@id": "http://id.kb.se/topic/sao",
+    "@type": "ConceptScheme",
+    "notation": "SAO"
+  },
+
+  {
+    "@id": "http://id.kb.se/topic/lcsh",
+    "@type": "ConceptScheme",
+    "notation": "LCSH"
+  },
+  {
+    "@id": "http://id.loc.gov/authorities/label/Value-added%20tax",
+    "@type": "Concept",
+    "inScheme": {"@id": "http://id.kb.se/topic/lcsh"},
+    "prefLabel": "Value-added tax"
+  },
+
+  {
+    "@id": "http://dewey.info/scheme/edition/e23/",
+    "@type": "ConceptScheme",
+    "isVersionOf": {"@id": "http://dewey.info/scheme/ddc/"},
+    "notation": "DDC",
+    "version": "23"
+  },
+  {
+    "@id": "http://dewey.info/class/343.485055/e23/",
+    "@type": "Concept",
+    "inScheme": {"@id": "http://dewey.info/scheme/edition/e23/"},
+    "notation": "343.485055"
+  },
+  {
+    "@id": "http://dewey.info/class/336.2714/e23/",
+    "@type": "Concept",
+    "inScheme": {"@id": "http://dewey.info/scheme/edition/e23/"},
+    "notation": "336.2714"
+  },
+
   {
     "@id": "http://id.kb.se/concept/novel",
     "@type": "Concept",
@@ -277,11 +468,6 @@
     "@id": "http://id.kb.se/concept/people",
     "@type": "Concept",
     "labelByLang": {"en": "People", "sv": "Folk"}
-  },
-  {
-    "@id": "http://id.kb.se/org/pressbyran",
-    "@type": "Organization",
-    "label": "Pressbyrån"
   }
 
 ]
