@@ -36,8 +36,8 @@
       {
         "@type": "Event",
         "where": {"@id": "http://id.kb.se/place/malmoe"},
-        "impliedWhen": "[2013]",
-        "who": {"name": "Gleerups"}
+        "assumedWhen": "2013",
+        "who": {"@id": "http://id.kb.se/org/gleerups"}
       }
     ],
     "dimensions": "21 cm",
@@ -309,6 +309,11 @@
     "@id": "http://id.kb.se/org/pressbyran",
     "@type": "Organization",
     "label": "Pressbyrån"
+  },
+  {
+    "@id": "http://id.kb.se/org/gleerups",
+    "name": "Gleerups",
+    "homepage": {"@id": "http://www.gleerups.se/"}
   },
   {
     "@id": "http://id.kb.se/org/lehl",
