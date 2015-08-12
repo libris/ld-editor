@@ -52,25 +52,16 @@
       "modified": "2015-06-11T08:44:50.0+02:00",
       "language": {"@id": "http://id.kb.se/language/swe"},
       "bibliography": [
-        {
-          "@type": "Organization",
-          "notation": "NB"
-        }
+        {"@id": "http://id.kb.se/org/nb"}
       ],
-      "modifyingAgency": {
-        "@type": "Organization",
-        "name": "Lehl"
-      },
-      "originalCatalogingAgency": {
-        "@type": "Organization",
-        "name": "BOKR"
-      },
+      "modifyingAgency": {"@id": "http://id.kb.se/org/lehl"},
+      "originalCatalogingAgency": {"@id": "http://id.kb.se/org/bokr"},
       "systemNumber": [
         "(BOKR)9789140678591"
       ],
-      "catalogingSource": {"@id": "/def/enum/content/CooperativeCatalogingProgram"},
-      "catForm": {"@id": "/def/enum/record/ISBD"},
-      "descriptionRules": "rda",
+      "catalogingSource": {"@id": "http://id.kb.se/enum/content/CooperativeCatalogingProgram"},
+      "catForm": {"@id": "http://id.kb.se/enum/record/ISBD"},
+      "descriptionRules": {"@id": "http://id.kb.se/enum/record/RDA"},
       "technicalNote": [
         "Ändrad av RDA-projektet på KB"
       ]
@@ -82,16 +73,11 @@
     "@id": "http://id.kb.se/text/mrvrdssktttrtllmpnng-hnkwskr",
     "title": "Mervärdesskatt i teori och tillämpning",
     "author": [
-      {
-        "@type": "Person",
-        "birthYear": "1972",
-        "familyName": "Henkow",
-        "givenName": "Oskar"
-      }
+      {"@id": "http://id.kb.se/auth/person/hnkwskr-1972"}
     ],
     "language": {"@id": "http://id.kb.se/language/swe"},
     "country": {"@id": "http://id.kb.se/country/sw"},
-    "literaryForm": {"@id": "/def/enum/content/NotFictionNotFurtherSpecified"},
+    "literaryForm": {"@id": "http://id.kb.se/enum/content/NotFictionNotFurtherSpecified"},
     "classification": [
       {"@id": "http://dewey.info/class/343.485055/e23/"},
       {"@id": "http://dewey.info/class/336.2714/e23/"}
@@ -100,16 +86,9 @@
       {
         "@type": "Concept",
         "broader": [
-          {
-            "@type": "Concept",
-            "prefLabel": "Mervärdesskatt"
-          },
-          {
-            "@type": "Concept",
-            "prefLabel": "juridik och lagstiftning"
-          }
-        ],
-        "inScheme": {"@id": "http://id.kb.se/topic/sao"}
+          {"@id": "http://id.kb.se/topic/sao/mervardesskatt"},
+          {"@id": "http://id.kb.se/topic/sao/juridik-och-lagstiftning"}
+        ]
       },
       {"@id": "http://id.loc.gov/authorities/label/Value-added%20tax"},
       {"@id": "http://id.kb.se/country/sw"}
@@ -292,6 +271,19 @@
     "deathYear": "1984",
     "sameAs": {"@id": "http://libris.kb.se/resource/auth/196303"}
   },
+  {
+    "@id": "http://id.kb.se/auth/person/hnkwskr-1972",
+    "@type": "Authority",
+    "focus": {"@id": "http://id.kb.se/person/hnkwskr-1972"},
+    "prefLabel": "Henkow, Oskar, 1972-"
+  },
+  {
+    "@id": "http://id.kb.se/person/hnkwskr-1972",
+    "@type": "Person",
+    "birthYear": "1972",
+    "familyName": "Henkow",
+    "givenName": "Oskar"
+  },
 
   {
     "@id": "http://id.kb.se/org/acme",
@@ -317,6 +309,23 @@
     "@id": "http://id.kb.se/org/pressbyran",
     "@type": "Organization",
     "label": "Pressbyrån"
+  },
+  {
+    "@id": "http://id.kb.se/org/lehl",
+    "@type": "Organization",
+    "name": "Lehl"
+  },
+  {
+    "@id": "http://id.kb.se/org/bokr",
+    "@type": "Organization",
+    "notation": "BOKR",
+    "name": "Bokrondellen"
+  },
+  {
+    "@id": "http://id.kb.se/org/nb",
+    "@type": "Organization",
+    "notation": "NB",
+    "name": "Nationalbibliografin"
   },
 
   {
@@ -416,6 +425,18 @@
     "@type": "ConceptScheme",
     "notation": "SAO"
   },
+  {
+    "@id": "http://id.kb.se/topic/sao/mervardesskatt",
+    "@type": "Concept",
+    "prefLabel": "Mervärdesskatt",
+    "inScheme": {"@id": "http://id.kb.se/topic/sao"}
+  },
+  {
+    "@id": "http://id.kb.se/topic/sao/juridik-och-lagstiftning",
+    "@type": "Concept",
+    "prefLabel": "Juridik och lagstiftning",
+    "inScheme": {"@id": "http://id.kb.se/topic/sao"}
+  },
 
   {
     "@id": "http://id.kb.se/topic/lcsh",
@@ -468,6 +489,27 @@
     "@id": "http://id.kb.se/concept/people",
     "@type": "Concept",
     "labelByLang": {"en": "People", "sv": "Folk"}
+  },
+
+  {
+    "@id": "http://id.kb.se/enum/content/NotFictionNotFurtherSpecified",
+    "@type": "Concept",
+    "labelByLang": {"en": "Non-fiction", "sv": "Facklitteratur"}
+  },
+  {
+    "@id": "http://id.kb.se/enum/content/CooperativeCatalogingProgram",
+    "@type": "Concept",
+    "labelByLang": {"en": "Kooperativt katalogiseringsprogram", "sv": "Cooperative cataloging program"}
+  },
+  {
+    "@id": "http://id.kb.se/enum/record/ISBD",
+    "@type": "Concept",
+    "label": "ISBD"
+  },
+  {
+    "@id": "http://id.kb.se/enum/record/RDA",
+    "@type": "Concept",
+    "label": "RDA"
   }
 
 ]
