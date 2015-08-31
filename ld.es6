@@ -55,7 +55,9 @@ export class LD {
     }
     defaultValue = defaultValue || o[ID]
     if (o) {
-      let value = (this.lang && o.labelByLang && o.labelByLang[this.lang]) ||
+      let value =
+        (this.lang && o.prefLabelByLang && o.prefLabelByLang[this.lang]) ||
+        (this.lang && o.labelByLang && o.labelByLang[this.lang]) ||
         o.prefLabel ||
         o.title ||
         o.name ||
