@@ -3,8 +3,7 @@
   {
     "@id": "http://libris.kb.se/resource/bib/14809796",
     "@type": "PrintedBook",
-    "contentType": {"@id": "http://id.kb.se/rda/content/Text"},
-    "mediaType": {"@id": "http://id.kb.se/rda/media/Unmediated"},
+    "exampleOfWork": {"@id": "http://id.kb.se/text/mrvrdssktttrtllmpnng-hnkwskr"},
     "carrierType": {"@id": "http://id.kb.se/rda/carrier/Volume"},
     "qualifiedTitle": [
       {
@@ -14,7 +13,8 @@
       {
         "@type": "CoverTitle",
         "title": "Mervärdesskatt",
-        "subtitle": "i teori och tillämpning"
+        "subtitle": "I TEORI OCH TILLÄMPNING",
+        "note": "undertitel angiven med versaler"
       }
     ],
     "responsibilityStatement": "Oskar Henkow",
@@ -25,6 +25,7 @@
         "value": "9789140678591"
       }
     ],
+    "manufactureStatement": "Tryck Dimograf, Polen 2013",
     "manufacture": [
       {
         "@type": "Event",
@@ -32,18 +33,18 @@
         "when": "2013"
       }
     ],
+    "publicationStatement": "Gleerups Malmö",
     "publication": [
       {
         "@type": "Event",
         "where": {"@id": "http://id.kb.se/place/malmoe"},
-        "assumedWhen": "2013",
+        "when": "2013",
         "who": {"@id": "http://id.kb.se/org/gleerups"}
       }
     ],
     "dimensions": "21 cm",
     "numberOfPages": "127",
     "illustrationNote": "illustrationer",
-    "exampleOfWork": {"@id": "http://id.kb.se/text/mrvrdssktttrtllmpnng-hnkwskr"},
     "describedBy": {
       "@id": "http://libris.kb.se/bib/14809796",
       "@type": "Record",
@@ -71,6 +72,7 @@
   {
     "@type": "Book",
     "@id": "http://id.kb.se/text/mrvrdssktttrtllmpnng-hnkwskr",
+    "contentType": {"@id": "http://id.kb.se/rda/content/Text"},
     "title": "Mervärdesskatt i teori och tillämpning",
     "author": [
       {"@id": "http://id.kb.se/auth/person/hnkwskr-1972"}
@@ -313,7 +315,8 @@
   {
     "@id": "http://id.kb.se/org/gleerups",
     "name": "Gleerups",
-    "homepage": {"@id": "http://www.gleerups.se/"}
+    "legalName": "Gleerups Utbildning AB",
+    "url": {"@id": "http://www.gleerups.se/"}
   },
   {
     "@id": "http://id.kb.se/org/lehl",
@@ -421,6 +424,7 @@
   {
     "@id": "http://id.kb.se/rda/carrier/Volume",
     "@type": "CarrierType",
+    "broader": {"@id": "http://id.kb.se/rda/media/Unmediated"},
     "labelByLang": {"en": "Volume", "sv": "Volym"},
     "termGroup": "rdacarrier"
   },
