@@ -16,7 +16,7 @@ With Node.js (including NPM) installed, *install* dependencies and build the app
 
 ## Development
 
-During development, run this to *watch* the source files to be rebuilt, and launch a simple http-server (on [port 7070](http://localhost:7000/)):
+During development, run this to *watch* the source files to be rebuilt, and launch a simple http-server (on [port 7000](http://localhost:7000/)):
 
     $ npm run watch
 
