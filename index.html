@@ -78,7 +78,7 @@
 </template>
 
 <template id="show-term">
-  <b v-on="click: state.termInfo(part.key)">{{ld.label(part.term, part.key)}}</b>
+  <b v-on="click: state.termInfo(part.key)" title="{{part.term.definitionByLang[ld.lang]}}">{{ld.label(part.term, part.key)}}</b>
 </template>
 
 <template id="show-type">
