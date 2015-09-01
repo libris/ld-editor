@@ -99,11 +99,11 @@
       "@id": "Event",
       "@type": "Class",
       "equivalentClass": [
-        {"@id": "sdo:Event"},
+        {"@id": "dctype:Event"},
         {"@id": "prov:Activity"},
-        {"@id": "bibo:Event"},
         {"@id": "bf:Event"},
-        {"@id": "dctype:Event"}
+        {"@id": "sdo:Event"},
+        {"@id": "bibo:Event"}
       ],
       "labelByLang": {"en": "Event", "sv": "Händelse"}
     },
@@ -157,7 +157,7 @@
       "@type": "Class",
       "equivalentClass": {"@id": "bf:MultipartMonograph"},
       "labelByLang": {"sv": "Multipel del av monograf"},
-      "subClassOf": [{"@id": "Monograph"}, {"@id": "Multipart"}]
+      "subClassOf": [{"@id": "Multipart"}, {"@id": "Monograph"}]
     },
     {
       "@id": "Offer",
@@ -169,10 +169,10 @@
       "@id": "Organization",
       "@type": "Class",
       "equivalentClass": [
-        {"@id": "sdo:Organization"},
-        {"@id": "foaf:Organization"},
+        {"@id": "prov:Organization"},
         {"@id": "bf:Organization"},
-        {"@id": "prov:Organization"}
+        {"@id": "sdo:Organization"},
+        {"@id": "foaf:Organization"}
       ],
       "labelByLang": {"en": "Organization", "sv": "Organisation"},
       "subClassOf": {"@id": "Agent"}
@@ -183,9 +183,9 @@
       "altLabelByLang": {"sv": "Periodisk resurs"},
       "commentByLang": {"sv": "Samma sak som seriell resurs."},
       "equivalentClass": [
+        {"@id": "sdo:Periodical"},
         {"@id": "bibo:Periodical"},
-        {"@id": "bf:Serial"},
-        {"@id": "sdo:Periodical"}
+        {"@id": "bf:Serial"}
       ],
       "labelByLang": {"en": "Periodical", "sv": "Periodika"},
       "subClassOf": {"@id": "Aggregate"}
@@ -194,10 +194,10 @@
       "@id": "Person",
       "@type": "Class",
       "equivalentClass": [
-        {"@id": "foaf:Person"},
-        {"@id": "prov:Person"},
         {"@id": "bf:Person"},
-        {"@id": "sdo:Person"}
+        {"@id": "foaf:Person"},
+        {"@id": "sdo:Person"},
+        {"@id": "prov:Person"}
       ],
       "labelByLang": {"sv": "Person"},
       "subClassOf": {"@id": "Agent"}
@@ -205,7 +205,7 @@
     {
       "@id": "Place",
       "@type": "Class",
-      "equivalentClass": [{"@id": "bf:Place"}, {"@id": "sdo:Place"}],
+      "equivalentClass": [{"@id": "sdo:Place"}, {"@id": "bf:Place"}],
       "labelByLang": {"sv": "Plats"}
     },
     {
@@ -219,7 +219,7 @@
       "@id": "PrintedBook",
       "@type": "Class",
       "labelByLang": {"en": "Printed Book", "sv": "Tryckt bok"},
-      "subClassOf": [{"@id": "Book"}, {"@id": "PrintedText"}]
+      "subClassOf": [{"@id": "PrintedText"}, {"@id": "Book"}]
     },
     {
       "@id": "PrintedText",
@@ -236,8 +236,8 @@
       },
       "labelByLang": {"en": "Product", "sv": "Produkt"},
       "subClassOf": [
-        {"@id": "sdo:Product"},
         {"@id": "rdaent:Manifestation"},
+        {"@id": "sdo:Product"},
         {"@id": "bf:Instance"}
       ]
     },
@@ -258,21 +258,21 @@
       "equivalentClass": {"@id": "bf:Serial"},
       "labelByLang": {"sv": "Seriell resurs"},
       "subClassOf": [
-        {"@id": "Aggregate"},
         {"@id": "CreativeWork"},
-        {"@id": "Continuing"}
+        {"@id": "Continuing"},
+        {"@id": "Aggregate"}
       ]
     },
     {
       "@id": "Text",
       "@type": "Class",
       "equivalentClass": [
-        {"@id": "dctype:Text"},
+        {"@id": "sdo:Text"},
         {"@id": "bf:Text"},
-        {"@id": "sdo:Text"}
+        {"@id": "dctype:Text"}
       ],
       "labelByLang": {"sv": "Text"},
-      "subClassOf": [{"@id": "CreativeWork"}, {"@id": "Product"}]
+      "subClassOf": [{"@id": "Product"}, {"@id": "CreativeWork"}]
     },
     {
       "@id": "Title",
@@ -326,8 +326,8 @@
       },
       "note": [
         "MARC bib 521",
-        "MARC bib 008[22:23]",
-        "MARC bib 006[5:6]"
+        "MARC bib 006[5:6]",
+        "MARC bib 008[22:23]"
       ],
       "range": {"@id": "Concept"},
       "subPropertyOf": {"@id": "sdo:audience"}
@@ -364,12 +364,12 @@
       "equivalentProperty": {"@id": "skos:broader"},
       "labelByLang": {"sv": "bredare"},
       "note": [
-        "MARC auth 450.x",
         "MARC bib 650.z",
-        "MARC bib 650.x",
+        "MARC auth 450.x",
+        "MARC bib 650.a",
         "MARC auth 450.a",
         "MARC bib 650.y",
-        "MARC bib 650.a",
+        "MARC bib 650.x",
         "MARC bib 650.v"
       ]
     },
@@ -380,9 +380,9 @@
       "note": "MARC bib 007[1:2]",
       "range": {"@id": "CarrierType"},
       "subPropertyOf": [
-        {"@id": "rdael:carrierType"},
         {"@id": "dc:format"},
-        {"@id": "sdo:additionalType"}
+        {"@id": "sdo:additionalType"},
+        {"@id": "rdael:carrierType"}
       ]
     },
     {
@@ -393,7 +393,7 @@
     {
       "@id": "catalogingSource",
       "@type": "ObjectProperty",
-      "note": ["MARC bib 008[39:40]", "MARC auth 008[39:40]"]
+      "note": ["MARC auth 008[39:40]", "MARC bib 008[39:40]"]
     },
     {
       "@id": "classification",
@@ -401,11 +401,11 @@
       "equivalentProperty": {"@id": "bf:classification"},
       "labelByLang": {"sv": "Klassifikation"},
       "note": [
-        "MARC bib 080",
-        "MARC bib 976",
-        "MARC bib 082",
         "MARC bib 060",
-        "MARC bib 084"
+        "MARC bib 084",
+        "MARC bib 976",
+        "MARC bib 080",
+        "MARC bib 082"
       ]
     },
     {
@@ -422,23 +422,23 @@
       "equivalentProperty": {"@id": "sdo:contentType"},
       "labelByLang": {"en": "content type", "sv": "innehållstyp"},
       "note": [
-        "MARC bib 008[33:34]",
+        "MARC bib 006[8:9]",
+        "MARC bib 008[24:25]",
+        "MARC bib 008[21:22]",
+        "MARC bib 006[10:11]",
         "MARC bib 008[25:26]",
-        "MARC bib 006[7:8]",
         "MARC bib 008[27:28]",
         "MARC bib 008[26:27]",
-        "MARC bib 008[24:25]",
-        "MARC bib 006[4:5]",
-        "MARC bib 008[21:22]",
-        "MARC bib 006[8:9]",
-        "MARC bib 006[10:11]",
+        "MARC bib 008[33:34]",
+        "MARC bib 006[7:8]",
         "MARC bib 006[16:17]",
+        "MARC bib 006[4:5]",
         "MARC bib 006[9:10]"
       ],
       "subPropertyOf": [
+        {"@id": "sdo:additionalType"},
         {"@id": "dc:type"},
-        {"@id": "rdael:contentType"},
-        {"@id": "sdo:additionalType"}
+        {"@id": "rdael:contentType"}
       ]
     },
     {
@@ -453,10 +453,10 @@
       "equivalentProperty": {"@id": "identifier"},
       "labelByLang": {"sv": "kontrollnummer"},
       "note": [
-        "MARC bib 001",
-        "MARC hold 004",
         "MARC bib 240.0",
-        "MARC bib 772.w"
+        "MARC bib 001",
+        "MARC bib 772.w",
+        "MARC hold 004"
       ]
     },
     {
@@ -468,12 +468,12 @@
     {
       "@id": "created",
       "@type": "DatatypeProperty",
-      "equivalentProperty": [{"@id": "dc:created"}, {"@id": "sdo:dateCreated"}],
+      "equivalentProperty": [{"@id": "sdo:dateCreated"}, {"@id": "dc:created"}],
       "labelByLang": {"en": "date created", "sv": "skapad"},
       "note": [
+        "MARC bib 008[0:6]",
         "MARC auth 008[0:6]",
-        "MARC hold 008[0:6]",
-        "MARC bib 008[0:6]"
+        "MARC hold 008[0:6]"
       ],
       "range": {"@id": "xsd:dateTime"}
     },
@@ -504,27 +504,27 @@
       "@id": "describedBy",
       "@type": "ObjectProperty",
       "equivalentProperty": [
-        {"@id": "wdrs:describedby"},
         {"@id": "iana:describedby"},
-        {"@id": "sdo:mainEntityOfPage"}
+        {"@id": "sdo:mainEntityOfPage"},
+        {"@id": "wdrs:describedby"}
       ],
       "labelByLang": {"sv": "Beskriven av"},
       "note": [
         "MARC bib 240.0",
-        "MARC bib 520",
-        "MARC bib 772.w"
+        "MARC bib 772.w",
+        "MARC bib 520"
       ],
       "subPropertyOf": {"@id": "foaf:isPrimaryTopicOf"}
     },
     {
       "@id": "description",
       "@type": "DatatypeProperty",
-      "equivalentProperty": [{"@id": "sdo:description"}, {"@id": "dc:description"}],
+      "equivalentProperty": [{"@id": "dc:description"}, {"@id": "sdo:description"}],
       "labelByLang": {"en": "description", "sv": "beskrivning"},
       "note": [
-        "MARC bib 856.3",
+        "MARC bib 533.a",
         "MARC hold 866.a",
-        "MARC bib 533.a"
+        "MARC bib 856.3"
       ]
     },
     {
@@ -553,7 +553,7 @@
       "equivalentProperty": {"@id": "sdo:exampleOfWork"},
       "labelByLang": {"en": "example of work", "sv": "exemplifierar verk"},
       "note": "MARC bib 240",
-      "subPropertyOf": [{"@id": "bf:instanceOf"}, {"@id": "rdfa:copy"}]
+      "subPropertyOf": [{"@id": "rdfa:copy"}, {"@id": "bf:instanceOf"}]
     },
     {
       "@id": "extent",
@@ -582,7 +582,7 @@
     {
       "@id": "genre",
       "@type": "ObjectProperty",
-      "equivalentProperty": [{"@id": "bf:genre"}, {"@id": "bf:classification"}],
+      "equivalentProperty": [{"@id": "bf:classification"}, {"@id": "bf:genre"}],
       "labelByLang": {"en": "genre", "sv": "genre"},
       "note": "MARC bib 655",
       "subPropertyOf": [{"@id": "sdo:genre"}, {"@id": "dc:type"}]
@@ -597,21 +597,21 @@
       "@id": "hasPart",
       "@type": "ObjectProperty",
       "equivalentProperty": [
-        {"@id": "dc:hasPart"},
         {"@id": "sdo:hasPart"},
+        {"@id": "dc:hasPart"},
         {"@id": "bf:hasPart"}
       ],
       "labelByLang": {"en": "has part", "sv": "har del"},
       "note": [
+        "MARC bib 041",
         "MARC bib 006",
         "MARC bib 336",
-        "MARC bib 774",
-        "MARC bib 041"
+        "MARC bib 774"
       ]
     },
     {
       "@id": "identifier",
-      "@type": ["ObjectProperty", "DatatypeProperty"],
+      "@type": ["DatatypeProperty", "ObjectProperty"],
       "equivalentProperty": [
         {"@id": "dc:identifier"},
         {"@id": "bibo:identifier"},
@@ -619,10 +619,10 @@
       ],
       "labelByLang": {"en": "identifier", "sv": "identifikator"},
       "note": [
-        "MARC bib 020",
         "MARC bib 772.x",
         "MARC bib 024",
         "MARC bib 022",
+        "MARC bib 020",
         "MARC bib 772.o",
         "MARC bib 772.z"
       ],
@@ -640,16 +640,16 @@
       "equivalentProperty": {"@id": "skos:inScheme"},
       "labelByLang": {"sv": "ingår i schema"},
       "note": [
-        "MARC bib 976.i2",
-        "MARC bib 082.2",
-        "MARC bib 650.2",
-        "MARC bib 610.i2",
-        "MARC auth 150.9",
-        "MARC auth 065.2",
         "MARC bib 084.2",
         "MARC auth 040.f",
+        "MARC auth 150.9",
+        "MARC bib 610.i2",
         "MARC bib 650.i2",
-        "MARC bib 610.2"
+        "MARC bib 976.i2",
+        "MARC bib 610.2",
+        "MARC bib 082.2",
+        "MARC auth 065.2",
+        "MARC bib 650.2"
       ]
     },
     {
@@ -658,11 +658,11 @@
       "equivalentProperty": [{"@id": "sdo:isPartOf"}, {"@id": "dc:isPartOf"}],
       "labelByLang": {"en": "part of", "sv": "del av"},
       "note": [
+        "MARC bib 610.a",
         "MARC bib 110.a",
         "MARC bib 773",
-        "MARC bib 830",
         "MARC bib 772",
-        "MARC bib 610.a"
+        "MARC bib 830"
       ]
     },
     {"@id": "isVersionOf", "equivalentProperty": {"@id": "dc:isVersionOf"}},
@@ -671,47 +671,47 @@
       "@type": "DatatypeProperty",
       "equivalentProperty": [
         {"@id": "sdo:name"},
-        {"@id": "rdfs:label"},
-        {"@id": "bf:label"}
+        {"@id": "bf:label"},
+        {"@id": "rdfs:label"}
       ],
       "labelByLang": {"en": "label", "sv": "etikett"},
       "note": [
-        "MARC bib 336.a",
-        "MARC auth 670.a",
-        "MARC bib 300.f",
+        "MARC bib 260.e",
+        "MARC bib 520.a",
         "MARC bib 100.q",
+        "MARC bib 111.c",
+        "MARC bib 130.l",
         "MARC bib 264.a",
         "MARC bib 700.l",
+        "MARC bib 338.a",
+        "MARC auth 670.a",
         "MARC bib 521.a",
-        "MARC bib 520.a",
+        "MARC bib 533.b",
         "MARC auth 675.a",
         "MARC bib 240.l",
-        "MARC bib 338.a",
-        "MARC bib 130.l",
-        "MARC bib 533.b",
         "MARC bib 775.e",
         "MARC bib 337.a",
+        "MARC bib 336.a",
         "MARC bib 260.a",
-        "MARC bib 260.e",
-        "MARC bib 111.c"
+        "MARC bib 300.f"
       ]
     },
     {
       "@id": "language",
       "@type": "ObjectProperty",
       "commentByLang": {"sv": "Verkets språk"},
-      "equivalentProperty": [{"@id": "sdo:language"}, {"@id": "bf:language"}],
+      "equivalentProperty": [{"@id": "bf:language"}, {"@id": "sdo:language"}],
       "labelByLang": {"en": "language", "sv": "språk"},
       "note": [
-        "MARC bib 242.y",
-        "MARC bib 700.l",
-        "MARC bib 041.a",
-        "MARC bib 040.b",
         "MARC bib 008[35:38]",
+        "MARC bib 040.b",
+        "MARC bib 242.y",
+        "MARC bib 041.a",
         "MARC bib 775.e",
+        "MARC bib 700.l",
         "MARC bib 130.l",
-        "MARC bib 240.l",
-        "MARC hold 008[22:25]"
+        "MARC hold 008[22:25]",
+        "MARC bib 240.l"
       ],
       "range": {"@id": "Language"},
       "subPropertyOf": {"@id": "dc:language"}
@@ -726,14 +726,14 @@
       "@id": "literaryForm",
       "@type": "ObjectProperty",
       "labelByLang": {"sv": "Litterär genre"},
-      "note": ["MARC bib 006[16:17]", "MARC bib 008[33:34]"]
+      "note": ["MARC bib 008[33:34]", "MARC bib 006[16:17]"]
     },
     {
       "@id": "manufacture",
       "@type": "ObjectProperty",
       "equivalentProperty": {"@id": "bf:manufacture"},
       "labelByLang": {"en": "manufacture", "sv": "tillverkning"},
-      "note": ["MARC bib 260", "MARC bib 264"]
+      "note": ["MARC bib 264", "MARC bib 260"]
     },
     {
       "@id": "manufactureStatement",
@@ -754,7 +754,7 @@
       "@type": "DatatypeProperty",
       "equivalentProperty": {"@id": "dc:modified"},
       "labelByLang": {"sv": "modifierad"},
-      "note": ["MARC auth 008[38:39]", "MARC bib 005"],
+      "note": ["MARC bib 005", "MARC auth 008[38:39]"],
       "range": {"@id": "xsd:dateTime"}
     },
     {
@@ -766,57 +766,57 @@
       "@id": "name",
       "@type": "DatatypeProperty",
       "commentByLang": {"sv": "Aktörens allmänna namn"},
-      "equivalentProperty": [{"@id": "sdo:name"}, {"@id": "foaf:name"}],
+      "equivalentProperty": [{"@id": "foaf:name"}, {"@id": "sdo:name"}],
       "labelByLang": {"en": "name", "sv": "namn"},
       "note": [
-        "MARC bib 034.z",
-        "MARC bib 040.d",
         "MARC bib 040.c",
-        "MARC bib 610.a",
-        "MARC bib 110.a",
-        "MARC bib 100.a",
-        "MARC bib 610.x",
-        "MARC bib 040.a",
         "MARC bib 110.b",
-        "MARC bib 028.b"
+        "MARC bib 034.z",
+        "MARC bib 110.a",
+        "MARC bib 610.x",
+        "MARC bib 040.d",
+        "MARC bib 028.b",
+        "MARC bib 040.a",
+        "MARC bib 610.a",
+        "MARC bib 100.a"
       ],
       "subPropertyOf": {"@id": "label"}
     },
     {
       "@id": "notation",
       "@type": "DatatypeProperty",
-      "equivalentProperty": [{"@id": "skos:notation"}, {"@id": "bf:notation"}],
+      "equivalentProperty": [{"@id": "bf:notation"}, {"@id": "skos:notation"}],
       "labelByLang": {"sv": "notation"},
       "note": [
+        "MARC bib 041.h",
+        "MARC bib 060.a",
         "MARC auth 150.9",
         "MARC bib 082.a",
-        "MARC bib 976.i2",
-        "MARC bib 338.b",
-        "MARC auth 750.0",
         "MARC bib 242.y",
-        "MARC bib 336.b",
-        "MARC bib 610.i2",
-        "MARC bib 976.a",
-        "MARC bib 337.b",
-        "MARC bib 024.i1",
-        "MARC bib 084.2",
-        "MARC auth 065.2",
-        "MARC auth 043.a",
-        "MARC bib 080.a",
-        "MARC bib 084.a",
-        "MARC bib 041.h",
-        "MARC bib 650.i2",
-        "MARC hold 852.b",
-        "MARC auth 040.f",
         "MARC bib 490.l",
-        "MARC bib 024.2",
-        "MARC bib 610.2",
-        "MARC bib 650.0",
-        "MARC bib 040.b",
-        "MARC bib 650.2",
+        "MARC bib 084.a",
+        "MARC bib 610.i2",
         "MARC bib 042.9",
+        "MARC hold 852.b",
+        "MARC bib 338.b",
+        "MARC bib 650.i2",
+        "MARC auth 750.0",
+        "MARC bib 336.b",
+        "MARC bib 976.a",
+        "MARC bib 040.b",
+        "MARC auth 040.f",
         "MARC bib 041.a",
-        "MARC bib 060.a"
+        "MARC auth 065.2",
+        "MARC bib 650.0",
+        "MARC bib 976.i2",
+        "MARC bib 024.2",
+        "MARC auth 043.a",
+        "MARC bib 610.2",
+        "MARC bib 084.2",
+        "MARC bib 080.a",
+        "MARC bib 650.2",
+        "MARC bib 337.b",
+        "MARC bib 024.i1"
       ],
       "subPropertyOf": {"@id": "label"}
     },
@@ -826,11 +826,11 @@
       "equivalentProperty": [{"@id": "skos:note"}, {"@id": "bf:note"}],
       "labelByLang": {"sv": "anteckning"},
       "note": [
-        "MARC bib 533.n",
         "MARC auth 678.a",
-        "MARC bib 772.n",
+        "MARC bib 533.n",
         "MARC bib 246.g",
-        "MARC bib 502.a"
+        "MARC bib 502.a",
+        "MARC bib 772.n"
       ]
     },
     {
@@ -871,20 +871,20 @@
       "labelByLang": {"sv": "föredragen etikett"},
       "note": [
         "MARC bib 650.a",
-        "MARC auth 450.x",
-        "MARC bib 976.b",
-        "MARC auth 450.a",
-        "MARC bib 650.z",
         "MARC bib 648.a",
-        "MARC bib 650.y",
-        "MARC auth 181.z",
-        "MARC bib 650.x",
-        "MARC auth 150.a",
-        "MARC bib 651.a",
+        "MARC bib 650.z",
         "MARC auth 151.a",
-        "MARC auth 180.x",
         "MARC bib 650.v",
-        "MARC auth 148.a"
+        "MARC auth 181.z",
+        "MARC bib 976.b",
+        "MARC bib 650.x",
+        "MARC auth 148.a",
+        "MARC bib 651.a",
+        "MARC auth 150.a",
+        "MARC auth 180.x",
+        "MARC bib 650.y",
+        "MARC auth 450.a",
+        "MARC auth 450.x"
       ],
       "subPropertyOf": {"@id": "label"}
     },
@@ -897,7 +897,7 @@
     {
       "@id": "publication",
       "@type": "ObjectProperty",
-      "equivalentProperty": [{"@id": "sdo:publication"}, {"@id": "bf:publication"}],
+      "equivalentProperty": [{"@id": "bf:publication"}, {"@id": "sdo:publication"}],
       "labelByLang": {"en": "publication", "sv": "utgivning"},
       "note": ["MARC bib 264", "MARC bib 260"]
     },
@@ -911,7 +911,7 @@
     {
       "@id": "qualifiedIdentifier",
       "@type": "ObjectProperty",
-      "labelByLang": {"en": "structured identifier", "sv": "strukturerad identifikator"},
+      "labelByLang": {"en": "qualified identifier", "sv": "kvalificerad identifikator"},
       "range": {"@id": "Identifier"}
     },
     {
@@ -920,7 +920,7 @@
       "commentByLang": {"sv": "Rätta inte felaktigheter, skriv som det står."},
       "definitionByLang": {"sv": "Titeln överförs exakt som i den föredragna källan, oftast titelsidan."},
       "equivalentProperty": {"@id": "bf:instanceTitle"},
-      "labelByLang": {"en": "structured title", "sv": "strukturerad titel"},
+      "labelByLang": {"en": "qualified title", "sv": "kvalificerad titel"},
       "range": {"@id": "Title"}
     },
     {
@@ -928,7 +928,7 @@
       "@type": "DatatypeProperty",
       "altLabelByLang": {"sv": "Upphov"},
       "definitionByLang": {"sv": "Ange upphov som det står i objektet. Uppgiften beskriver hur upphov anges i publikationen och kan skilja sig från kontrollerade namnformer."},
-      "equivalentProperty": [{"@id": "rdael:statementOfResponsibility"}, {"@id": "bf:responsibilityStatement"}],
+      "equivalentProperty": [{"@id": "bf:responsibilityStatement"}, {"@id": "rdael:statementOfResponsibility"}],
       "labelByLang": {"en": "responsibility statement", "sv": "upphovsuppgift"},
       "note": "MARC bib 245.c"
     },
@@ -938,10 +938,10 @@
       "equivalentProperty": {"@id": "owl:sameAs"},
       "labelByLang": {"sv": "samma sak som"},
       "note": [
-        "MARC auth 400",
         "MARC auth 856",
+        "MARC bib 650.0",
         "MARC bib 035.a.a",
-        "MARC bib 650.0"
+        "MARC auth 400"
       ]
     },
     {
@@ -952,17 +952,17 @@
     {
       "@id": "subject",
       "@type": "ObjectProperty",
-      "equivalentProperty": [{"@id": "dc:subject"}, {"@id": "bf:subject"}],
+      "equivalentProperty": [{"@id": "bf:subject"}, {"@id": "dc:subject"}],
       "labelByLang": {"en": "subject", "sv": "ämne"},
       "note": [
-        "MARC bib 611",
+        "MARC hold 600",
         "MARC auth 083",
+        "MARC bib 600",
+        "MARC bib 072",
+        "MARC bib 630",
+        "MARC bib 611",
         "MARC auth 750",
         "MARC bib 650",
-        "MARC bib 600",
-        "MARC bib 630",
-        "MARC hold 600",
-        "MARC bib 072",
         "MARC bib 610"
       ],
       "subPropertyOf": {"@id": "about"}
@@ -975,8 +975,8 @@
       "equivalentProperty": {"@id": "bf:subtitle"},
       "labelByLang": {"en": "subtitle", "sv": "undertitel"},
       "note": [
-        "MARC bib 245.a.b",
         "MARC bib 240.k",
+        "MARC bib 245.a.b",
         "MARC bib 245.b"
       ]
     },
@@ -996,9 +996,9 @@
       "@id": "termGroup",
       "@type": "DatatypeProperty",
       "note": [
-        "MARC bib 338.2",
         "MARC bib 337.2",
-        "MARC bib 336.2"
+        "MARC bib 336.2",
+        "MARC bib 338.2"
       ]
     },
     {
@@ -1011,23 +1011,23 @@
       ],
       "labelByLang": {"en": "title", "sv": "titel"},
       "note": [
+        "MARC bib 740.a",
+        "MARC bib 240.a",
         "MARC auth 400.t",
+        "MARC auth 100.t",
+        "MARC bib 772.t",
         "MARC bib 600.t",
+        "MARC bib 700.t",
         "MARC bib 510.a",
         "MARC bib 730.a",
-        "MARC bib 772.t",
-        "MARC bib 240.a",
-        "MARC bib 440.a",
-        "MARC auth 100.t",
-        "MARC bib 740.a",
-        "MARC bib 700.t"
+        "MARC bib 440.a"
       ],
       "subPropertyOf": {"@id": "label"}
     },
     {
       "@id": "translationOf",
       "@type": "ObjectProperty",
-      "equivalentProperty": [{"@id": "bf:translationOf"}, {"@id": "bibo:translationOf"}],
+      "equivalentProperty": [{"@id": "bibo:translationOf"}, {"@id": "bf:translationOf"}],
       "note": "MARC bib 765"
     },
     {
@@ -1035,6 +1035,17 @@
       "@type": "ObjectProperty",
       "equivalentProperty": {"@id": "sdo:translator"},
       "labelByLang": {"en": "translator", "sv": "översättare"}
+    },
+    {
+      "@id": "uniformTitle",
+      "@type": "DatatypeProperty",
+      "labelByLang": {"sv": "uniform titel"},
+      "note": [
+        "MARC bib 130.a",
+        "MARC bib 830.a",
+        "MARC bib 772.s"
+      ],
+      "subPropertyOf": [{"@id": "title"}, {"@id": "prefLabel"}]
     },
     {
       "@id": "url",
@@ -1051,13 +1062,13 @@
     },
     {
       "@id": "version",
-      "@type": ["DatatypeProperty", "ObjectProperty"],
+      "@type": ["ObjectProperty", "DatatypeProperty"],
       "equivalentProperty": {"@id": "sdo:version"},
       "labelByLang": {"sv": "version"},
       "note": [
         "MARC bib 082.2",
-        "MARC bib 245.s",
-        "MARC bib 240.s"
+        "MARC bib 240.s",
+        "MARC bib 245.s"
       ]
     },
     {

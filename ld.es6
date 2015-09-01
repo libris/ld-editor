@@ -59,7 +59,7 @@ export class LD {
         (this.lang && o.prefLabelByLang && o.prefLabelByLang[this.lang]) ||
         (this.lang && o.labelByLang && o.labelByLang[this.lang]) ||
         o.prefLabel ||
-        o.title ||
+        o.uniformTitle || o.title ||
         o.name ||
         o.notation ||
         o.label ||

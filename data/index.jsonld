@@ -4,6 +4,7 @@
     "@id": "http://libris.kb.se/resource/bib/14809796",
     "@type": "PrintedBook",
     "exampleOfWork": {"@id": "http://id.kb.se/text/mrvrdssktttrtllmpnng-hnkwskr"},
+    "mediaType": {"@id": "http://id.kb.se/rda/media/Unmediated"},
     "carrierType": {"@id": "http://id.kb.se/rda/carrier/Volume"},
     "qualifiedTitle": [
       {
@@ -73,7 +74,7 @@
     "@type": "Book",
     "@id": "http://id.kb.se/text/mrvrdssktttrtllmpnng-hnkwskr",
     "contentType": {"@id": "http://id.kb.se/rda/content/Text"},
-    "title": "Mervärdesskatt i teori och tillämpning",
+    "uniformTitle": "Mervärdesskatt i teori och tillämpning",
     "author": [
       {"@id": "http://id.kb.se/auth/person/hnkwskr-1972"}
     ],
@@ -140,7 +141,7 @@
     "@type": "BookVolume",
     "@id": "http://id.kb.se/book/tfotr-jrrt",
     "sameAs": {"@id": "http://dbpedia.org/resource/The_Fellowship_of_the_Ring"},
-    "title": "The Fellowship of the Ring",
+    "uniformTitle": "The Fellowship of the Ring",
     "description": "The Fellowship of the Ring is the first of three volumes of the epic novel The Lord of the Rings by the English author J. R. R. Tolkien. It takes place in the fictional universe of Middle-earth.",
     "author": {"@id": "http://id.kb.se/auth/person/jrr-tolkien-1892-1973"},
     "language": {"@id": "http://id.kb.se/language/eng"},
@@ -226,7 +227,7 @@
       {"@id": "http://id.kb.se/topic/kssb/Hce"}
     ],
     "language": {"@id": "http://id.kb.se/language/swe"},
-    "title": "Sagan om ringen",
+    "uniformTitle": "Sagan om ringen",
     "translationOf": {"@id": "http://id.kb.se/book/tfotr-jrrt"},
     "translator": {"@id": "http://id.kb.se/auth/person/aake-ohlmarks-1911-1984"},
     "contentType": {"@id": "http://id.kb.se/concept/novel"}
@@ -314,6 +315,7 @@
   },
   {
     "@id": "http://id.kb.se/org/gleerups",
+    "@type": "Organization",
     "name": "Gleerups",
     "legalName": "Gleerups Utbildning AB",
     "url": {"@id": "http://www.gleerups.se/"}
@@ -390,7 +392,7 @@
     "@id": "http://id.kb.se/multipart/lotr",
     "@type": "MultiVolumeBook",
     "sameAs": {"@id": "http://dbpedia.org/resource/The_Lord_of_the_Rings"},
-    "title": "The Lord of the Rings"
+    "uniformTitle": "The Lord of the Rings"
   },
   {
     "@id": "http://id.kb.se/periodical/panpocket",
