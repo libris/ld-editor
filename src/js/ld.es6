@@ -38,7 +38,7 @@ export class LD {
       [pfx, local] = [null, pfx]
     } else  {
       let ns = this.context[pfx]
-      console.log(key, ns, local)
+      // console.log(key, ns, local)
       if (ns) {
         return ns + local
       }
@@ -82,6 +82,8 @@ export class LD {
       if (kind.array) {
         value = value.map(it => Object.assign({value: it}, classify(it)))
       }
+      let obj = Object.assign({term, key, value}, kind)
+      console.log(obj)
       return Object.assign({term, key, value}, kind)
     })
   }
