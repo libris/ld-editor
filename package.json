@@ -25,10 +25,10 @@
     "build:less": "lessc src/less/main.less build/main.css --source-map=build/main.css.map",
     "copy:html": "cp -a src/html/. build",
     "copy:data": "cp -a data/. build/data/",
-    "watch": "parallelshell 'npm run watch:js' 'npm run watch:less' 'npm run watch:html' 'npm run copy:data' 'npm run serve'",
+    "watch": "parallelshell 'npm run watch:js' 'npm run watch:less' 'npm run watch:html' 'npm run serve'",
     "watch:js": "$npm_package_config_RUN_BABEL -w",
     "watch:less": "chokidar *.less -c 'npm run build:less'",
     "watch:html": "chokidar './src/html/*.html' -c 'npm run copy:html'",
-    "serve": "http-server ./build -p ${HTTP_PORT:-7000}"
+    "serve": "parallelshell 'npm run copy:data' 'http-server ./build -p ${HTTP_PORT:-7000}'"
   }
 }
